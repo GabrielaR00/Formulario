@@ -20,4 +20,3 @@ if (!$resultado) {
 else {
   echo "Registro Exitoso. ";
 }
- ?>
