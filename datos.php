@@ -1,6 +1,6 @@
 <?php
-  $nombre = $_GET['nombre'];
-  $correo = $_GET['correo'];
-  $contraseña = $_GET['contraseña'];
+  $nombre = $_POST['nombre'];
+  $correo = $_POST['correo'];
+  $contraseña = $_POST['contraseña'];
   echo $nombre.' '.$nombre.' '.$contraseña;
  ?>
