@@ -84,6 +84,7 @@ p
 {
 	font-family: Lato, Bold,sans-serif;
 	padding-top: 1.5rem;
+	padding-bottom: 1rem;
 	font-size: 1rem;
 	text-align: center;
 	color: #1a2537;
@@ -97,17 +98,23 @@ p
 	color: rgb(	139,0,0);
 	color: cadetblue;
 }
-
 .error
 {
-  background-color: #FF9185;
-  font-size: 1rem;
-  padding: 1.5rem;
-}
+	border-radius: 1rem;
+	text-align: center;
+	background-color: #FF9185;
+	font-size: 0.9rem;
+	font-family: Lato, Bold, sans-serif;
 
+}
 .correcto
 {
-  background-color: #A0DEA7;
-  font-size: 1rem;
-  padding: 1.5rem;
+	background-color: #A0DEA7;
+	font-size: 1rem;
+	padding: 1.5rem;
+}
+li
+{
+	font-family: Lato, Bold, sans-serif;
+	list-style: none;
 }

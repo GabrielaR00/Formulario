@@ -34,43 +34,45 @@
 
 				<input class="button" type="submit" value="Registrate">
 				<p>Al registrarte aceptas nuestras condiciones de uso y política de privacidad.</p>
-				<p> ¿Ya tienes cuenta? <a class="link" href="Login.html"> Iniciar Sesion. </a></p>
+				<p> ¿Ya tienes cuenta? <a class="link" href="Login.html"> Iniciar Sesión. </a></p>
 
 				<?php
-									if (isset($_POST['nombre'])) {
-											$nombre=$_POST['nombre'];
-											$correo=$_POST['correo'];
-											$contraseña=$_POST['contraseña'];
+					if (isset($_POST['nombre']))
+					{
+						$nombre=$_POST['nombre'];
+						$correo=$_POST['correo'];
+						$contraseña=$_POST['contraseña'];
 
-											$campos=array();
+						$campos=array();
 
-											if ($nombre=="") {
-													array_push($campos, "El campo Nombre no puede estar vacio");
-											}
-											if($correo=="" || strpos($correo, "@") ===false)
-											{
-													array_push($campos, "Ingrese un correo electrónico válido");
-											}
-											if($contraseña =="" || strlen($contraseña)<8)
-											{
-													array_push($campos, "El campo de contraseña no puede estar vacio. Debe tener minino 8 caracteres");
-											}
-											if(count($campos)>0)
-											{
-													echo"<div class='error'>";
-															for ($i=0; $i<count($campos); $i++)
-															{
-																	echo "<li>".$campos[$i]."</div>";
-															}
-											}
-											else
-											{
-													echo "<div class='correcto'> Registro Exitoso";
-											}
-										}
-											echo "</div>";
+						if ($nombre=="") {
+								array_push($campos, "El campo nombre no puede estar vacio");
+						}
+						if($correo=="" || strpos($correo, "@") ===false)
+						{
+								array_push($campos, "Ingrese un correo electrónico válido");
+						}
+						if($contraseña =="" || strlen($contraseña)<8)
+						{
+								array_push($campos, "El campo de contraseña no puede estar vacio. Debe tener minino 8 caracteres");
+						}
+						if(count($campos)>0)
+						{
+								echo"<div class='error'>";
+									for ($i=0; $i<count($campos); $i++)
+									{
+											echo "<li> * ".  $campos[$i]. " *";
+									}
+								"</div>";
+						}
+						else
+						{
+								echo "<div class='correcto'> Registro Exitoso";
+						}
+					}
+						echo "</div>";
 
-											?>
+				?>
 
 				<?php
 
