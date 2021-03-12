@@ -6,12 +6,7 @@
 }
 body
 {
-<<<<<<< Updated upstream
-	background-image: url(Assests/fondo.png);
-=======
-
   background-image: url(Assests/fondo.png);
->>>>>>> Stashed changes
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -99,9 +94,6 @@ p
 }
 .link:hover
 {
-<<<<<<< Updated upstream
-	color: rgb(	139,0,0);	
-=======
+	color: rgb(	139,0,0);
 	color: cadetblue;
->>>>>>> Stashed changes
 }
