@@ -6,7 +6,12 @@
 }
 body
 {
+<<<<<<< Updated upstream
 	background-image: url(Assests/fondo.png);
+=======
+
+  background-image: url(Assests/fondo.png);
+>>>>>>> Stashed changes
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -20,7 +25,7 @@ body
 {
 	margin:0 auto;
 	width: 25%;
-    background: rgb(255,255,255); 
+    background: rgb(255,255,255);
     margin-top: 6%;
     padding: 3rem;
     border-radius: 1rem;
@@ -37,7 +42,7 @@ h1
 input[type="text"],input[type="password"]
 {
 	font-family: Lato, Light, sans-serif;
-	font-size: 1.2rem;  
+	font-size: 1.2rem;
 	width: 100%;
 	border: none;
 }
@@ -45,12 +50,12 @@ input[type="text"],input[type="password"]
 
 	border: 0.2rem solid #999;
 	display: flex;
-	justify-content: space-between;	
+	justify-content: space-between;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
   	margin-bottom: 2rem;
   	align-items: center;
-  	border-radius: 1rem;  	
+  	border-radius: 1rem;
 }
 img
 {
@@ -62,7 +67,7 @@ img
 	height: 8%;
 	padding-right: 3%;
 	padding-left: 3%;
-	align-items: center;	
+	align-items: center;
 }
 .button
 {
@@ -78,7 +83,7 @@ img
 }
 .button:hover
 {
-	background: cadetblue;	
+	background: cadetblue;
 }
 p
 {
@@ -90,10 +95,13 @@ p
 }
 .link
 {
-	text-decoration: none;	
+	text-decoration: none;
 }
 .link:hover
 {
+<<<<<<< Updated upstream
 	color: rgb(	139,0,0);	
+=======
+	color: cadetblue;
+>>>>>>> Stashed changes
 }
-

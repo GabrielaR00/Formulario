@@ -2,10 +2,10 @@
 
 $conex = mysqli_connect("localhost","root","","formulario");
 if (!$conex) {
-  echo "Fallo la conexion. ";
+  echo "Fallo la conexion ";
 }
 else {
-  echo "Se conectó correctamente. ";
+  echo "Se conectó correctamente";
 }
 $nombre = $_POST['nombre'];
 $correo = $_POST['correo'];
@@ -18,5 +18,6 @@ if (!$resultado) {
   echo "Registro Fallido";
 }
 else {
-  echo "Registro Exitoso. ";
+  echo "Registro Exitoso";
 }
+ ?>
