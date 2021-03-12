@@ -48,9 +48,9 @@
 						if ($nombre=="") {
 								array_push($campos, "El campo nombre no puede estar vacio");
 						}
-						if($correo=="" || strpos($correo, "@") ===false)
+						if($correo=="" || strpos($correo, "@unimilitar.edu.co") ===false)
 						{
-								array_push($campos, "Ingrese un correo electrónico válido");
+								array_push($campos, "Ingrese un correo electrónico válido: @unimiliat.edu.co");
 						}
 						if($contraseña =="" || strlen($contraseña)<8)
 						{
@@ -75,15 +75,12 @@
 				?>
 
 				<?php
-
-				if(isset($_POST['submited']))
-				{
 						$conex = mysqli_connect("localhost","root","","formulario");
 						if (!$conex) {
 							echo "Fallo la conexion ";
 						}
 						else {
-							echo "Se conectó correctamente";
+							echo "Se conectó correctamente.";
 						}
 						$consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
 						$resultado = mysqli_query($conex, $consulta);
@@ -92,10 +89,8 @@
 							echo "Registro Fallido";
 						}
 						else {
-							echo "Registro Exitoso";
+							echo " Registro Exitoso";
 						}
-				}
-
 				 ?>
 
 			</div>
