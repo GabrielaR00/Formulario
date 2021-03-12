@@ -4,30 +4,26 @@
   padding: 0px;
 
 }
-
 body
 {
-  
-  background-image: url(Assests/fondo.png);
+	background-image: url(Assests/fondo.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
-
-.contenedor{
+.contenedor
+{
 	margin:0 auto;
   	width: 85%;
 }
-
-.Formulario{
-
+.Formulario
+{
 	margin:0 auto;
 	width: 25%;
     background: rgb(255,255,255); 
     margin-top: 6%;
     padding: 3rem;
     border-radius: 1rem;
-
 }
 h1
 {
@@ -86,7 +82,7 @@ img
 }
 p
 {
-	font-family: Lato, Light, sans-serif;
+	font-family: Lato, Bold,sans-serif;
 	padding-top: 1.5rem;
 	font-size: 1rem;
 	text-align: center;
@@ -98,6 +94,6 @@ p
 }
 .link:hover
 {
-	color: cadetblue;	
+	color: rgb(	139,0,0);	
 }
 
