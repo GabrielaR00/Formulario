@@ -9,9 +9,6 @@
  $consulta="SELECT*FROM datosformulario where correo='$correo' and contraseña='$contraseña'";
  $resultado=mysqli_query($conexlogin,$consulta);
 
- if (isset($_POST[])) {
-   // code...
- }
 $filas=mysqli_num_rows($resultado);
 if ($filas) {
   header("location:home.html");

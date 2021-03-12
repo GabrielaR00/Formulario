@@ -97,3 +97,17 @@ p
 	color: rgb(	139,0,0);
 	color: cadetblue;
 }
+
+.error
+{
+  background-color: #FF9185;
+  font-size: 1rem;
+  padding: 1.5rem;
+}
+
+.correcto
+{
+  background-color: #A0DEA7;
+  font-size: 1rem;
+  padding: 1.5rem;
+}
