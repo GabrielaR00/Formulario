@@ -3,13 +3,15 @@
 <head>
 	<title>Formulario</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<link rel="stylesheet" type="text/css" href="Styles.css">
+
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
+
 	<div class="background">
 		<form class="Formulario" action="Register.php" method="POST">
 
@@ -36,7 +38,7 @@
 				<p>Al registrarte aceptas nuestras condiciones de uso y política de privacidad.</p>
 				<p> ¿Ya tienes cuenta? <a class="link" href="Login.html"> Iniciar Sesión. </a></p>
 
-				<?php
+				<!-- <?php
 					if (isset($_POST['nombre']))
 					{
 						$nombre=$_POST['nombre'];
@@ -50,7 +52,7 @@
 						}
 						if($correo=="" || strpos($correo, "@unimilitar.edu.co") ===false)
 						{
-								array_push($campos, "Ingrese un correo electrónico válido: @unimiliat.edu.co");
+								array_push($campos, "Ingrese un correo electrónico válido: @unimilitar.edu.co");
 						}
 						if($contraseña =="" || strlen($contraseña)<8)
 						{
@@ -91,11 +93,12 @@
 						else {
 							echo " Registro Exitoso";
 						}
-				 ?>
+				 ?> -->
 
 			</div>
 		</form>
 	</div>
+	
 
 </body>
 </html>

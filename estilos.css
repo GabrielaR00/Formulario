@@ -4,9 +4,136 @@
   padding: 0px;
 
 }
+:root
+{
+	--dark:#16191c;
+	--dark-x:#1e2126;
+	--light:#ffffff;
+}
+.bg-dark
+{
+	background-color: var(--dark) !important;
+}
+.form-label
+{
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	font-weight: bold;
+	width: 100%
+}
+.form-control
+{
+	background-color: var(--dark-x);
+	border:0px;
+	min-height: 3.125rem;
+	line-height: initial;
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+	font-weight: normal;
+	width: 100%
+
+}
 body
 {
-  background-image: url(Assests/fondo.png);
+	color: var(--light);
+
+}
+h1
+{
+	font-family: Lato, sans-serif;
+	font-weight: 700;
+	font-weight:bold;
+	margin-bottom: 2rem;
+}
+.input-contenedor
+{
+	margin-bottom: 1.5rem;
+	width: 100%
+}
+.links
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-decoration: none;	
+}
+.btn
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 400;
+	font-weight: bold;
+	width: 100%;
+	margin-top: 2rem;
+	min-height: 3.125rem;
+	line-height: initial;
+}
+.nocuenta
+{
+	font-family: Lato, sans-serif;
+	font-weight: 300;	
+	text-align: center;	
+}
+.regis
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-decoration: none;	
+	font-weight: bold;
+
+}
+p
+{
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+	font-weight: lighter;
+	text-align: center;	
+	display: inline-block;
+	margin: 0px auto;
+}
+.back
+{
+	background-image: url(Assests/fondo1.png);
+	background-position: center;
+	background-size: cover;
+}
+.back2
+{
+	background-image: url(Assests/Fondo2.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.error
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-align: center;
+	font-size: 0.95rem;
+	font-family: Lato, sans-serif;
+	font-weight: normal;
+	width: 100%;
+}
+.correcto
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-align: center;
+	font-size: 0.95rem;
+	font-family: Lato, sans-serif;
+	font-weight: normal;
+	width: 100%;
+}
+li
+{	
+	list-style: none;
+}
+
+
+
+
+
+/*body
+{
+
+  	background-image: url(Assests/fondo.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -121,3 +248,4 @@ li
 	font-family: Lato, Bold, sans-serif;
 	list-style: none;
 }
+	*/
