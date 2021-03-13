@@ -19,11 +19,11 @@
     			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 				  <div class="carousel-inner">
 				    <div class=" carousel-item active back min-vh-100 ">
-				      
+
 				    </div>
 				    <div class=" carousel-item back2 min-vh-100 ">
 
-				    </div>				    
+				    </div>
 				  </div>
 				  <a class="carousel-control-prev"  href="#carouselExampleControls" role="button" data-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,12 +33,12 @@
 				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 				    <span class="visually-hidden">Next</span>
 				  </a>
-				</div> 
-				
+				</div>
+
     		</div>
     		<div class="col-lg-5 d-flex flex-column align-items-end min-vh-100 ">
     			<div class="px-lg-5 pt-lg-4 pb-lg-3 p-4  w-100 mb-auto">
-    				
+
     			</div>
     			<div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center " >
 
@@ -53,7 +53,7 @@
 					  <div class="input-contenedor">
 					    <label for="exampleInputEmail1" class="form-label ">Email </label>
 					    <input type="email" class="form-control " placeholder="Ingresa tu email" name="correo" >
-					    
+
 					  </div>
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
@@ -61,13 +61,13 @@
 					    <a href="a" class="links text-muted">¿Has olvidado tu contraseña?</a>
 					  </div>
 					  <button type="submit" class="btn btn-primary">Registrate</button>
-					</form>	
-					
-	    		</div> 			
+					</form>
+
+	    		</div>
 
 	    			<div class="nocuenta px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mb-auto">
 	    			<p>¿Ya tienes una cuenta? </p> <a class="regis text-light" href="Login.php">  Inicia Sesión </a>
-    			</div> 
+    			</div>
 
     			<?php
 
@@ -104,39 +104,29 @@
 								echo "<div class='correcto mb-auto'> Registro Exitoso";
 
 								    $conex = mysqli_connect("localhost","root","","formulario");
-								      
+
 								      $nombre = $_POST['nombre'];
 								      $correo = $_POST['correo'];
 								      $contraseña = $_POST['contraseña'];
 
 								      $consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
-								      $resultado = mysqli_query($conex, $consulta);								     
+								      $resultado = mysqli_query($conex, $consulta);
 
 						}
 					}
 						echo "</div>";
 
-				?>    								
-    		</div>   		
+				?>
+    		</div>
 
     	</div>
 
-    	
+
     </section>
 
-    
+
     <script type="bootstrap.bundle.min.js"></script>
 
-    
+
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-

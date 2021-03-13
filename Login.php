@@ -19,11 +19,11 @@
     			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 				  <div class="carousel-inner">
 				    <div class=" carousel-item active back min-vh-100 ">
-				      
+
 				    </div>
 				    <div class=" carousel-item back2 min-vh-100 ">
 
-				    </div>				    
+				    </div>
 				  </div>
 				  <a class="carousel-control-prev"  href="#carouselExampleControls" role="button" data-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,12 +33,12 @@
 				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 				    <span class="visually-hidden">Next</span>
 				  </a>
-				</div> 
-				
+				</div>
+
     		</div>
     		<div class="col-lg-5 d-flex flex-column align-items-end min-vh-100 ">
     			<div class="px-lg-5 pt-lg-4 pb-lg-3 p-4  w-100 mb-auto">
-    				
+
     			</div>
     			<div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center " >
 
@@ -46,37 +46,33 @@
 
     				<form class="Formulario" action="Login.php" method="POST">
 
-    				  
+
 					  <div class="input-contenedor">
 					    <label for="exampleInputEmail1" class="form-label ">Email </label>
 					    <input type="email" class="form-control " placeholder="Ingresa tu email" name="correo" >
-					    
+
 					  </div>
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >					    
+					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-					</form>					
-	    		</div> 		
+					</form>
+	    		</div>
 	    			<div class="nocuenta px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mb-auto">
 	    			<p>¿No tienes una cuenta? </p> <a class="regis text-light" href="Registro.php">  Registrate </a>
-    			</div> 
+    			</div>
 
     			<?php
 
-					if (isset($_POST['nombre']))
+					if (isset($_POST['correo']))
 					{
-						$nombre=$_POST['nombre'];
 						$correo=$_POST['correo'];
 						$contraseña=$_POST['contraseña'];
 
 						$campos=array();
 
-						if ($nombre=="") {
-								array_push($campos, "El campo nombre no puede estar vacio");
-						}
 						if($correo=="" || strpos($correo, "@unimilitar.edu.co") ===false)
 						{
 								array_push($campos, "Ingrese un correo electrónico válido: @unimilitar.edu.co");
@@ -96,32 +92,41 @@
 						}
 						else
 						{
-								echo "<div class='correcto mb-auto'> Bienvenido";
+								      $conexlogin = mysqli_connect("localhost","root","","formulario");
+                      //Validacion//
+                      $consulta="SELECT*FROM datosformulario where correo='$correo' and contraseña='$contraseña'";
+                      $resultado=mysqli_query($conexlogin,$consulta);
 
-								$conex = mysqli_connect("localhost","root","","formulario");
-								      
-								      $nombre = $_POST['nombre'];
-								      $correo = $_POST['correo'];
-								      $contraseña = $_POST['contraseña'];
+                      $filas=mysqli_num_rows($resultado);
 
-								      $consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
-								      $resultado = mysqli_query($conex, $consulta);
+                     if ($filas)
+                     {
+                       header("location:Login.php");
+                    echo "<div class='correcto mb-auto'> Bienvenido";
+                     header('Location: home.php');
+                     }
+                     else
+                     {
+                    echo "<div class='correcto mb-auto'> Correo o Contraseña Incorrecta";
+                     }
+                       mysqli_free_result($resultado);
+                       mysqli_close($conexlogin);
 						}
 					}
 						echo "</div>";
 				?>
 
-    								
-    		</div>   		
+
+    		</div>
 
     	</div>
 
-    	
+
     </section>
 
-    
+
     <script type="bootstrap.bundle.min.js"></script>
 
-    
+
     </body>
 </html>
