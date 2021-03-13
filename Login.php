@@ -44,12 +44,9 @@
 
     				<h1  > Bienvenido </h1>
 
-    				<form class="Formulario" action="Registro.php" method="POST">
+    				<form class="Formulario" action="Login.php" method="POST">
 
-    				  <div class="input-contenedor">
-					    <label for="exampleInputName" class="form-label ">Nombre y apellido</label>
-					    <input type="name" class="form-control " placeholder="Ingresa tu nombre y apellido" name="nombre"  >
-					  </div>
+    				  
 					  <div class="input-contenedor">
 					    <label for="exampleInputEmail1" class="form-label ">Email </label>
 					    <input type="email" class="form-control " placeholder="Ingresa tu email" name="correo" >
@@ -57,16 +54,14 @@
 					  </div>
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >
-					    <a href="a" class="links text-muted">¿Has olvidado tu contraseña?</a>
+					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >					    
 					  </div>
-					  <button type="submit" class="btn btn-primary">Registrate</button>
-					</form>	
-					
-	    		</div> 			
 
+					  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+					</form>					
+	    		</div> 		
 	    			<div class="nocuenta px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mb-auto">
-	    			<p>¿Ya tienes una cuenta? </p> <a class="regis text-light" href="Login.php">  Inicia Sesión </a>
+	    			<p>¿No tienes una cuenta? </p> <a class="regis text-light" href="Registro.php">  Registrate </a>
     			</div> 
 
     			<?php
@@ -101,22 +96,22 @@
 						}
 						else
 						{
-								echo "<div class='correcto mb-auto'> Registro Exitoso";
+								echo "<div class='correcto mb-auto'> Bienvenido";
 
-								    $conex = mysqli_connect("localhost","root","","formulario");
+								$conex = mysqli_connect("localhost","root","","formulario");
 								      
 								      $nombre = $_POST['nombre'];
 								      $correo = $_POST['correo'];
 								      $contraseña = $_POST['contraseña'];
 
 								      $consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
-								      $resultado = mysqli_query($conex, $consulta);								     
-
+								      $resultado = mysqli_query($conex, $consulta);
 						}
 					}
 						echo "</div>";
+				?>
 
-				?>    								
+    								
     		</div>   		
 
     	</div>
@@ -130,13 +125,3 @@
     
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
