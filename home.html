@@ -7,13 +7,16 @@
 </head>
 <body>
 
-    <script src="js/three.js"></script>
+  <script src="js/three.js" charset="utf-8"></script>
 
-    <script>
+    <script type='module'>
+
+        import * as THREE from './three.module.js';
+        import {OrbitControls} from './OrbitControls2.js';
 
         //creating scene
         var scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x76456c, 0.1, 8);
+        scene.fog = new THREE.Fog( 0x76456c, 0.1, 8);
 
         var loader = new THREE.TextureLoader();
         loader.load("./Assests/fondonegro.jpg", function (texture){
@@ -42,13 +45,14 @@
 
         camera.position.z = 5;
 
+        var controls = new OrbitControls(camera, renderer.domElement);
 
         //animation
         var animate = function(){
             requestAnimationFrame(animate);
 
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
+            // cube.rotation.x += 0.01;
+            // cube.rotation.y += 0.01;
 
             renderer.render(scene, camera);
 
