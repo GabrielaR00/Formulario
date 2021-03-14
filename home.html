@@ -13,7 +13,14 @@
 
         //creating scene
         var scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x2a3b4c);
+        scene.fog = new THREE.Fog(0x76456c, 0.1, 8);
+
+        var loader = new THREE.TextureLoader();
+        loader.load("./Assests/fondonegro.jpg", function (texture){
+
+          scene.background = texture;
+
+        })
 
         //add camera
         var camera = new THREE.PerspectiveCamera(
