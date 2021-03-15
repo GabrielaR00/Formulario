@@ -7,12 +7,12 @@
 </head>
 <body>
 
-  <script src="js/three.js" charset="utf-8"></script>
+  <script src="./js/three.js" charset="utf-8"></script>
 
     <script type='module'>
 
-        import * as THREE from './three.module.js';
-        import {OrbitControls} from './OrbitControls2.js';
+        import * as THREE from "./js/three.module.js";
+        import {OrbitControls} from "./js/OrbitControls.js";
 
         //creating scene
         var scene = new THREE.Scene();
@@ -26,10 +26,7 @@
         })
 
         //add camera
-        var camera = new THREE.PerspectiveCamera(
-            75,
-            window.innerWidth/window.innerHeight
-        );
+        var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight);
 
         //renderer
         var renderer = new THREE.WebGLRenderer();
@@ -47,12 +44,23 @@
 
         var controls = new OrbitControls(camera, renderer.domElement);
 
+        window.addEventListener('resize', redimensionar);
+
+        function redimensionar()
+        {
+            camera.aspect = window.innerWidth/window.innerHeight;
+            camera.updateProjectionMatrix()
+            renderer.setSize(window.innerWidth,window.innerHeight);
+
+            renderer.render(scene, camera); 
+        }
+
         //animation
         var animate = function(){
             requestAnimationFrame(animate);
 
-            // cube.rotation.x += 0.01;
-            // cube.rotation.y += 0.01;
+             cube.rotation.x += 0.01;
+             cube.rotation.y += 0.01;
 
             renderer.render(scene, camera);
 
