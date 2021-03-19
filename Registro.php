@@ -66,7 +66,9 @@
 	    		</div>
 
 	    			<div class="nocuenta px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mb-auto">
+
 	    			<p>¿Ya tienes una cuenta? </p> <a class="regis text-light" href="Login.php">  Inicia Sesión </a>
+
     			</div>
 
     			<?php
@@ -108,7 +110,6 @@
 								      $nombre = $_POST['nombre'];
 								      $correo = $_POST['correo'];
 								      $contraseña = $_POST['contraseña'];
-
 								      $consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
 								      $resultado = mysqli_query($conex, $consulta);
 
@@ -126,6 +127,7 @@
 
 
     <script type="bootstrap.bundle.min.js"></script>
+
 
 
     </body>

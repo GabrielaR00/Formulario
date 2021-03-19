@@ -7,28 +7,6 @@
 </head>
 <body>
 
-<<<<<<< Updated upstream
-  <script src="./js/three.js" charset="utf-8"></script>
-
-    <script type='module'>
-
-        import * as THREE from "./js/three.module.js";
-        import {OrbitControls} from "./js/OrbitControls.js";
-
-        //creating scene
-        var scene = new THREE.Scene();
-        scene.fog = new THREE.Fog( 0x76456c, 0.1, 8);
-
-        var loader = new THREE.TextureLoader();
-        loader.load("./Assests/fondonegro.jpg", function (texture){
-
-          scene.background = texture;
-
-        })
-
-        //add camera
-        var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight);
-=======
     <script src="js/three.js"></script>
 
     <script>
@@ -42,7 +20,6 @@
             75,
             window.innerWidth/window.innerHeight
         );
->>>>>>> Stashed changes
 
         //renderer
         var renderer = new THREE.WebGLRenderer();
@@ -58,39 +35,21 @@
 
         camera.position.z = 5;
 
-<<<<<<< Updated upstream
-        var controls = new OrbitControls(camera, renderer.domElement);
-
-        window.addEventListener('resize', redimensionar);
-
-        function redimensionar()
-        {
-            camera.aspect = window.innerWidth/window.innerHeight;
-            camera.updateProjectionMatrix()
-            renderer.setSize(window.innerWidth,window.innerHeight);
-
-            renderer.render(scene, camera); 
-        }
-=======
->>>>>>> Stashed changes
 
         //animation
         var animate = function(){
             requestAnimationFrame(animate);
 
-<<<<<<< Updated upstream
-             cube.rotation.x += 0.01;
-             cube.rotation.y += 0.01;
-=======
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
->>>>>>> Stashed changes
 
             renderer.render(scene, camera);
 
         }
 
         animate();
+
+      }
 
     </script>
 
