@@ -103,7 +103,7 @@
                      {
                        header("location:Login.php");
                     echo "<div class='correcto mb-auto'> Bienvenido";
-                     header('Location: home.html');
+                     header('Location: Casa.html');
                      }
                      else
                      {

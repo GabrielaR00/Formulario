@@ -22,9 +22,8 @@
         function init()
         {
             scene = new THREE.Scene();
-            scene.background =new THREE.Color (0xffffff);
-            //scene.add(new THREE.AxesHelper(500)); //Muestra los ejes
-            
+            scene.background =new THREE.Color (0x000000);
+            //scene.add(new THREE.AxesHelper(500)); //Muestra los ejes           
 
             
             camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,0.1,1000);
@@ -55,9 +54,10 @@
                  var habi = gltf.scene.children[0];
                  habi.position.set(0,0,0);
                  habi.scale.set(1,1,1);
+                 //Sombras
                  habi.traverse(n =>
                  {
-                    if(n.ismMesh) //Sombras
+                    if(n.ismMesh) 
                     {
                         n.castShadow=true;
                         n.receiveShadow=true;
@@ -88,8 +88,6 @@
 
             // });
 
-
-          
             // var hlight = new THREE.AmbientLight (0xffffff,50);
             // scene.add(hlight);
 
@@ -157,8 +155,7 @@
             //     habi.scale.set(5,5,5);
             //     scene.add(gltf.scene);
             //     animate();
-            // }); 
-             
+            // });           
 
             
             //AJUSTE PANTALLA
@@ -175,9 +172,9 @@
 
             //CONTROLS
             controls = new OrbitControls(camera, renderer.domElement); 
-            controls.target.set(4.5,0,4.5);
-            controls.enablePan= false;
-            controls.maxPolarAngle=Math.PI/2;            
+            // controls.target.set(4.5,0,4.5);
+            // controls.enablePan= false;
+            // controls.maxPolarAngle=Math.PI/2;            
             window.requestAnimationFrame(animate);                 
 
         }      
