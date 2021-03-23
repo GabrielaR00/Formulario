@@ -101,16 +101,16 @@
 
                      if ($filas)
                      {
-                       header("location:Login.php");
-                    echo "<div class='correcto mb-auto'> Bienvenido";
-                     header('Location: Casa.html');
+                      header("location:Login.php");
+                      echo "<div class='correcto mb-auto'> Bienvenido";
+                      header('Location: Casa.html');
                      }
                      else
                      {
-                    echo "<div class='correcto mb-auto'> Correo o Contraseña Incorrecta";
+                       echo "<div class='correcto mb-auto'> Correo o Contraseña Incorrecta";
                      }
-                       mysqli_free_result($resultado);
-                       mysqli_close($conexlogin);
+                      mysqli_free_result($resultado);
+                      mysqli_close($conexlogin);
 						}
 					}
 						echo "</div>";
