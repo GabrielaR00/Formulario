@@ -13,6 +13,7 @@
     <title>Registro</title>
   </head>
   <body class="bg-dark">
+
     <section>
     	<div class="row g-0">
     		<div class="col-lg-7 d-none d-lg-block">
@@ -58,6 +59,7 @@
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+
 					</form>
 	    		</div>
 	    			<div class="nocuenta px-lg-5 pt-lg-3 pb-lg-4 p-4 w-100 mb-auto">
@@ -123,9 +125,10 @@
 
 
     </section>
+    <link rel="stylesheet" href="bootstrap.min.js" / >
 
 
-    <script type="bootstrap.bundle.min.js"></script>
+    <script type="bootstrap.min.js"></script>
 
 
     </body>

@@ -1,0 +1,159 @@
+* {
+
+  margin: 0px;
+  padding: 0px;
+
+}
+:root
+{
+	--dark:#16191c;
+	--dark-x:#1e2126;
+	--light:#ffffff;
+}
+.bg-dark
+{
+	background-color: var(--dark) !important;
+}
+
+.contenedor
+{
+	
+	margin: 0 auto;
+	
+}
+.form-label
+{
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	font-weight: bold;
+	width: 100%
+}
+.form-control
+{
+	background-color: var(--dark-x);
+	border:0px;
+	min-height: 3.125rem;
+	line-height: initial;
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+	font-weight: normal;
+	width: 100%
+}
+body
+{
+	color: var(--light);
+}
+h1
+{
+	color: var(--light);
+	font-family: Lato, sans-serif;
+	font-weight: 700;
+	font-weight:bold;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+.input-contenedor
+{
+	color: var(--light);
+	margin-bottom: 1.5rem;
+	width: 100%
+}
+textarea
+{
+	width: 100%
+}
+div.dropdown-menu
+{
+	height: 300%;
+	width: 50%;
+	overflow: auto;	
+	background-color: #ccc;
+	padding: 8px;
+}
+.select-box
+{
+	height: 20%;
+}
+.select-box option
+{
+	border-style: none;
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	font-weight:normal;
+}
+
+/*.links
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-decoration: none;	
+}
+.btn
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 400;
+	font-weight: bold;
+	width: 100%;
+	margin-top: 2rem;
+	min-height: 3.125rem;
+	line-height: initial;
+}
+.nocuenta
+{
+	font-family: Lato, sans-serif;
+	font-weight: 300;	
+	text-align: center;	
+}
+.regis
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-decoration: none;	
+	font-weight: bold;
+
+}
+p
+{
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+	font-weight: lighter;
+	text-align: center;	
+	display: inline-block;
+	margin: 0px auto;
+}
+.back
+{
+	background-image: url(Assests/fondo1.png);
+	background-position: center;
+	background-size: cover;
+}
+.back2
+{
+	background-image: url(Assests/Fondo2.jpg);
+	background-position: center;
+	background-size: cover;
+}
+.error
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-align: center;
+	font-size: 0.9rem;
+	font-family: Lato, sans-serif;
+	font-weight: normal;
+	width: 100%;
+}
+.correcto
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 300;	
+	text-align: center;
+	font-size: 0.9rem;
+	font-family: Lato, sans-serif;
+	font-weight: normal;
+	width: 100%;
+}
+li
+{	
+	list-style: none;
+}*/
