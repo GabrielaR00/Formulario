@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="InputCSS.css">
 
 	<link rel="stylesheet" href="bootstrap.min.css" >
-	
+
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
@@ -18,19 +18,19 @@
 	<div class="contenedor col-lg-6 d-flex flex-column p-2 mb-auto ">
 		<h1 class="titulo" > Formulario envio </h1>
 
-		<form>	
-			<div class="input-contenedor d-flex flex-md-row justify-content-between ">				
+		<form  action="input.php" method="POST" enctype="multipart/form-data">
+			<div class="input-contenedor d-flex flex-md-row justify-content-between ">
 				<label for="exampleInputName" class="form-label ">Nombre del proyecto </label>
 				<input type="name" class="form-control " name="NombreP" >
 			</div>
-			<div class="input-contenedor"> 
+			<div class="input-contenedor">
 				<label for="exampleInputName" class="form-label ">Tipo </label>
 				<input type="tipo" class="form-control " name="Tipo" >
 			</div >
-			<div class="input-contenedor"> 
+			<div class="input-contenedor">
 				<label for="exampleInputName" class="form-label ">Materia para la que se realizó el proyecto </label>
 				<div class="select-box ">
-					<select  class=" select px-lg-2 py-lg-2">
+					<select  class=" select px-lg-2 py-lg-2" name="materia">
 						<option>Seleccione una materia </option>
 						<option>Animación 2D </option>
 					    <option>Animación 3D y dinámicas </option>
@@ -63,30 +63,51 @@
 					    <option>Simulación </option>
 
 					</select>
-					
-				</div>				
+
+				</div>
 			</div>
-			<div  class="input-contenedor"> 
+			<div  class="input-contenedor">
 				<label for="exampleInputName" class="form-label ">Breve descripcíón </label>
 				<textarea  name="descrip" placeholder="Escriba una breve descripción de su proyecto"></textarea>
-				
+
 			</div>
-			<div class="input-contenedor"> 
-				<label for="avatar" class="form-label "> <strong>Archivo </strong></label>
-				<input type="file" class="form-control " name="avatar" >
+			<div class="input-contenedor">
+
+				<input type="file" name="archivo"/>
 			</div>
-			<div class="input-contenedor"> 				
-				<input type="submit" value="Registro" >
+			<div class="input-contenedor">
+				<input type="submit" value="Envio" >
 				<input type="reset" value="Reestablecer" >
 			</div>
+			<?php
+
+			$conex = mysqli_connect("localhost","root","","formulario");
+
+				$nombrep = $_POST['NombreP'];
+				$tipo = $_POST['Tipo'];
+				$materia = $_POST['materia'];
+				$descripcion = $_POST['descrip'];
+				$archivo=$_FILES['archivo']["tmp_name"];
+				$consulta = "INSERT INTO proyectos(NombreDelProyecto, Tipo, Materia, Descripcion, Archivo) VALUES ('$nombrep', '$tipo', '$materia','$descripcion','$archivo')";
+				$resultado = mysqli_query($conex, $consulta);
+				if ($resultado)
+				{
+					echo "si";
+				}
+				else {
+					echo "no";
+				}
+
+			 ?>
 
 		</form>
+
 	</div>
-	
+
 	<!-- <script type="text/javascript" src="./js/bootstrap.min.js"></script> -->
-	
+
 	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
-	
-	
+
+
 </body>
 </html>
