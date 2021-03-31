@@ -10,7 +10,7 @@
 
    	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <title>Registro</title>
+    <title>Login</title>
   </head>
   <body class="bg-dark">
 
@@ -98,14 +98,13 @@
                       //Validacion//
                       $consulta="SELECT*FROM datosformulario where correo='$correo' and contraseña='$contraseña'";
                       $resultado=mysqli_query($conexlogin,$consulta);
-
+                      $_SESSION['id_usuario']=$row["id"];
                       $filas=mysqli_num_rows($resultado);
 
                      if ($filas)
                      {
-                      header("location:Login.php");
+                      header('Location: mostrarus.php');
                       echo "<div class='correcto mb-auto'> Bienvenido";
-                      header('Location: Casa.html');
                      }
                      else
                      {
