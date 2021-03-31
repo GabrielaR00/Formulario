@@ -6,19 +6,25 @@
 }
 :root
 {
-	--dark:#16191c;
-	--dark-x:#1e2126;
+	--dark:#09181F;
+	--dark-x:#09181F;
 	--light:#ffffff;
+	--bs-green: #198754;
+}
+body
+{
+	color: var(--light);
+	
 }
 .bg-dark
-{
-	background-color: var(--dark) !important;
+{	
+	background-color: var(--dark) !important;	
 }
 h1
 {
 	color: var(--light);	
 	margin-bottom: 2rem;
-	text-align: center;
+	
 }
 .titulo
 {
@@ -26,11 +32,12 @@ h1
 	font-weight: 700 ;
 	font-weight:bold;
 	margin-bottom: 3rem;
+	text-align: center;
 }
 
 .contenedor
 {	
-	margin: 0 auto;	
+	margin: 0px auto;	
 	
 }
 .form-label
@@ -42,7 +49,7 @@ h1
 }
 .form-control
 {
-	background-color: var(--dark-x);	
+	/*background-color: var(--dark-x);*/	
 	min-height: 3.125rem;
 	line-height: initial;
 	font-family: Lato, sans-serif;
@@ -50,11 +57,6 @@ h1
 	font-weight: normal;
 	
 }
-body
-{
-	color: var(--light);
-}
-
 .input-contenedor
 {
 	color: var(--light);
@@ -65,7 +67,6 @@ body
 textarea
 {
 	width: 100%;
-	height:500%;
 }
 select 
 {
@@ -82,22 +83,99 @@ select
 	font-weight: 400;
 	font-weight:normal;
 }
+.btn
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 400;
+	font-weight: bold;	
+	margin-top: 2rem;
+	min-height: 3.125rem;
+	line-height: initial;
+}
+.botones
+{
+	display: inline-block;
+}
+/*.archivo input[type="file"] 
+{
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;            
+}*/
 
+.invoiceBox > input {
+  display: none;
+}
+.invoiceBox label {
+	display: block;
+}
+.boxFile 
+{
+	font-family: Lato,  sans-serif;
+	font-weight: 700;
+	font-weight: bold;	
+	display: inline-block;  	
+	background: #fff;
+	color: grey;
+	padding: 0.8rem;
+	text-align: center;	
+	font-size: 14px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.boxFile:hover {
+	cursor: pointer;
+	background: grey;
+	color: #fff;
+}
+.boxFile i {
+	display: block;
+	font-size: 26px;
+	margin-bottom: 5px;
+}
+.attached,
+.attached:hover,
+.attached:focus {
+	background: green;
+  color: #fff;
+  border: 1px solid green;
+}
+
+
+/*.custom-archivo {
+  background-color: #941B80;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.custom-archivo .archivo {
+ border: 10000px solid transparent;
+ cursor: pointer;
+ font-size: 10000px;
+ margin: 0;
+ opacity: 0;
+ outline: 0 none;
+ padding: 0;
+ position: absolute;
+ right: -1000px;
+ top: -1000px;
+}*/
 /*.links
 {
 	font-family: Lato,  sans-serif;
 	font-weight: 300;	
 	text-decoration: none;	
 }
-.btn
-{
-	font-family: Lato,  sans-serif;
-	font-weight: 400;
-	font-weight: bold;
-	width: 100%;
-	margin-top: 2rem;
-	min-height: 3.125rem;
-	line-height: initial;
 }
 .nocuenta
 {

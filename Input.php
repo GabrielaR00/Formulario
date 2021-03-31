@@ -6,24 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Envia Tu Trabajo</title>
 
-	<link rel="stylesheet" type="text/css" href="InputCSS.css">
-
 	<link rel="stylesheet" href="bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="inputestilo.css">
+
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 <body class="bg-dark ">
 	<div class="col align-self-start p-5"></div>
-	<div class="contenedor col-lg-6 d-flex flex-column p-2 mb-auto ">
-		<h1 class="titulo" > Formulario envio </h1>
+	<div class="contenedor col-6 d-flex flex-column p-2 mb-auto align-self-center">
+		<h1 class="titulo" > Formulario de envio </h1>
 
 		<form  action="input.php" method="POST" enctype="multipart/form-data">
-			<div class="input-contenedor d-flex flex-md-row justify-content-between ">
+			<div class="input-contenedor   ">
 				<label for="exampleInputName" class="form-label ">Nombre del proyecto </label>
-				<input type="name" class="form-control " name="NombreP" >
+				<input type="name" class="form-control  " name="NombreP" >
 			</div>
 			<div class="input-contenedor">
+				<div></div>
 				<label for="exampleInputName" class="form-label ">Tipo </label>
 				<input type="tipo" class="form-control " name="Tipo" >
 			</div >
@@ -66,20 +67,28 @@
 
 				</div>
 			</div>
-			<div  class="input-contenedor">
+			<div  class="input-contenedor" row="3">
 				<label for="exampleInputName" class="form-label ">Breve descripcíón </label>
 				<textarea  name="descrip" placeholder="Escriba una breve descripción de su proyecto"></textarea>
 
 			</div>
-			<div class="input-contenedor">
+			
+			    <div class="invoiceBox">
+			      <label for="file">
+			        <div class="boxFile" data-text="Seleccionar archivo">
+			          Seleccionar archivo
+			        </div>
+			      </label>
+			      <input id="file" multiple="" name="invoice[]" size="6000" type="file" accept="application/pdf,image/x-png,image/gif,image/jpeg,image/jpg,image/tiff">
+			    </div>			  
+			
+			<div class="botones ">
+				<input type="reset" class="btn btn-primary  " value="Reestablecer" name="reestablecer" >
+				<input type="submit" class="btn btn-primary " value="Enviar" name="envio">
+				
+			</div>
 
-				<input type="file" name="archivo"/>
-			</div>
-			<div class="input-contenedor">
-				<input type="submit" value="Envio" >
-				<input type="reset" value="Reestablecer" >
-			</div>
-			<?php
+			<!-- <?php
 
 			$conex = mysqli_connect("localhost","root","","formulario");
 
@@ -94,11 +103,12 @@
 				{
 					echo "si";
 				}
-				else {
+				else
+				{
 					echo "no";
 				}
 
-			 ?>
+			 ?>  -->
 
 		</form>
 
