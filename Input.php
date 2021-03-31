@@ -72,31 +72,31 @@
 				<textarea  name="descrip" placeholder="Escriba una breve descripción de su proyecto"></textarea>
 
 			</div>
-			
+
 			    <div class="invoiceBox">
 			      <label for="file">
 			        <div class="boxFile" data-text="Seleccionar archivo">
 			          Seleccionar archivo
 			        </div>
 			      </label>
-			      <input id="file" multiple="" name="invoice[]" size="6000" type="file" accept="application/pdf,image/x-png,image/gif,image/jpeg,image/jpg,image/tiff">
-			    </div>			  
-			
+			      <input id="file" name="archivo" size="6000" type="file" >
+			    </div>
+
 			<div class="botones ">
 				<input type="reset" class="btn btn-primary  " value="Reestablecer" name="reestablecer" >
 				<input type="submit" class="btn btn-primary " value="Enviar" name="envio">
-				
+
 			</div>
 
-			<!-- <?php
-
+	<?php
 			$conex = mysqli_connect("localhost","root","","formulario");
-
+			if (isset($_POST['envio']))
+			{
 				$nombrep = $_POST['NombreP'];
 				$tipo = $_POST['Tipo'];
 				$materia = $_POST['materia'];
 				$descripcion = $_POST['descrip'];
-				$archivo=$_FILES['archivo']["tmp_name"];
+				$archivo=$_FILES['archivo']['tmp_name'];
 				$consulta = "INSERT INTO proyectos(NombreDelProyecto, Tipo, Materia, Descripcion, Archivo) VALUES ('$nombrep', '$tipo', '$materia','$descripcion','$archivo')";
 				$resultado = mysqli_query($conex, $consulta);
 				if ($resultado)
@@ -107,14 +107,12 @@
 				{
 					echo "no";
 				}
-
-			 ?>  -->
+			}
+			 ?>
 
 		</form>
 
 	</div>
-
-	<!-- <script type="text/javascript" src="./js/bootstrap.min.js"></script> -->
 
 	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
 
