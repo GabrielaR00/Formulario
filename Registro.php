@@ -73,6 +73,8 @@
 
     			<?php
 
+
+
 					if (isset($_POST['nombre']))
 					{
 						$nombre=$_POST['nombre'];
@@ -103,15 +105,36 @@
 						}
 						else
 						{
+              session_start();
+              if (isset($_GET['cerrar_sesion']))
+              {
+                session_unset();
+
+                session_destroy();
+              }
+
+              if (isset($_SESSION['rol']))
+              {
+                switch ($_SESSION['rol']) {
+                  case 1:
+                    header('location: Casa.html');
+                    break;
+
+                  case 2:
+                    header('location: Registro.php');
+                  default:
+                }
+              }
+
+              //CONXION
+              $conex = mysqli_connect("localhost","root","","formulario");
+
+              $nombre = $_POST['nombre'];
+              $correo = $_POST['correo'];
+              $contraseña = $_POST['contraseña'];
+              $consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
+              $resultado = mysqli_query($conex, $consulta);
 								echo "<div class='correcto mb-auto'> Registro Exitoso";
-
-								    $conex = mysqli_connect("localhost","root","","formulario");
-
-								      $nombre = $_POST['nombre'];
-								      $correo = $_POST['correo'];
-								      $contraseña = $_POST['contraseña'];
-								      $consulta = "INSERT INTO datosformulario(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
-								      $resultado = mysqli_query($conex, $consulta);
 
 						}
 					}

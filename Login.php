@@ -98,19 +98,39 @@
                       //Validacion//
                       $consulta="SELECT*FROM datosformulario where correo='$correo' and contraseña='$contraseña'";
                       $resultado=mysqli_query($conexlogin,$consulta);
-                      $_SESSION['id_usuario']=$row["id"];
                       $filas=mysqli_num_rows($resultado);
+                      $rol="SELECT*FROM usuarios where correo='$correo' and contraseña='$contraseña'";
+                      $resultado2=mysqli_query($conexlogin,$rol);
+                      $filas2=mysqli_num_rows($resultado2);
 
                      if ($filas)
                      {
-                      header('Location: mostrarus.php');
-                      echo "<div class='correcto mb-auto'> Bienvenido";
-                     }
+                         session_start();
+                         if (isset($_GET['cerrar_sesion']))
+                         {
+                           session_unset();
+
+                           session_destroy();
+                         }
+                         header('location: Casa.html');
+                      }
+                     if ($filas2)
+                      {
+                        if ($rol==true)
+                        {
+                          header('location: admin.php');
+                        }
+                        else
+                        {
+                          echo "<div class='correcto mb-auto'> Correo o Contraseña Incorrecta";
+                        }
+                      }
                      else
                      {
                        echo "<div class='correcto mb-auto'> Correo o Contraseña Incorrecta";
                      }
                       mysqli_free_result($resultado);
+                      mysqli_free_result($resultado2);
                       mysqli_close($conexlogin);
 						}
 					}
