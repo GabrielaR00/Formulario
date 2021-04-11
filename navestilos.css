@@ -1,0 +1,35 @@
+* {
+
+  margin: 0px;
+  padding: 0px;
+
+}
+.imagen
+{
+	background: url("./Assests/fondo1.png");
+	background-size: cover;
+
+}
+a
+{
+	font-size:1rem;
+}
+.navigation
+{
+	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	animation-name: initial;
+	animation-duration: 1s;
+	
+}
+.seccion
+{
+	
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+}
+
