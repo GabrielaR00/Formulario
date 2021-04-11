@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Hello There</title>
 </head>
 <body>
-
+  <a href="micuenta.php">Mi cuenta</a>
   <!-- <script src="js/three.js" ></script>
   <script src="js/GLTFLoader.js"></script> -->
-    
+
         <script type="module" >
 
 
             var scene, camera, renderer, controls, hemiLight, spotLight;
             import * as THREE from './js/three.module.js';
-            import {OrbitControls} from './js/OrbitControls.js';       
+            import {OrbitControls} from './js/OrbitControls.js';
             import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/loaders/GLTFLoader.js';
 
 
@@ -24,12 +24,12 @@
             {
                 scene = new THREE.Scene();
                 scene.background =new THREE.Color (0x000000);
-                //scene.add(new THREE.AxesHelper(500)); //Muestra los ejes           
+                //scene.add(new THREE.AxesHelper(500)); //Muestra los ejes
 
-                
+
                 camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,0.1,1000);
                 camera.position.set(80,40,80);
-                    
+
                 hemiLight=new THREE.HemisphereLight(0xffeeb1, 0x080820,4);
                 scene.add(hemiLight);
 
@@ -41,24 +41,24 @@
                 scene.add(spotLight);
 
 
-                renderer =new THREE.WebGLRenderer({antialias:true}); 
-                renderer.toneMapping=THREE.ReinhardToneMapping; 
+                renderer =new THREE.WebGLRenderer({antialias:true});
+                renderer.toneMapping=THREE.ReinhardToneMapping;
                 renderer.toneMappingExposure=2.3;
                 renderer.shadowMap.enabled =true;
                 renderer.setSize(window.innerWidth, window.innerHeight);
-                document.body.appendChild(renderer.domElement);           
+                document.body.appendChild(renderer.domElement);
 
 
                 const loader3= new GLTFLoader();
                 loader3.load('./Assests/Modelos/todo1.gltf', function(gltf)
-                 { 
+                 {
                      var habi = gltf.scene.children[0];
                      habi.position.set(0,0,0);
                      habi.scale.set(1,1,1);
                      //Sombras
                      habi.traverse(n =>
                      {
-                        if(n.ismMesh) 
+                        if(n.ismMesh)
                         {
                             n.castShadow=true;
                             n.receiveShadow=true;
@@ -97,7 +97,7 @@
                 // directionalLight.castShadow =true;
                 // scene.add (directionalLight);
 
-                // renderer =new THREE.WebGLRenderer({antialias:true}); 
+                // renderer =new THREE.WebGLRenderer({antialias:true});
                 // renderer.setSize(window.innerWidth, window.innerHeight);
                 // document.body.appendChild(renderer.domElement);
 
@@ -105,60 +105,60 @@
                 // //STARWARS
                 // const loader= new GLTFLoader();
                 // loader.load('./Assests/Modelos/scene.gltf', function(gltf)
-                // { 
+                // {
                 //     var per = gltf.scene.children[0];
                 //     per.scale.set(15,15,15);
                 //     per.position.set(-50,80,0);
                 //     scene.add(gltf.scene);
                 //     animate();
-                // });    
+                // });
 
                 // const light =new THREE.PointLight(0xD80E0E,6,300);
                 // light.position.set(100,150,150);
-                // scene.add(light); 
+                // scene.add(light);
 
                 // const light2 =new THREE.PointLight(0x0513F7,6,300);
                 // light2.position.set(-100,150,150);
-                // scene.add(light2); 
+                // scene.add(light2);
 
                 // const light3 =new THREE.PointLight(0x0FF008,6,300);
                 // light3.position.set(0,200,-10);
-                // scene.add(light3); 
+                // scene.add(light3);
 
 
                 // //CARRITO
                 // const loader1= new GLTFLoader();
                 // loader1.load("scene.gltf", function(gltf)
-                // { 
+                // {
                 //     var car = gltf.scene.children[0];
                 //     car.scale.set(0.3,0.3,0.3);
                 //     scene.add(gltf.scene);
                 //     animate();
-                // });    
+                // });
 
                 // //RUBIK
                 // const loader2= new GLTFLoader();
                 // loader2.load("cubito2.gltf", function(gltf)
-                // { 
+                // {
                 //     var cubo = gltf.scene.children[0];
                 //     cubo.position.set(0,150,0);
                 //     cubo.scale.set(50,50,50);
                 //     scene.add(gltf.scene);
                 //     animate();
-                // }); 
+                // });
 
 
                 // const loader3= new GLTFLoader();
                 // loader3.load('./Assests/Modelos/todo1.gltf', function(gltf)
-                // { 
+                // {
                 //     var habi = gltf.scene.children[0];
                 //     habi.position.set(0,0,0);
                 //     habi.scale.set(5,5,5);
                 //     scene.add(gltf.scene);
                 //     animate();
-                // });           
+                // });
 
-                
+
                 //AJUSTE PANTALLA
 
                 window.addEventListener('resize', redimensionar);
@@ -167,18 +167,18 @@
                     camera.aspect = window.innerWidth/window.innerHeight;
                     camera.updateProjectionMatrix()
                     renderer.setSize(window.innerWidth,window.innerHeight);
-                    renderer.render(scene, camera); 
+                    renderer.render(scene, camera);
                 }
 
 
                 //CONTROLS
-                controls = new OrbitControls(camera, renderer.domElement); 
+                controls = new OrbitControls(camera, renderer.domElement);
                 // controls.target.set(4.5,0,4.5);
                 // controls.enablePan= false;
-                // controls.maxPolarAngle=Math.PI/2;            
-                window.requestAnimationFrame(animate);                 
+                // controls.maxPolarAngle=Math.PI/2;
+                window.requestAnimationFrame(animate);
 
-            }      
+            }
 
             function animate()
             {
@@ -188,27 +188,11 @@
                         camera.position.y + 10,
                         camera.position.z + 10);
                     window.requestAnimationFrame(animate);
-            }       
+            }
 
-            init(); 
-                 
+            init();
+
        </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
