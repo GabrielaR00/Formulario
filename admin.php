@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" type="text/css" href="estilos2.css">
     <meta charset="utf-8">
     <title>Ventana de Administrador</title>
   </head>
@@ -26,6 +27,7 @@
     							<th>Nombre</th>
     							<th>Nombre del proyecto</th>
     							<th>Tipo</th>
+                  <th>Aprovacion</th>
     						</thead>
     						<tbody>
     							<?php
