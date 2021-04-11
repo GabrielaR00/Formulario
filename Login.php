@@ -102,28 +102,35 @@
                       $rol="SELECT*FROM admins where correo='$correo' and contraseña='$contraseña'";
                       $resultado2=mysqli_query($conn,$rol);
                       $filas2=mysqli_num_rows($resultado2);
-
+                      $consulus="SELECT usuarios.nombre FROM usuarios where correo = '$correo'";
+                      $resultado3 = $conn->query($consulus);
+                      $consulus="SELECT usuarios.nombre FROM usuarios where correo = '$correo'";
+                      $resultado3 = $conn->query($consulus);
+                      $consuladmin="SELECT admins.nombre FROM admins where correo = '$correo'";
+                      $resultado4 = $conn->query($consuladmin);
                      if ($filas)
                      {
-                         session_start();
-                         if (isset($_GET['cerrar_sesion']))
-                         {
-                           session_unset();
-
-                           session_destroy();
-                         }
-                         header('location: Casa.html');
+                        $row=$resultado3->fetch_assoc();
+                        $nombreusuario=$row["nombre"];
+                        $idadmin=0;
+                        session_start();
+                        $_SESSION['usuario']=$nombreusuario;
+                        $_SESSION['correo']=$correo;
+                        $_SESSION['rol_id']=$idadmin;
+                        header('location: Casa.php');
                       }
-                     if ($filas2)
+                     else if ($filas2)
                       {
-                        if ($rol==true)
-                        {
+
+                          $row2=$resultado4->fetch_assoc();
+                          $nombreadmin=$row2["nombre"];
+                          $idadmin=1;
+                          session_start();
+                          $_SESSION['usuario']=$nombreadmin;
+                          $_SESSION['correo']=$correo;
+                          $_SESSION['rol_id']=$idadmin;
                           header('location: admin.php');
-                        }
-                        else
-                        {
-                          echo "<div class='correcto mb-auto'> Correo o Contraseña Incorrecta";
-                        }
+
                       }
                      else
                      {
@@ -131,7 +138,7 @@
                      }
                       mysqli_free_result($resultado);
                       mysqli_free_result($resultado2);
-                      mysqli_close($conexlogin);
+                      mysqli_close($conn);
 						}
 					}
 						echo "</div>";

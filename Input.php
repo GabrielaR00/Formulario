@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,11 +89,14 @@
 			<div class="botones ">
 				<input type="reset" class="btn btn-primary  " value="Reestablecer" name="reestablecer" >
 				<input type="submit" class="btn btn-primary " value="Enviar" name="envio">
+				<div></div>
+				<a href="micuenta.php">Regresar</a>
 
 			</div>
 
 	<?php
 			include "conexion.php";
+			$nombreest=$_SESSION['usuario'];
 			if (isset($_POST['envio']))
 			{
 				$nombrep = $_POST['NombreP'];
@@ -97,15 +104,17 @@
 				$materia = $_POST['materia'];
 				$descripcion = $_POST['descrip'];
 				$archivo=$_FILES['archivo']['tmp_name'];
-				$consulta = "INSERT INTO proyectos(NombreDelProyecto, Tipo, Materia, Descripcion, Archivo) VALUES ('$nombrep', '$tipo', '$materia','$descripcion','$archivo')";
+				$consulta = "INSERT INTO proyectos(NombreDelProyecto, Tipo, Materia, Descripcion, Archivo, nombreest) VALUES ('$nombrep', '$tipo', '$materia','$descripcion','$archivo','$nombreest')";
 				$resultado = mysqli_query($conn, $consulta);
 				if ($resultado)
 				{
-					echo "si";
+					echo "</div>";
+					echo "Proyecto Enviado";
 				}
 				else
 				{
-					echo "no";
+					echo "</div>";
+					echo "Proyecto NO Enviado";
 				}
 			}
 			 ?>

@@ -19,7 +19,7 @@
     				<div class="contenedorgiant">
     					<table border="2">
     						<thead>
-    							<th>Nombre</th>
+    							<th>Nombre de estudiante</th>
     							<th>Nombre del proyecto</th>
     							<th>Tipo</th>
     						</thead>
@@ -28,7 +28,7 @@
     							<?php
     							while ($row=$resultado->fetch_assoc()) {?>
     								<tr>
-    									<td><?php echo $row["id"]  ?></td>
+    									<td><?php echo $row["nombreest"]  ?></td>
     									<td><?php echo $row["NombreDelProyecto"]  ?></td>
     									<td><?php echo $row["Tipo"]  ?></td>
     								</tr>

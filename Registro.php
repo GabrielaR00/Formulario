@@ -44,7 +44,7 @@
 
     				<h1  > Bienvenido </h1>
 
-    				<form class="Formulario" action="Casa.html" method="POST">
+    				<form class="Formulario" action="Registro.php" method="POST">
 
     				  <div class="input-contenedor">
 					    <label for="exampleInputName" class="form-label ">Nombre y apellido</label>
@@ -77,6 +77,7 @@
 
 					if (isset($_POST['nombre']))
 					{
+
 						$nombre=$_POST['nombre'];
 						$correo=$_POST['correo'];
 						$contraseña=$_POST['contraseña'];
@@ -103,15 +104,6 @@
 									}
 								"</div>";
 						}
-						else
-						{
-              session_start();
-              if (isset($_GET['cerrar_sesion']))
-              {
-                session_unset();
-
-                session_destroy();
-              }
               //CONXION
               include "conexion.php";
 
@@ -120,12 +112,15 @@
               $contraseña = $_POST['contraseña'];
               $consulta = "INSERT INTO usuarios(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
               $resultado = mysqli_query($conn, $consulta);
-								echo "<div class='correcto mb-auto'> Registro Exitoso";
-
+							echo "<div class='correcto mb-auto'> Registro Exitoso";
+              $idadmin=0;
+              session_start();
+              $_SESSION['usuario']=$nombre;
+              $_SESSION['correo']=$correo;
+              $_SESSION['rol_id']=$idadmin;
+              header('location: Casa.php');
 						}
-					}
 						echo "</div>";
-
 				?>
     		</div>
 
