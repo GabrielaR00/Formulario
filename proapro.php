@@ -2,19 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Ventana de Administrador</title>
+    <title></title>
   </head>
   <body>
-    <h1>ADMINISTRADOR</h1>
-    <div>
-    </div>
+    <div class="ProyectosAP">
 
-    <div class="ProyectosP">
-
-      <h2>Proyectos Pendientes</h2>
+      <h2>Proyectos Aprovados</h2>
       <?php
   		include "conexion.php";
-  	  $sql ="SELECT * FROM proyectos where apro=''";
+  	  $sql ="SELECT * FROM proyectos where apro='aprovado'";
   		$resultado = $conn->query($sql);
     	if ($resultado->num_rows>0)
       {
@@ -27,6 +23,7 @@
     							<th>Nombre del proyecto</th>
     							<th>Tipo</th>
     						</thead>
+
     						<tbody>
     							<?php
     							while ($row=$resultado->fetch_assoc()) {?>
@@ -34,9 +31,7 @@
     									<td><?php echo $row["id"]  ?></td>
     									<td><?php echo $row["NombreDelProyecto"]  ?></td>
     									<td><?php echo $row["Tipo"]  ?></td>
-                      <td><?php echo "<a href='aprovacion.php?id=".$row['id']."'> <button type='button' name='botonapro' value='aprovado'>Aprovado</button></a>"?></td>
-                      <td><?php echo "<a href='denegar.php?id=".$row['id']."'> <button type='button' name='botonapro' value='denegado'>Denegado</button></a>"?></td>
-                    </tr>
+    								</tr>
     							<?php   }?>
     						</tbody>
     					</table>
@@ -46,12 +41,11 @@
       }
   	  else
     	{
-    		echo "No hay proyectos";
+    		echo "No hay proyectos aprovados";
     	}?>
     </div>
     <div class="">
     </div>
-    <a href="proapro.php">Proyectos Aprovados</a>
-
+    <a href="Admin.php">Regresar</a>
   </body>
 </html>

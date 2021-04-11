@@ -89,7 +89,7 @@
 			</div>
 
 	<?php
-			$conex = mysqli_connect("localhost","root","","formulario");
+			include "conexion.php";
 			if (isset($_POST['envio']))
 			{
 				$nombrep = $_POST['NombreP'];
@@ -98,7 +98,7 @@
 				$descripcion = $_POST['descrip'];
 				$archivo=$_FILES['archivo']['tmp_name'];
 				$consulta = "INSERT INTO proyectos(NombreDelProyecto, Tipo, Materia, Descripcion, Archivo) VALUES ('$nombrep', '$tipo', '$materia','$descripcion','$archivo')";
-				$resultado = mysqli_query($conex, $consulta);
+				$resultado = mysqli_query($conn, $consulta);
 				if ($resultado)
 				{
 					echo "si";

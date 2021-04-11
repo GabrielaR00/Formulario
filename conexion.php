@@ -1,5 +1,17 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
 
-  $conex = mysqli_connect("localhost","root","","formulario");
+</head>
+<body>
+	<?php
 
-?>
+	    $servername ="localhost";
+	    $username = "root";
+	    $password = "";
+	    $db="formulario";
+
+	    $conn= new mysqli($servername,$username,$password,$db);
+	?>
+</body>
+</html>

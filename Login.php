@@ -94,13 +94,13 @@
 						}
 						else
 						{
-								      $conexlogin = mysqli_connect("localhost","root","","formulario");
+								      include "conexion.php";
                       //Validacion//
-                      $consulta="SELECT*FROM datosformulario where correo='$correo' and contraseña='$contraseña'";
-                      $resultado=mysqli_query($conexlogin,$consulta);
+                      $consulta="SELECT*FROM usuarios where correo='$correo' and contraseña='$contraseña'";
+                      $resultado=mysqli_query($conn,$consulta);
                       $filas=mysqli_num_rows($resultado);
-                      $rol="SELECT*FROM usuarios where correo='$correo' and contraseña='$contraseña'";
-                      $resultado2=mysqli_query($conexlogin,$rol);
+                      $rol="SELECT*FROM admins where correo='$correo' and contraseña='$contraseña'";
+                      $resultado2=mysqli_query($conn,$rol);
                       $filas2=mysqli_num_rows($resultado2);
 
                      if ($filas)
