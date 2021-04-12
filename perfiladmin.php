@@ -37,6 +37,11 @@ $varsesion=$_SESSION['usuario'];
 						<img class="d-block rounded-circle mx-auto my-2" src="./Assests/user.png" width="110">
 						<h5 class="mb-0 pt-1"> <?php echo $nombreadmin ?></h5>						
 					</div>
+					<div class="d-lg-none px-4 pb-4 text-center">
+						
+						<a class="btn btn-primary px-5 mb-2 collapsed" href="#sidemenu" role="button" aria-controls="sidemenu" data-toggle="collapse" aria-expanded="false"> Menú</a>
+						
+					</div>
 					<div class="d-lg-block collapse pb-2" id="sidemenu">
 						<h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
 						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="adminproyecto.php">Edición proyectos</a>
