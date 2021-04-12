@@ -25,8 +25,8 @@ $varsesion=$_SESSION['usuario'];
 
 	<?php 
 
-	$nombreadmin= $_SESSION['usuario'];
-	$correoadmin= $_SESSION['correo'];
+		$nombreadmin= $_SESSION['usuario'];
+		$correoadmin= $_SESSION['correo'];
 	 ?>
 	<div class="container pb-4 mb-md-3 py-5">
 		<div class="row">
@@ -54,7 +54,7 @@ $varsesion=$_SESSION['usuario'];
 			<div class="col-lg-8"> <!-- box grande -->
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 
-					<?php include 'admin.php';?>
+					<?php include 'proapro.php';?>
 
 					
 					<!-- <div class="py-2 p-md-3">

@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  $varsesion=$_SESSION['usuario'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,20 +23,30 @@
 		<?php include 'navsesion.html'; ?>
 	</header>
 
+	<?php
+      
+      if ($varsesion=true) {
+        
+        $nombreus=$_SESSION['usuario'];
+        $correous=$_SESSION['correo'];          
+       
+      }
+      ?>
+
 	<div class="container pb-4 mb-md-3 py-5">
 		<div class="row">
 			<div class="col-lg-4 mb-4 mb-lg-0"> <!-- lateral box -->
 				<div class="bg-light rounded 3 shadow-lg">
 					<div class="px-3 py-4 mb-1 text-center">
 						<img class="d-block rounded-circle mx-auto my-2" src="./Assests/user.png" width="110">
-						<h5 class="mb-0 pt-1"> Pinche sabassssss Galvis</h5>						
+						<h5 class="mb-0 pt-1"> <?php echo $nombreus ?></h5>						
 					</div>
 					<div class="d-lg-block collapse pb-2" id="sidemenu">
 						<h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
 						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="userproyecto.php">Mis proyectos</a>
 						<h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
 						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="perfiluser.php">Perfil</a>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="#">Cerrar sesión
+						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="cerrarsesion.php">Cerrar sesión
 							<!-- <i class="ai fs-lg opacity-60 me-2"></i> -->
 														
 						</a>
@@ -54,11 +69,14 @@
 						<div class="d-block d-sm-flex align-items-center">							
 							<div class="ps-sm-3 text-center text-sm-start">
 								<div class="p mb-0 fonts blackcolor pb-3"> <h5> Comparte tus proyectos con nosotros </h5> </div>
+								<form method="POST" action="Input.php">
 
-								<button class="btn btn-primary shadow btn-sm mb-2" type="button">
-									<i class="ai-refresh-cw me-2"></i>
-									Subir Proyecyo									
-								</button>								
+									<button class="btn btn-primary shadow btn-sm mb-2" type="submit"  >
+										<i class="ai-refresh-cw me-2"></i>
+										Subir Proyecto									
+									</button>								
+
+								</form>
 							</div>
 						</div>						
 					</div>					

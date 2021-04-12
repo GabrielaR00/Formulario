@@ -44,8 +44,6 @@
     		echo "No hay proyectos aprovados";
     	}?>
     </div>
-    <div class="">
-    </div>
-    <a href="Admin.php">Regresar</a>
+    
   </body>
 </html>

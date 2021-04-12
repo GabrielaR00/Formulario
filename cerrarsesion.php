@@ -1,5 +1,9 @@
 <?php
 session_start();
 session_destroy();
-header("Location:Casa.php");
+
+$_SESSION['rol_id']=2;
+
+ header("Location:Casa.php");
+
 ?>

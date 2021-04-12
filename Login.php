@@ -129,7 +129,7 @@
                           $_SESSION['usuario']=$nombreadmin;
                           $_SESSION['correo']=$correo;
                           $_SESSION['rol_id']=$idadmin;
-                          header('location: admin.php');
+                          header('location: perfiladmin.php');
 
                       }
                      else

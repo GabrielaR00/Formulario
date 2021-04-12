@@ -18,6 +18,9 @@ session_start();
 
 </head>
 <body class="bg-dark ">
+	<div>
+		<?php include 'navsesion.html'; ?>
+	</div>
 	<div class="col align-self-start p-5"></div>
 	<div class="contenedor col-6 d-flex flex-column p-2 mb-auto align-self-center">
 		<h1 class="titulo" > Formulario de envio </h1>
@@ -27,10 +30,24 @@ session_start();
 				<label for="exampleInputName" class="form-label ">Nombre del proyecto </label>
 				<input type="name" class="form-control  " name="NombreP" >
 			</div>
-			<div class="input-contenedor">
-				<div></div>
+			<div class="input-contenedor">				
 				<label for="exampleInputName" class="form-label ">Tipo </label>
-				<input type="tipo" class="form-control " name="Tipo" >
+				<div class="select-box ">
+					<select class=" select px-lg-2 py-lg-2" name="tipo">
+						<option>Seleccione una materia </option>
+						<option>Animación 2D </option>
+					    <option>Animación 3D</option>
+					    <option>Arte analógico </option>
+					    <option>Arte digital o</option>	
+					    <option>Open GL </option>
+					    <option>Página web </option>
+						<option>Programa </option>
+					    <option>Simulación </option>	    
+					 	<option>Videojuego </option>		    
+					    
+					</select>
+				</div>				
+
 			</div >
 			<div class="input-contenedor">
 				<label for="exampleInputName" class="form-label ">Materia para la que se realizó el proyecto </label>
@@ -90,7 +107,7 @@ session_start();
 				<input type="reset" class="btn btn-primary  " value="Reestablecer" name="reestablecer" >
 				<input type="submit" class="btn btn-primary " value="Enviar" name="envio">
 				<div></div>
-				<a href="micuenta.php">Regresar</a>
+				
 
 			</div>
 
@@ -100,7 +117,7 @@ session_start();
 			if (isset($_POST['envio']))
 			{
 				$nombrep = $_POST['NombreP'];
-				$tipo = $_POST['Tipo'];
+				$tipo = $_POST['tipo'];
 				$materia = $_POST['materia'];
 				$descripcion = $_POST['descrip'];
 				$archivo=$_FILES['archivo']['tmp_name'];
@@ -124,7 +141,6 @@ session_start();
 	</div>
 
 	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
-
-
+	
 </body>
 </html>

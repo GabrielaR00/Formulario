@@ -1,5 +1,6 @@
   <?php
    session_start();
+   error_reporting(0);
   ?>
 
 <!DOCTYPE html>
@@ -15,27 +16,24 @@
 <body>
     <?php
     $varsesion=$_SESSION['usuario'];
-    $rol=$_SESSION['rol_id'];
-    if ($varsesion==null || $varsesion="")
+    $rol=$_SESSION['rol_id'];    
+
+
+    if ($varsesion==null )
     {
-      echo "<div></div>";
-      echo "<a href='Registro.php'>Registrate";
-      echo "<div></div>";
-      echo "<a href='Login.php'>Iniciar Sesion";
-      echo "<div></div>";
+
+        include 'navnosesion.html';
     }
-    if ($varsesion=true && $rol==0)
+    if ($varsesion==true && $rol!=1)
     {
-      echo "<div></div>";
-      echo "<a href='micuenta.php'>Mi cuenta";
-      echo "<div></div>";
+        include 'navsesion.html';
+      
     }
-    if ($varsesion=true && $rol==1)
+    if ($varsesion==true && $rol==1)
     {
-      echo "<div></div>";
-      echo "<a href='admin.php'>Mi cuenta admin";
-      echo "<div></div>";
+      include 'navsesionadmin.html';
     }
+
     ?>
     <script type="module" >
 
