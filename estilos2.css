@@ -1,0 +1,42 @@
+* {
+
+  margin: 0px;
+  padding: 0px;
+
+}
+/*para admin*/
+.myaccordion .btn
+{
+	
+	
+	align-items: center;
+	justify-content: center;
+}
+.myaccordion .fa-stack
+{
+	font-size: 1rem;
+	color: #16191c;
+}
+.fw-medium
+{
+	font-weight:500! important;
+}
+.form-label
+{
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	font-weight: bold;
+	width: 100%
+}
+.form-control
+{
+	background-color: var(--dark-x);
+	border:0px;
+	min-height: 3.125rem;
+	line-height: initial;
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+	font-weight: normal;
+	width: 100%
+
+}

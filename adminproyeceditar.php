@@ -59,7 +59,7 @@ $varsesion=$_SESSION['usuario'];
 			<div class="col-lg-8"> <!-- box grande -->
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 
-					<?php include 'proapro.php';?>
+					<?php include 'proaproeditar.php';?>
 
 					
 						

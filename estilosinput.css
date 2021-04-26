@@ -11,6 +11,7 @@
 	--light:#ffffff;
 	--bs-green: #198754;
 }
+
 body
 {
 	color: var(--light);
@@ -20,11 +21,40 @@ body
 {	
 	background-color: var(--dark) !important;	
 }
-h1
+.fondo
+{
+	background-color: #09181F !important;	
+
+}
+h1 
 {
 	color: var(--light);	
 	margin-bottom: 2rem;
 	
+}
+h3
+{
+	color: var(--light);	
+	margin-bottom: 2rem;
+	
+}
+.parrafo
+{
+
+	text-align: justify;
+	font-family: Lato, sans-serif ;
+	font-weight: 400 ;
+	font-weight:normal;
+	color: #ffffff;
+
+
+}
+.arch
+{
+	font-family: Lato, sans-serif ;
+	font-weight: 400 ;
+	font-weight:normal;
+	color: #ffffff;	
 }
 .titulo
 {
