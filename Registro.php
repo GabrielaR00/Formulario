@@ -136,11 +136,17 @@
                 $resul5 = mysqli_query($conn, $consulta5);
                 $resultfinal3 = mysqli_fetch_array($resul5);
                 $correodatabase = $resultfinal3['correodatabase'];
+                $consulta6= "SELECT usuarios.fotoperfil as foto FROM usuarios WHERE usuarios.id = '$idusu'";
+                $resul6 = mysqli_query($conn, $consulta6);
+                $resultfinal6 = mysqli_fetch_array($resul6);
+                $foto = $resultfinal6['foto'];
 
                 session_start();
                 $_SESSION['idusu']=$idusu;
                 $_SESSION['usuario']=$nombredatabase;
                 $_SESSION['correo']=$correodatabase;
+                $_SESSION['foto']=$foto;
+
 
                 header('location: Casa.php');
               }

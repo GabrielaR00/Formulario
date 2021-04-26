@@ -28,6 +28,7 @@
 
         $nombreus=$_SESSION['usuario'];
         $correous=$_SESSION['correo'];
+        $foto=$_SESSION['foto'];
 
       }
       ?>
@@ -36,13 +37,13 @@
 			<div class="col-lg-4 mb-4 mb-lg-0"> <!-- side box -->
 				<div class="bg-light rounded 3 shadow-lg">
 					<div class="px-3 py-4 mb-1 text-center">
-						<img class="d-block rounded-circle mx-auto my-2" src="./Assests/user.png" width="110">
+						<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto; ?>" width="110">
 						<h5 class="mb-0 pt-1"> <?php echo $nombreus ?></h5>
 					</div>
 					<div class="d-lg-none px-4 pb-4 text-center">
-						
+
 						<a class="btn btn-primary px-5 mb-2 collapsed" href="#sidemenu" role="button" aria-controls="sidemenu" data-toggle="collapse" aria-expanded="false"> Menú</a>
-						
+
 					</div>
 					<div class="d-lg-block pb-2 collapse" id="sidemenu">
 						<h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
@@ -66,21 +67,15 @@
 					</div>
 					<div class="backspace rounded-3 p-4 mb-4">
 						<div class="d-block d-sm-flex align-items-center">
-							<img class="d-block rounded-circle mx-auto my-2" src="./Assests/user.png" width="110">
+							<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto; ?>" width="110">
 							<div class="ps-sm-3 text-center text-sm-start">
-                <form action="cambiarfotodeperfil.php" method="post" enctype="multipart/form-data">
+                <form action="actualizarperfil.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="foto">
-                      <div></div>
-                        <button input class="btn btn-primary shadow btn-sm mb-2" name="hola" >
-                          Subir foto
-        								</button>
-                </form>
 								<div class="p mb-0 fonts blackcolor"> Subir foto JPG o PNG. Requerido 300 x 300. </div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-            <form action="actualizarperfil.php" method="post">
               <div class="col-sm-6">
                 <div class="mb-3 pb-1">
                   <label class="form-label px-0">Nombre y apellido</label>
