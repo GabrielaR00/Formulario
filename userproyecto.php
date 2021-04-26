@@ -63,13 +63,6 @@
 			<div class="col-lg-8"> <!-- box grande -->
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 
-					
-					<div class="py-2 p-md-3">
-						<div class="d-sm-flex align-items-center justify-content-between pb-4 text-center "></div>
-						<h1 class="h3 mb-2 text-nowrap"> No hay proyectos subidos</h1>						
-					</div>
-
-
 					<div class="backspace rounded-3 p-4 mb-4">
 						<div class="d-block d-sm-flex align-items-center">							
 							<div class="ps-sm-3 text-center text-sm-start">
@@ -84,7 +77,82 @@
 								</form>
 							</div>
 						</div>						
-					</div>					
+					</div>			
+
+					<?php
+
+           				include "conexion.php";
+
+			            $consulta1 = "SELECT*FROM proyectos WHERE proyectos.nombreest = '$nombreus'";
+			            $resultado1 = mysqli_query($conn, $consulta1);
+			            
+
+						if ($resultado1->num_rows>0)
+					    {
+					          $cont=0;
+					                               
+					            while ($row=$resultado1->fetch_assoc()) 
+					            {  $cont++ ?>
+					              <div class="contenedorgiant pt-2">
+				                  <div id="accordion" class="myaccordion">
+				                    <div class="card">
+				                      <div class="card-header" id="heading<?php echo $cont ?>">
+				                        <h5 class="mb-0">
+				                          <button class="btn d-flex align-items-center justify-content-between w-100" data-toggle="collapse" data-target="#collapse<?php echo $cont ?>" aria-expanded="true" aria-controls="collapse<?php echo $cont ?>">
+				                                                      <?php echo $row["NombreDelProyecto"]  ?>
+				                            <span class="fa-stack fa-fw ">
+				                              <i class="fas fa-circle fa-stack-2x"></i>
+				                              <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+				                            </span>
+				                          </button>
+
+				                        </h5>
+				                      </div>
+
+				                      <div id="collapse<?php echo $cont ?>" class="collapse" aria-labelledby="heading<?php echo $cont ?>" data-parent="#accordion">
+				                        <div class="card-body">
+				                          
+				                            <ul class="list-unstyled">
+
+				                              <li> Nombre estudiante: 
+				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
+				                              </li>
+				                              <li> Nombre proyecto: 
+				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
+				                              </li>
+				                              <li> Tipo de proyecto: 
+				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
+				                              </li>
+				                              <li> Materia: 
+				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
+				                              </li>
+				                            </ul>
+				                            <h3 class="h5">Descripción</h3>
+				                            <p> <?php echo $row["Descripcion"]  ?></p>
+				                            <div>
+				                              <img class="card-img" src="./Assests/Fondo2.jpg">
+				                            </div>
+				                            
+				                         
+				                        </div>
+				                      </div>
+				                    </div>        
+				                 </div>	
+								<?php 								 
+								}
+						}
+						else
+						{?>
+							<div class="py-2 p-md-3">
+								<div class="d-sm-flex align-items-center justify-content-between pb-4 text-center "></div>
+								<h1 class="h3 mb-2 text-nowrap"> No hay proyectos subidos</h1>						
+							</div>
+
+					<?php
+						}
+					?>					
+
+							
 					
 				</div>
 				
