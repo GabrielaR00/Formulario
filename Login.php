@@ -110,13 +110,27 @@
                       $resultado4 = $conn->query($consuladmin);
                      if ($filas)
                      {
+                       $consulta4= "SELECT usuarios.id as idusu FROM usuarios WHERE usuarios.correo = '$correo'";
+                       $resul4 = mysqli_query($conn, $consulta4);
+                       $resultfinal = mysqli_fetch_array($resul4);
+                       $idusu = $resultfinal['idusu'];
+                       $consulta5= "SELECT usuarios.nombre as nombredatabase FROM usuarios WHERE usuarios.id = '$idusu'";
+                       $resul5 = mysqli_query($conn, $consulta5);
+                       $resultfinal2 = mysqli_fetch_array($resul5);
+                       $nombredatabase = $resultfinal2['nombredatabase'];
+                       $consulta5= "SELECT usuarios.correo as correodatabase FROM usuarios WHERE usuarios.id = '$idusu'";
+                       $resul5 = mysqli_query($conn, $consulta5);
+                       $resultfinal3 = mysqli_fetch_array($resul5);
+                       $correodatabase = $resultfinal3['correodatabase'];
                         $row=$resultado3->fetch_assoc();
                         $nombreusuario=$row["nombre"];
-                        $idadmin=0;
+
+                        echo $idusu;
+
                         session_start();
                         $_SESSION['usuario']=$nombreusuario;
-                        $_SESSION['correo']=$correo;
-                        $_SESSION['rol_id']=$idadmin;
+                        $_SESSION['idusu']=$idusu;
+                        $_SESSION['correo']=$correodatabase;
                         header('location: Casa.php');
                       }
                      else if ($filas2)

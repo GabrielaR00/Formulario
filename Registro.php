@@ -95,6 +95,17 @@
 						{
 								array_push($campos, "El campo de contraseña no puede estar vacio. Debe tener minino 8 caracteres");
 						}
+
+            include "conexion.php";
+
+            $consulta1 = "SELECT*FROM usuarios WHERE usuarios.correo = $correo";
+            $resultado1 = mysqli_query($conn, $consulta1);
+
+            if ($consulta1=true) {
+              echo "<div class='correcto mb-auto'> Este correo ya se encuentra registrado.";
+                echo "<div class='correcto mb-auto'> Porfavor Ingrese un correo diferente";
+            }
+
 						if(count($campos)>0)
 						{
 								echo"<div class='error mb-auto'>";
@@ -105,20 +116,34 @@
 								"</div>";
 						}
               //CONXION
-              include "conexion.php";
+            else {
+                $nombre = $_POST['nombre'];
+                $correo = $_POST['correo'];
+                $contraseña = $_POST['contraseña'];
+                $consulta = "INSERT INTO usuarios(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
+                $resultado = mysqli_query($conn, $consulta);
+                echo "<div class='correcto mb-auto'> Registro Exitoso";
 
-              $nombre = $_POST['nombre'];
-              $correo = $_POST['correo'];
-              $contraseña = $_POST['contraseña'];
-              $consulta = "INSERT INTO usuarios(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
-              $resultado = mysqli_query($conn, $consulta);
-							echo "<div class='correcto mb-auto'> Registro Exitoso";
-              $idadmin=0;
-              session_start();
-              $_SESSION['usuario']=$nombre;
-              $_SESSION['correo']=$correo;
-              $_SESSION['rol_id']=$idadmin;
-              header('location: Casa.php');
+                $consulta4= "SELECT usuarios.id as idusu FROM usuarios WHERE usuarios.nombre = '$nombre'";
+                $resul4 = mysqli_query($conn, $consulta4);
+                $resultfinal = mysqli_fetch_array($resul4);
+                $idusu = $resultfinal['idusu'];
+                $consulta5= "SELECT usuarios.nombre as nombredatabase FROM usuarios WHERE usuarios.id = '$idusu'";
+                $resul5 = mysqli_query($conn, $consulta5);
+                $resultfinal2 = mysqli_fetch_array($resul5);
+                $nombredatabase = $resultfinal2['nombredatabase'];
+                $consulta5= "SELECT usuarios.correo as correodatabase FROM usuarios WHERE usuarios.id = '$idusu'";
+                $resul5 = mysqli_query($conn, $consulta5);
+                $resultfinal3 = mysqli_fetch_array($resul5);
+                $correodatabase = $resultfinal3['correodatabase'];
+
+                session_start();
+                $_SESSION['idusu']=$idusu;
+                $_SESSION['usuario']=$nombredatabase;
+                $_SESSION['correo']=$correodatabase;
+
+                header('location: Casa.php');
+              }
 						}
 						echo "</div>";
 				?>
