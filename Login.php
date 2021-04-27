@@ -110,6 +110,8 @@
                       $resultado4 = $conn->query($consuladmin);
                      if ($filas)
                      {
+                       $idadmin=1;
+
                        $consulta4= "SELECT usuarios.id as idusu FROM usuarios WHERE usuarios.correo = '$correo'";
                        $resul4 = mysqli_query($conn, $consulta4);
                        $resultfinal = mysqli_fetch_array($resul4);
@@ -129,30 +131,45 @@
                         $row=$resultado3->fetch_assoc();
                         $nombreusuario=$row["nombre"];
 
-                        echo $idusu;
-
                         session_start();
-                        $_SESSION['usuario']=$nombreusuario;
+                        $_SESSION['rol_id']=$idadmin;
+                        $_SESSION['usuario']=$nombredatabase;
                         $_SESSION['idusu']=$idusu;
                         $_SESSION['correo']=$correodatabase;
                         $_SESSION['foto']=$foto;
-
 
                         header('location: Casa.php');
                       }
                      else if ($filas2)
                       {
 
-                          $row2=$resultado4->fetch_assoc();
-                          $nombreadmin=$row2["nombre"];
-                          $idadmin=1;
+                          $idadmin=2;
+
+                          $consulta4= "SELECT admins.id as idusu FROM admins WHERE admins.correo = '$correo'";
+                          $resul4 = mysqli_query($conn, $consulta4);
+                          $resultfinal = mysqli_fetch_array($resul4);
+                          $idusu = $resultfinal['idusu'];
+                          $consulta5= "SELECT admins.nombre as nombredatabase FROM admins WHERE admins.id = '$idusu'";
+                          $resul5 = mysqli_query($conn, $consulta5);
+                          $resultfinal2 = mysqli_fetch_array($resul5);
+                          $nombredatabase = $resultfinal2['nombredatabase'];
+                          $consulta5= "SELECT admins.correo as correodatabase FROM admins WHERE admins.id = '$idusu'";
+                          $resul5 = mysqli_query($conn, $consulta5);
+                          $resultfinal3 = mysqli_fetch_array($resul5);
+                          $correodatabase = $resultfinal3['correodatabase'];
+                          $consulta6= "SELECT admins.fotoperfil as foto FROM admins WHERE admins.id = '$idusu'";
+                          $resul6 = mysqli_query($conn, $consulta6);
+                          $resultfinal6 = mysqli_fetch_array($resul6);
+                          $foto = $resultfinal6['foto'];
+
                           session_start();
-                          $_SESSION['usuario']=$nombreadmin;
-                          $_SESSION['correo']=$correo;
                           $_SESSION['rol_id']=$idadmin;
+                          $_SESSION['usuario']=$nombredatabase;
+                          $_SESSION['idusu']=$idusu;
+                          $_SESSION['correo']=$correodatabase;
+                          $_SESSION['foto']=$foto;
 
-                        header('location: perfiladmin.php');
-
+                          header('location: Casa.php');
                       }
                      else
                      {

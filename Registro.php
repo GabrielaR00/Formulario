@@ -141,7 +141,10 @@
                 $resultfinal6 = mysqli_fetch_array($resul6);
                 $foto = $resultfinal6['foto'];
 
+                $idadmin=1;
+
                 session_start();
+                $_SESSION['rol_id']=$idadmin;
                 $_SESSION['idusu']=$idusu;
                 $_SESSION['usuario']=$nombredatabase;
                 $_SESSION['correo']=$correodatabase;

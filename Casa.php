@@ -11,25 +11,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="estiloscanvas.css">
 
-    <title>Hello There</title>
+    <title>Casa</title>
 </head>
 <body>
     <?php
     $varsesion=$_SESSION['usuario'];
-    $rol=$_SESSION['rol_id'];    
+    $rol=$_SESSION['rol_id'];
+    echo $rol;
 
 
     if ($varsesion==null )
     {
-
-        include 'navnosesion.html';
-    }
-    if ($varsesion==true && $rol!=1)
-    {
-        include 'navsesion.html';
-      
+      include 'navnosesion.html';
     }
     if ($varsesion==true && $rol==1)
+    {
+      include 'navsesion.html';
+    }
+    if ($varsesion==true && $rol==2)
     {
       include 'navsesionadmin.html';
     }
