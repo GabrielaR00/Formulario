@@ -17,9 +17,9 @@
       <form method="POST" action="adminproyeceditar.php">
         <div class=" w-100 p-2">
           <button class='btn btn-primary btn-md' type='submit' name='botoneditar' value='Editar'>Editar
-          <i class='fa fa-paint-brush' aria-hidden='true'></i>                       
-            
-        </div>   
+          <i class='fa fa-paint-brush' aria-hidden='true'></i>
+
+        </div>
       </form>
       <?php
   		include "conexion.php";
@@ -29,8 +29,8 @@
       {
           $cont=0;
           if ($sql==true)
-          {    										
-						while ($row=$resultado->fetch_assoc()) 
+          {
+						while ($row=$resultado->fetch_assoc())
               {  $cont++ ?>
 							<div class="contenedorgiant pt-2">
                   <div id="accordion" class="myaccordion">
@@ -50,35 +50,35 @@
 
                       <div id="collapse<?php echo $cont ?>" class="collapse" aria-labelledby="heading<?php echo $cont ?>" data-parent="#accordion">
                         <div class="card-body">
-                          
+
                             <ul class="list-unstyled">
 
-                              <li> Nombre estudiante: 
+                              <li> Nombre estudiante:
                                 <span class="fw-medium text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
                               </li>
-                              <li> Nombre proyecto: 
+                              <li> Nombre proyecto:
                                 <span class="fw-medium text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
                               </li>
-                              <li> Tipo de proyecto: 
+                              <li> Tipo de proyecto:
                                 <span class="fw-medium text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
                               </li>
-                              <li> Materia: 
+                              <li> Materia:
                                 <span class="fw-medium text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
                               </li>
                             </ul>
                             <h3 class="h5">Descripción</h3>
                             <p> <?php echo $row["Descripcion"]  ?></p>
                             <div>
-                              <img class="card-img" src="./Assests/Fondo2.jpg">
+                              <img class="card-img" src="<?php echo $row["foto"]?>">
                             </div>
-                            
-                         
+
+
                         </div>
                       </div>
-                    </div>        
+                    </div>
                  </div>
-              <?php   }	               			
-    		
+              <?php   }
+
     		  }
       }
   	  else

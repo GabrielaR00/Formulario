@@ -7,13 +7,13 @@
     <title>Ventana de Administrador</title>
 
     <link rel="stylesheet" href="bootstrap.min.css" / >
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   </head>
   <body>
-   
 
-      
+
+
       <div class="ProyectosP m-3">
 
         <h2 class="pb-5">Proyectos Pendientes</h2>
@@ -26,9 +26,9 @@
             $cont=0;
             if ($sql==true)
             {
-           
-              while ($row=$resultado->fetch_assoc()) 
-                { $cont++; ?>   
+
+              while ($row=$resultado->fetch_assoc())
+                { $cont++; ?>
         				<div class="contenedorgiant pt-2">
                   <div id="accordion" class="myaccordion">
                     <div class="card">
@@ -48,23 +48,23 @@
                       <div id="collapse<?php echo $cont ?>" class="collapse" aria-labelledby="heading<?php echo $cont ?>" data-parent="#accordion">
                         <div class="card-body">
                           <ul class="list-unstyled">
-                            <li> Nombre estudiante: 
+                            <li> Nombre estudiante:
                               <span class="fw-medium text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
                             </li>
-                            <li> Nombre proyecto: 
+                            <li> Nombre proyecto:
                               <span class="fw-medium text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
                             </li>
-                            <li> Tipo de proyecto: 
+                            <li> Tipo de proyecto:
                               <span class="fw-medium text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
                             </li>
-                            <li> Materia: 
+                            <li> Materia:
                               <span class="fw-medium text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
                             </li>
                           </ul>
                           <h3 class="h5">Descripción</h3>
                           <p> <?php echo $row["Descripcion"]  ?></p>
                           <div>
-                            <img class="card-img" src="./Assests/Fondo2.jpg">
+                            <img class="card-img" src="<?php echo $row["foto"]?>">
                           </div>
                           <div class="d-flex align-items-center justify-content-center w-100 p-2">
                             <?php echo "<a href='aprobacion.php?id=".$row['id']."'> <button class='btn btn-success  btn-lg m-2' type='button' name='botonapro' value='aprovado'>Aprobado
@@ -78,10 +78,10 @@
                           </div>
                         </div>
                       </div>
-                    </div>        
+                    </div>
                  </div>
                <?php   }?>
-      					
+
       				</div>
       		<?php
       		  }
@@ -90,10 +90,10 @@
       	{
       		echo "No hay proyectos";
       	}?>
-        
-        
+
+
       </div>
-      
+
     </div>
 
     <script type="bootstrap.min.js"></script>

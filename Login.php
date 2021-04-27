@@ -131,12 +131,21 @@
                         $row=$resultado3->fetch_assoc();
                         $nombreusuario=$row["nombre"];
 
+                        $consulta6 = "SELECT proyectos.foto as foto FROM proyectos WHERE proyectos.nombreest = '$nombreest'";
+                        $resul6 = mysqli_query($conn, $consulta6);
+                        $resultfinal6 = mysqli_fetch_array($resul6);
+                        $fotoproye = $resultfinal6['foto'];
+
+
+
+
                         session_start();
                         $_SESSION['rol_id']=$idadmin;
                         $_SESSION['usuario']=$nombredatabase;
                         $_SESSION['idusu']=$idusu;
                         $_SESSION['correo']=$correodatabase;
                         $_SESSION['foto']=$foto;
+                        $_SESSION['$fotoproyecto'] = $fotoproye;
 
                         header('location: Casa.php');
                       }

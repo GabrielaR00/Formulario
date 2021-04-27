@@ -1,5 +1,6 @@
 <?php
 session_start();
+$varsesion=$_SESSION['usuario'];
 ?>
 
 <!DOCTYPE html>
@@ -30,29 +31,30 @@ session_start();
 			<p class="parrafo  pb-4">Con este formulario puedes enviar los proyectos que hayas realizado en la carrera y que desees compartir con nosotros. Te pedimos que hagas uso de un vocabulario adecuado y profesional al momento de ingresar tu información. Al momento de subir el archivo seguir las instrucciones indicadas y al llenar el espacio de la breve descripción explicar de que se trata el proyecto y un poco de su desarrollo, sin exceder los 300 caracteres con espacios. </p>
 		</div>
 
-		<form  action="input.php" method="POST" enctype="multipart/form-data">
+		<form  action="subirproyecto.php" method="POST" enctype="multipart/form-data">
 			<div class="input-contenedor   ">
 				<label for="exampleInputName" class="form-label ">Nombre del proyecto </label>
-				
+
 				<input type="name" class="form-control  " name="NombreP" >
 			</div>
-			<div class="input-contenedor">				
+			<div class="input-contenedor">
 				<label for="exampleInputName" class="form-label ">Tipo </label>
 				<div class="select-box ">
 					<select class=" selectpicker  px-lg-2 py-lg-2" data-width="fit" name="tipo">
-						<option>Seleccione una materia </option>
-						<option>Animación 2D </option>
+							<option>Seleccione el tipo de proyecto</option>
+							<option>Animación 2D </option>
 					    <option>Animación 3D</option>
 					    <option>Arte analógico </option>
 					    <option>Arte digital </option>
 					   	<option>Modelado 3D </option>
 					    <option>Open GL </option>
 					    <option>Página web </option>
-						<option>Programa </option>
-					    <option>Simulación </option>	    
-					 	<option>Videojuego </option>		    					    
+							<option>Programa </option>
+							<option>Prototipo </option>
+					    <option>Simulación </option>
+						 	<option>Videojuego </option>
 					</select>
-				</div>				
+				</div>
 
 			</div >
 			<div class="input-contenedor">
@@ -105,7 +107,7 @@ session_start();
 						    <option>Movimiento e interacción </option>
 						    <option>Multimedia educativa </option>
 						    <option>Museos y tecnología  </option>
-						    <option>Visión por computador </option>						   
+						    <option>Visión por computador </option>
 						</optgroup>
 
 					</select>
@@ -122,44 +124,18 @@ session_start();
 			    <div class="invoiceBox">
 			      <label for="file">
 			        <div class="boxFile" data-text="Seleccionar archivo">
-			          Seleccionar archivo
+			          <input type="file" name="fotoproye">
 			        </div>
 			      </label>
-			      <input id="file" name="archivo" size="6000" type="file" >
 			    </div>
 			</div>
 			<div class="botones ">
 				<input type="reset" class="btn btn-primary  " value="Reestablecer" name="reestablecer" >
 				<input type="submit" class="btn btn-primary " value="Enviar" name="envio">
 				<div></div>
-				
+
 
 			</div>
-
-	<?php
-			include "conexion.php";
-			$nombreest=$_SESSION['usuario'];
-			if (isset($_POST['envio']))
-			{
-				$nombrep = $_POST['NombreP'];
-				$tipo = $_POST['tipo'];
-				$materia = $_POST['materia'];
-				$descripcion = $_POST['descrip'];
-				$archivo=$_FILES['archivo']['tmp_name'];
-				$consulta = "INSERT INTO proyectos(NombreDelProyecto, Tipo, Materia, Descripcion, Archivo, nombreest) VALUES ('$nombrep', '$tipo', '$materia','$descripcion','$archivo','$nombreest')";
-				$resultado = mysqli_query($conn, $consulta);
-				if ($resultado)
-				{
-					echo "</div>";
-					echo "Proyecto Enviado";
-				}
-				else
-				{
-					echo "</div>";
-					echo "Proyecto NO Enviado";
-				}
-			}
-			 ?>
 
 		</form>
 
@@ -167,6 +143,6 @@ session_start();
 	<script type="bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="bootstrap.bundle.min.js"></script>
-	
+
 </body>
 </html>

@@ -17,8 +17,6 @@
     <?php
     $varsesion=$_SESSION['usuario'];
     $rol=$_SESSION['rol_id'];
-    echo $rol;
-
 
     if ($varsesion==null )
     {
