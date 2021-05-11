@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intentp4</title>
+</head>
+<body>
+
+<script src="./js/three.min.js"></script>
+
+
+	<script type="module">
+
+		import * as THREE from './js/three.module.js';
+			var SEPARATION = 120, AMOUNTX = 300, AMOUNTY = 70;
+
+			var container, stats;
+			var camera, scene, renderer;
+
+			var particles, particle, count = 0;
+
+			var mouseX = 0, mouseY = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.z = 10000;
+
+				scene = new THREE.Scene();
+
+				particles = new Array();
+
+				var PI2 = Math.PI * 2;
+				var material = new THREE.SpriteMaterial( {
+
+					color: 0xffffff,
+					program: function ( context ) {
+
+						context.beginPath();
+						context.arc( 0.9, 0, 0.5, 0, PI2, true );
+						context.fill();
+
+					}
+
+				} );
+
+				var i = 0;
+
+				for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+					for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+						particle = particles[ i ++ ] = new THREE.Sprite( material );
+						particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+						particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+						scene.add( particle );
+
+					}
+
+				}
+
+				renderer = new THREE.Renderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				stats = new Stats();
+				stats.domElement.style.position = 'absolute';
+				stats.domElement.style.top = '0px';
+				container.appendChild( stats.domElement );
+
+	
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			//
+
+			//
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+				stats.update();
+
+			}
+
+			function render() {
+
+		
+				camera.position.set(0,355,122);
+
+				var i = 0;
+        
+				for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+					for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+						particle = particles[ i++ ];
+						particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+							( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+						particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 4 +
+							( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 4;
+
+					}
+
+				}
+
+				renderer.render( scene, camera );
+
+				count += 0.1;
+
+			}
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>intento3</title>
+</head>
+<body>
+
+<script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js'></script>
+<script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js'></script>
+<script src='https://jeromeetienne.github.io/threex.terrain/threex.terrain.js'></script>
+<style type="text/css">
+	body{
+  margin: 0px; background-color: #222222; overflow: hidden;
+}
+
+</style>
+
+<script type="module">
+		var renderer	= new THREE.WebGLRenderer({
+			antialias	: true
+		});
+	/* Fullscreen */
+		renderer.setSize( window.innerWidth, window.innerHeight );
+	/* Append to HTML */
+		document.body.appendChild( renderer.domElement );
+		var onRenderFcts= [];
+		var scene	= new THREE.Scene();
+		var camera	= new THREE.PerspectiveCamera(25, window.innerWidth /    window.innerHeight, 0.01, 1000);
+	/* Play around with camera positioning */
+		camera.position.z = 15; 
+	  camera.position.y = 2;
+	/* Fog provides depth to the landscape*/
+	  scene.fog = new THREE.Fog(0x000, 0, 45);
+		;(function(){
+			var light	= new THREE.AmbientLight( 0x202020 )
+			scene.add( light )
+			var light	= new THREE.DirectionalLight('white', 5)
+			light.position.set(0.5, 0.0, 2)
+			scene.add( light )
+			var light	= new THREE.DirectionalLight('white', 0.75*2)
+			light.position.set(-0.5, -0.5, -2)
+			scene.add( light )		
+		})()
+		var heightMap	= THREEx.Terrain.allocateHeightMap(256,256)
+		THREEx.Terrain.simplexHeightMap(heightMap)	
+		var geometry	= THREEx.Terrain.heightMapToPlaneGeometry(heightMap)
+		THREEx.Terrain.heightMapToVertexColor(heightMap, geometry)
+	/* Wireframe built-in color is white, no need to change that */
+		var material	= new THREE.MeshBasicMaterial({
+			wireframe: true
+		});
+		var mesh	= new THREE.Mesh( geometry, material );
+		scene.add( mesh );
+		mesh.lookAt(new THREE.Vector3(0,1,0));
+	/* Play around with the scaling */
+		mesh.scale.y	= 3.5;
+		mesh.scale.x	= 3;
+		mesh.scale.z	= 0.20;
+		mesh.scale.multiplyScalar(10);
+	/* Play around with the camera */
+		onRenderFcts.push(function(delta, now){
+			mesh.rotation.z += 0.2 * delta;	
+		})
+		onRenderFcts.push(function(){
+			renderer.render( scene, camera );		
+		})
+		var lastTimeMsec= null
+		requestAnimationFrame(function animate(nowMsec){
+			requestAnimationFrame( animate );
+			lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+			var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+			lastTimeMsec	= nowMsec
+			onRenderFcts.forEach(function(onRenderFct){
+				onRenderFct(deltaMsec/1000, nowMsec/1000)
+			})
+		})
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - particles - waves</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
+	</head>
+	<body>
+
+		<div id="info">
+			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - webgl particles waves example
+		</div>
+
+		<script type="x-shader/x-vertex" id="vertexshader">
+
+			attribute float scale;
+
+			void main() {
+
+				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+				gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+				gl_Position = projectionMatrix * mvPosition;
+
+			}
+
+		</script>
+
+		<script type="x-shader/x-fragment" id="fragmentshader">
+
+			uniform vec3 color;
+
+			void main() {
+
+				if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+				gl_FragColor = vec4( color, 1.0 );
+
+			}
+
+		</script>
+
+		<script type="module">
+
+			import * as THREE from './js/three.module.js';
+
+			
+
+			const SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+
+			let container;
+			let camera, scene, renderer;
+
+			let particles, count = 0;
+
+			let mouseX = 0, mouseY = 0;
+
+			let windowHalfX = window.innerWidth / 2;
+			let windowHalfY = window.innerHeight / 2;
+
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.z = 1000;
+
+				scene = new THREE.Scene();
+
+				//
+
+				const numParticles = AMOUNTX * AMOUNTY;
+
+				const positions = new Float32Array( numParticles * 3 );
+				const scales = new Float32Array( numParticles );
+
+				let i = 0, j = 0;
+
+				for ( let ix = 0; ix < AMOUNTX; ix ++ ) {
+
+					for ( let iy = 0; iy < AMOUNTY; iy ++ ) {
+
+						positions[ i ] = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 ); // x
+						positions[ i + 1 ] = 0; // y
+						positions[ i + 2 ] = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 ); // z
+
+						scales[ j ] = 1;
+
+						i += 3;
+						j ++;
+
+					}
+
+				}
+
+				const geometry = new THREE.BufferGeometry();
+				geometry.setAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+				geometry.setAttribute( 'scale', new THREE.BufferAttribute( scales, 1 ) );
+
+				const material = new THREE.ShaderMaterial( {
+
+					uniforms: {
+						color: { value: new THREE.Color( 0xff00ff ) },
+					},
+					vertexShader: document.getElementById( 'vertexshader' ).textContent,
+					fragmentShader: document.getElementById( 'fragmentshader' ).textContent
+
+				} );
+
+				//
+
+				particles = new THREE.Points( geometry, material );
+				scene.add( particles );
+
+				//
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				
+				
+
+				container.style.touchAction = 'none';
+				//container.addEventListener( 'pointermove', onPointerMove );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize );
+
+			}
+
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			//
+
+			// function onPointerMove( event ) {
+
+			// 	if ( event.isPrimary === false ) return;
+
+			// 	mouseX = event.clientX - windowHalfX;
+			// 	mouseY = event.clientY - windowHalfY;
+
+			// }
+
+			//
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+				
+
+			}
+
+			function render() {
+
+				camera.position.x += ( mouseX - camera.position.x ) * .05;
+				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				camera.lookAt( scene.position );
+
+				const positions = particles.geometry.attributes.position.array;
+				const scales = particles.geometry.attributes.scale.array;
+
+				let i = 0, j = 0;
+
+				for ( let ix = 0; ix < AMOUNTX; ix ++ ) {
+
+					for ( let iy = 0; iy < AMOUNTY; iy ++ ) {
+
+						positions[ i + 1 ] = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+										( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+
+						scales[ j ] = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 20 +
+										( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 20;
+
+						i += 3;
+						j ++;
+
+					}
+
+				}
+
+				particles.geometry.attributes.position.needsUpdate = true;
+				particles.geometry.attributes.scale.needsUpdate = true;
+
+				renderer.render( scene, camera );
+
+				count += 0.1;
+
+			}
+
+		</script>
+	</body>
+</html> -->

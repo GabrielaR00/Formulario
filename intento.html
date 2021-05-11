@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intento</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css" / >
+    <!-- <link rel="stylesheet" type="text/css" href="perfilestilo.css"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+
+
+    <!-- <script src="http://threejs.org/build/three.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous"></script> -->
+    <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
+    <!-- <script src="./js/three.js"></script> -->
+
+
+</head>
+<body>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+      }
+      html, body
+       {
+        width: 100%;
+        height: 100%;
+        background: black;
+        overflow: hidden;
+       }
+       .contenedorbody
+       {
+        position: absolute;
+        z-index: 5;
+       }
+    </style>
+
+<script src="./js/three.min.js"></script>
+<script type="module">
+
+    import * as THREE from './js/three.module.js';
+
+    
+    var camera, scene, renderer;
+    var geometry, material, mesh, clock, delta,cubeSineDriver;
+    var smokeTexture, smokeMaterial,smokeGeo, smokeParticles;
+     
+    init();
+    animate(); 
+
+    function init() {
+        // stats = new Stats();
+        // stats.setMode(0);
+        // stats.domElement.style.position = 'absolute';
+        // stats.domElement.style.left = '0px';
+        // stats.domElement.style.top = '0px';
+        // document.body.appendChild(stats.domElement);
+
+         clock = new THREE.Clock();
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+        scene = new THREE.Scene();
+     
+        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.z = 1000;
+        scene.add( camera );
+     
+        geometry = new THREE.BoxGeometry( 200, 200, 200 );
+        material = new THREE.MeshLambertMaterial( { color: 0xaa6666, wireframe: false } );
+        mesh = new THREE.Mesh( geometry, material );
+        //scene.add( mesh );
+         cubeSineDriver = 0;
+     
+        
+        THREE.ImageUtils.crossOrigin = ''; //Need this to pull in crossdomain images from AWS
+        
+
+        var light = new THREE.DirectionalLight(0xffffff,0.5);
+        light.position.set(-1,0,1);
+        scene.add(light);
+      
+         smokeTexture = THREE.ImageUtils.loadTexture('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png');
+         smokeMaterial = new THREE.MeshLambertMaterial({color: 0x000fff, map: smokeTexture, transparent: true});
+         smokeGeo = new THREE.PlaneGeometry(300,300);
+         smokeParticles = [];
+
+
+
+        for (let p = 0; p < 150; p++) {
+            var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
+            particle.position.set(Math.random()*500-250,Math.random()*500-250,Math.random()*1000-100);
+            particle.rotation.z = Math.random() * 360;
+            scene.add(particle);
+            smokeParticles.push(particle);
+        }
+     
+        document.body.appendChild( renderer.domElement );
+     
+    }
+     
+    function animate() {
+     
+        // note: three.js includes requestAnimationFrame shim
+        // stats.begin();
+         delta = clock.getDelta();
+        requestAnimationFrame( animate );
+        evolveSmoke();
+        render();
+        // stats.end();
+    }
+     
+    function evolveSmoke() {
+        var sp = smokeParticles.length;
+        while(sp--) {
+            smokeParticles[sp].rotation.z += (delta * 0.2);
+        }
+    }
+
+    function render() {
+     
+        mesh.rotation.x += 0.005;
+        mesh.rotation.y += 0.01;
+        cubeSineDriver += .01;
+        mesh.position.z = 100 + (Math.sin(cubeSineDriver) * 500);
+        renderer.render( scene, camera );
+     
+    }
+</script>
+
+<div class="contenedorbody">
+    <canvas class="webgl" > </canvas>
+   
+</div>
+
+<script type="bootstrap.min.js"></script>
+</body>
+</html>

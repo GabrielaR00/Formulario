@@ -15,11 +15,11 @@
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilo.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="fondouser">
 
 	<header>
 		<?php include 'navsesion.html'; ?>
@@ -50,10 +50,10 @@
 					</div>
 					<div class="d-lg-block collapse pb-2" id="sidemenu">
 						<h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="userproyecto.php">Mis proyectos</a>
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top activeuser" href="userproyecto.php">Mis proyectos</a>
 						<h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="perfiluser.php">Perfil</a>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="cerrarsesion.php">Cerrar sesión
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="perfiluser.php">Perfil</a>
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión
 							<!-- <i class="ai fs-lg opacity-60 me-2"></i> -->
 
 						</a>
@@ -71,8 +71,8 @@
 								<div class="p mb-0 fonts blackcolor pb-3"> <h5> Comparte tus proyectos con nosotros </h5> </div>
 								<form method="POST" action="Input.php">
 
-									<button class="btn btn-primary shadow btn-sm mb-2" type="submit"  >
-										<i class="ai-refresh-cw me-2"></i>
+									<button class="subiruser shadow btn-md mb-2" type="submit"  >
+										
 										Subir Proyecto
 									</button>
 

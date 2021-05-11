@@ -23,8 +23,17 @@ body
 }
 .fondo
 {
-	background-color: #09181F !important;	
+	background-image: url(./Assests/Fondoazul.gif);
+	background-size: cover;
 
+
+}
+.backtexto
+{
+	margin: 0px auto;	
+	background-color: rgba(130,130,130,0.4);	
+	border-radius: 10px;
+	
 }
 h1 
 {

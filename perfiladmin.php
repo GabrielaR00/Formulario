@@ -13,14 +13,14 @@
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilo.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
-<body>
-	<header>
-		<?php include 'navsesion.html'; ?>
+<body class="fondoadmin">
+	<header >
+		<?php include 'navsesionadmin.html'; ?>
 	</header>
 	<?php
 
@@ -45,16 +45,13 @@
 						<a class="btn btn-primary px-5 mb-2 collapsed" href="#sidemenu" role="button" aria-controls="sidemenu" data-toggle="collapse" aria-expanded="false"> Menú</a>
 
 					</div>
-          <div class="d-lg-block collapse pb-2" id="sidemenu">
-              <h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
-              <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="adminproyecto.php">Edición proyectos</a>
-              <h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
-              <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top active" href="perfiladmin.php">Perfil</a>
-              <a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="cerrarsesion.php">Cerrar sesión
-                  <!-- <i class="ai fs-lg opacity-60 me-2"></i> -->
-
-              </a>
-         </div>
+			        <div class="d-lg-block collapse pb-2" id="sidemenu">
+			            <h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
+			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="adminproyecto.php">Edición proyectos</a>
+			            <h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
+			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top activeadmin" href="perfiladmin.php">Perfil</a>
+			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión </a>
+			        </div>
 
 				</div>
 
@@ -63,41 +60,40 @@
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 					<div class="py-2 p-md-3">
 						<div class="d-sm-flex align-items-center justify-content-between pb-4 text-center text-sm-start"></div>
-						<h1 class="h3 mb-2 text-nowrap"> Información del perfil</h1>
+						<h1 class="h3 mb-2 text-nowrap"> Perfil</h1>
 					</div>
 					<div class="backspace rounded-3 p-4 mb-4">
 						<div class="d-block d-sm-flex align-items-center">
 							<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto; ?>" width="110">
 							<div class="ps-sm-3 text-center text-sm-start">
-                <form action="actualizarperfiladmin.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="foto">
+	                			<form action="actualizarperfiladmin.php" method="post" enctype="multipart/form-data">
+	                    		<input type="file" name="foto">
 								<div class="p mb-0 fonts blackcolor"> Subir foto JPG o PNG. Requerido 300 x 300. </div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-              <div class="col-sm-6">
-                <div class="mb-3 pb-1">
-                  <label class="form-label px-0">Nombre y apellido</label>
-                  <input type="text" class="form-control" placeholder="Ingresa tu nombre y apellido" name="nombrenew" value="<?php echo $nombreus ?>">
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="mb-3 pb-1">
-                  <label class="form-label px-0">Correo</label>
-                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
-                </div>
-                <button class="btn btn-primary shadow btn-sm mb-2" type="submit" name="btneditar">
+		              <div class="col-sm-6">
+			                <div class="mb-3 pb-1">
+			                  <label class="form-label px-0">Nombre y apellido</label>
+			                  <input type="text" class="form-control" placeholder="Ingresa tu nombre y apellido" name="nombrenew" value="<?php echo $nombreus ?>">
+			                </div>
+		              </div>
+		              <div class="col-sm-6">
+			                <div class="mb-3 pb-1">
+			                  <label class="form-label px-0">Correo</label>
+			                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
+			                </div>			                
+						</div>
+						<div class="col-sm-6 pt-3 ">
+							<button class=" editaradmin shadow btn-md py-2" type="submit" name="btneditar">
 									<i class="ai-refresh-cw me-2"></i>
 									Editar Perfil
-
-								</button>
-              </div>
-            </div>
-
-            </form>
+							</button>
+						</div>
+          			</div>
+            		</form>
 				</div>
-
 			</div>
 		</div>
 

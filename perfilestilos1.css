@@ -1,0 +1,100 @@
+* {
+
+  margin: 0px;
+  padding: 0px;
+
+}
+header
+{
+	width: 100%;
+}
+body
+{
+	font-family: Lato, sans-serif;	
+	/*font-weight: 400;*/	
+	line-height: 1.5;	
+}
+.fondoadmin
+{
+	background-image: url(./Assests/Fondorojo.gif);
+	background-size: cover;
+}
+.fondouser
+{
+	background-image: url(./Assests/Fondoazul.gif);
+	background-size: cover;
+}
+.backspace
+{
+	background-color: #F0F1F3 !important;
+}
+.blackcolor
+{
+	color: #9e9fb4!important;
+}
+.fonts
+{
+	font-weight: 600;
+	font-size: 1rem;
+}
+.nav-link-style
+{
+	font-weight: 600;
+	color: #275865;
+	text-decoration: none;
+}
+.activeuser
+{
+	color: rgb(0,51,210);
+	pointer-events: none;
+}
+.activeadmin
+{
+	color: rgb(148,0,0);
+	pointer-events: none;
+}
+.editaradmin
+{
+	color: #000000;
+	width: auto;
+	display: inline-block;
+	font-weight: 600;
+	/*background-color: rgb(187,2,2);  */
+	border-radius: 0.5rem;
+	border:2px solid rgb(148,0,0);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 1rem 3rem;
+}
+.editaruser
+{
+	color: #000000;
+	width: auto;
+	display: inline-block;
+	font-weight: 600;
+	/*background-color: rgb(187,2,2);  */
+	border-radius: 0.5rem;
+	border:2px solid rgb(30, 144, 255);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 1rem 3rem;
+}
+.subiruser
+{
+
+	color: #ffffff;
+	width: auto;
+	display: inline-block;
+	font-weight: 600;
+	background-color: rgb(30, 144, 255); 
+	border-radius: 0.5rem;
+	border:1px solid transparent;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 0.5rem 0.7rem;
+
+}
+
+
+
+

@@ -15,14 +15,14 @@ $foto=$_SESSION['foto'];
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilo.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="fondoadmin ">
 
 	<header>
-		<?php include 'navsesion.html'; ?>
+		<?php include 'navsesionadmin.html'; ?>
 	</header>
 
 	<?php
@@ -45,11 +45,11 @@ $foto=$_SESSION['foto'];
 					</div>
 					<div class="d-lg-block collapse pb-2" id="sidemenu">
 						<h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="adminproyecto.php">Proyectos pendientes</a>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="adminproyecapro.php">Proyectos aprobados</a>
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top activeadmin" href="adminproyecto.php">Proyectos pendientes</a>
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="adminproyecapro.php">Proyectos aprobados</a>
 						<h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="perfiladmin.php">Perfil</a>
-						<a class="d-flex align-items-center nav-link-style px-4 py-3 border-top" href="cerrarsesion.php">Cerrar sesión
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="perfiladmin.php">Perfil</a>
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión
 							<!-- <i class="ai fs-lg opacity-60 me-2"></i> -->
 
 						</a>
