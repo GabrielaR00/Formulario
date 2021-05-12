@@ -1,4 +1,4 @@
-  <?php
+ <?php
    session_start();
    error_reporting(0);
   ?>
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa</title>
 
-    <link rel="stylesheet" type="text/css" href="estiloscasa.css">
+    <link rel="stylesheet" type="text/css" href="estiloscasa1.css">
     <title>Invasión Multimedia</title>
 </head>
 <body>
@@ -102,23 +102,29 @@
             window.addEventListener('click',()=>
             {
                 if(siinter){
+                    
+                    
 
                     if(siinter.object === tableta){
                         console.log('tableta');
                         const doc = document.querySelector('.contenedorinfo')
                         doc.style.backgroundColor = '#FF9400';
                         
+                        //animacion
                     }
                     else if(siinter.object === monitor){
                         console.log('monitor');
                         const doc = document.querySelector('.contenedorinfo')
                         doc.style.backgroundColor = '#42FF00';
+
                     }
                     else if(siinter.object === mesadibujo){
                         console.log('mesadibujo');
                         const doc = document.querySelector('.contenedorinfo')
                         doc.style.backgroundColor = '#000FFF';
                     }
+                   
+
                 }
             })
 
@@ -228,8 +234,13 @@
 <div class="controles"><img src="controles.png" alt="" class="imgcon"> </div>
 
 <div class="contenedorinfo">
-<h1>hola</h1>
+     <?php 
+     //$ides="texto";
+     //<input type="hidden" name="materia_cl" value="Introduccion a la computacion"> 
+     require_once "consultanimacion2d.php";
+     ?>
 </div>
+
 
 </div>
 

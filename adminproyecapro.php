@@ -15,7 +15,7 @@ $foto=$_SESSION['foto'];
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>

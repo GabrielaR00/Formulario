@@ -6,16 +6,13 @@
 
     <link rel="stylesheet" type="text/css" href="estilos22.css">
      <link rel="stylesheet" href="bootstrap.min.css" / >
-
-     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
   </head>
   <body>
     <div class="ProyectosAP m-3">
-      <div class="align-items-center w-100">
-        <h2 class="pb-5 ">Proyectos aprobados</h2>
-      </div>
+
+      <h2 class="pb-5">Proyectos Aprobados</h2>
       <?php
       include "conexion.php";
       $sql ="SELECT * FROM proyectos where apro='aprovado'";
@@ -36,7 +33,7 @@
                           <button class="btn collapsed d-flex align-items-center justify-content-between w-100" data-toggle="collapse" data-target="#collapse<?php echo $cont ?>" aria-expanded="false" aria-controls="collapse<?php echo $cont ?>">
                                                       <?php echo $row["NombreDelProyecto"]  ?>
                             <span class="fa-stack fa-fw ">
-                              <i class="fas fa-circle fa-stack-2x mas "></i>
+                              <i class="fas fa-circle fa-stack-2x mas"></i>
                               <i class="fas fa-plus fa-stack-1x fa-inverse mas"></i>
                             </span>
                           </button>
@@ -49,15 +46,13 @@
                           <form action="actualizarproyecto.php" method="post" enctype="multipart/form-data">
                             <ul class="list-unstyled">
                               <?php $idproyecto = $row["id"] ?>
-                              <?php echo " $idproyecto"; ?>
+                              <input type="hidden" name="id" value="<?php echo $idproyecto; ?>">
                               <?php $_SESSION['idproyecto']=$idproyecto; ?>
                               <li class="form-label"> Nombre estudiante:
                                  <input type="text" class="form-control" name="newnombestpro" value="<?php echo $row["nombreest"]  ?>">
                               </li>
                               <li class="form-label"> Nombre proyecto:
                                  <input type="text" class="form-control" name="newnombreproyecto" value="<?php echo $row["NombreDelProyecto"]; $nombreantiguo=$row["NombreDelProyecto"]?>">
-                                 <?php $_SESSION['nombreantiguo']=$nombreantiguo; ?>
-                                 <?php echo $_SESSION['nombreantiguo'] ?>
                               </li>
                               <li class="form-label"> Tipo de proyecto:
                                  <input type="text" class="form-control" name="newtipoproyecto" value="<?php echo $row["Tipo"]  ?>">

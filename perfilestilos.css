@@ -55,29 +55,33 @@ body
 }
 .editaradmin
 {
-	color: #000000;
+	
+
+	color: #ffffff;
 	width: auto;
 	display: inline-block;
 	font-weight: 600;
-	/*background-color: rgb(187,2,2);  */
+	background-color: rgb(148,0,0); 
 	border-radius: 0.5rem;
-	border:2px solid rgb(148,0,0);
+	border:1px solid transparent;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-	padding: 1rem 3rem;
+	letter-spacing: 1.5px;
+	padding: 1rem 2.5rem;
+
 }
 .editaruser
 {
-	color: #000000;
+	
+	color: #ffffff;
 	width: auto;
 	display: inline-block;
 	font-weight: 600;
-	/*background-color: rgb(187,2,2);  */
+	background-color: rgb(30, 144, 255); 
 	border-radius: 0.5rem;
-	border:2px solid rgb(30, 144, 255);
+	border:1px solid transparent;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-	padding: 1rem 3rem;
+	letter-spacing: 1.5px;
+	padding: 1rem 2.5rem;
 }
 .subiruser
 {

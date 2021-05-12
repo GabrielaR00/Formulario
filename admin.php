@@ -85,7 +85,7 @@
         }
     	  else
       	{ 
-          echo "  <h5 class='pb-5'> No hay proyectos pendientes </h2>"  ;
+          echo "  <h5 class='pb-5'> No hay proyectos pendientes </h2>";
         }?>
       </div>   
 
