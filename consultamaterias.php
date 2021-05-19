@@ -12,16 +12,28 @@
   <body>
     <div class="ProyectosAP m-3">
 
+
       <h2 class="pb-5">Consultorio Animacion 2D</h2>
 
       
       <?php
 
 
+
+
+
   		include "conexion.php";
+      $materiainterac=$_REQUEST['eleccion'];
+      
   		//$ides=$_POST["materia_cl"];
-        $sql ="SELECT * FROM proyectos where Materia='Modelado 3D'";
+        $sql ="SELECT * FROM info where materia= $materiainterac";
         $resultado = $conn->query($sql);
+        echo "<h2 >$materiainterac";       
+        echo $row["Descripcion"];    
+        
+
+
+
     	if ($resultado->num_rows>0)
       {
           $cont=0;

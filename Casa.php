@@ -9,10 +9,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa</title>
-
+    
     <link rel="stylesheet" type="text/css" href="estiloscasa1.css">
     <title>Invasión Multimedia</title>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
 </head>
 <body>
     <div class="header">
@@ -39,8 +43,11 @@
     ?>
     </div>
 
+
     <script type="module" >
         var scene, camera, renderer, controls, hemiLight, spotLight;
+        var eleccion="";
+        
         import * as THREE from './js/three.module.js';
         import {OrbitControls} from './js/OrbitControls.js';
         import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/loaders/GLTFLoader.js';
@@ -96,37 +103,63 @@
             {
                 mouse.x = (event.clientX / size.ancho * 2 - 1);
                 mouse.y = (-((event.clientY-106) / size.alto) * 2 + 1);
-            })
+            });
 
-            
+            function getvar()
+            {
+                $(document).ready(function()
+                {
+                     var igual= eleccion;
+
+                     $("#contenedorinfo").load("consultamaterias.php",{eleccion:igual});
+
+                });             
+                
+               
+            }  
+
+
+         
             window.addEventListener('click',()=>
             {
                 if(siinter){
                     
                     
 
-                    if(siinter.object === tableta){
+                    if(siinter.object == tableta){
                         console.log('tableta');
-                        const doc = document.querySelector('.contenedorinfo')
+                        const doc = document.querySelector('.contenedorinfo');
                         doc.style.backgroundColor = '#FF9400';
-                        
-                        //animacion
-                    }
-                    else if(siinter.object === monitor){
-                        console.log('monitor');
-                        const doc = document.querySelector('.contenedorinfo')
-                        doc.style.backgroundColor = '#42FF00';
+                        eleccion='Animacion2d';                   
 
+                        getvar();             
+
+                    }
+                    else if(siinter.object == monitor){
+                        console.log('monitor');
+                        const doc = document.querySelector('.contenedorinfo');
+                        doc.style.backgroundColor = '#42FF00';
+                         eleccion='Animacion3d';     
+                         getvar();
+                        
                     }
                     else if(siinter.object === mesadibujo){
                         console.log('mesadibujo');
-                        const doc = document.querySelector('.contenedorinfo')
+                        const doc = document.querySelector('.contenedorinfo');
                         doc.style.backgroundColor = '#000FFF';
+                         eleccion='Dibujo';   
+                         getvar();  
                     }
                    
 
                 }
-            })
+                
+
+            });       
+            
+
+           
+
 
             //LUCES
 
@@ -233,11 +266,11 @@
 
 <div class="controles"><img src="controles.png" alt="" class="imgcon"> </div>
 
-<div class="contenedorinfo">
-     <?php 
-     //$ides="texto";
-     //<input type="hidden" name="materia_cl" value="Introduccion a la computacion"> 
-     require_once "consultanimacion2d.php";
+<div class="contenedorinfo" id="contenedorinfo">
+   
+     <?php  
+
+     require_once "consultamaterias.php";
      ?>
 </div>
 

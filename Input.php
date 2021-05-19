@@ -47,13 +47,13 @@ $varsesion=$_SESSION['usuario'];
 							    <option>Animación 3D</option>
 							    <option>Arte analógico </option>
 							    <option>Arte digital </option>
-							   	<option>Modelado 3D </option>
-							    <option>Open GL </option>
+							    <option>Bibliotecas 3D </option>
+							   	<option>Modelado 3D </option>							    
 							    <option>Página web </option>
 								<option>Programa </option>
 								<option>Prototipo </option>
-						    <option>Simulación </option>
-							 	<option>Videojuego </option>
+						   		<option>Simulación </option>
+							 	<option>Videojuego </option>							 	
 						</select>
 					</div>
 
@@ -79,16 +79,15 @@ $varsesion=$_SESSION['usuario'];
 							    <option>Historia del arte </option>
 							    <option>Ingeniera de Software </option>
 							    <option>Integración multimedia </option>
-							    <option>Inteligencia articial </option>
+							    <option>Inteligencia artificial </option>
 							    <option>Introducción a la computación gráfica </option>
-							    <option>Introducción a la ingeniería </option>
-							    <option>Metodologia de la investigación </option>
+							    <option>Introducción a la ingeniería </option>							   
 							    <option>Modelado 3D </option>
 							    <option>Procesamiento de señales </option>
 							    <option>Procesamiento de imagenes </option>
-							    <option>Programacion I</option>
-							    <option>Programacion II</option>
-							    <option>Programacion III</option>
+							    <option>Programación I</option>
+							    <option>Programación II</option>
+							    <option>Programación III</option>
 							   	<option>Render </option>
 							  	<option>Taller digital de diseño </option>
 							    <option>Tecnologias de la internet </option>
