@@ -13,87 +13,44 @@
     <div class="ProyectosAP m-3">
 
 
-      <h2 class="pb-5">Consultorio Animacion 2D</h2>
+      <h2 class="pb-5">Mataerias:</h2>
 
-      
+
       <?php
 
 
 
 
 
-  		include "conexion.php";
-      $materiainterac=$_REQUEST['eleccion'];
-      
+    		include "conexion.php";
+        $materiainterac=$_REQUEST['eleccion'];
+
   		//$ides=$_POST["materia_cl"];
-        $sql ="SELECT * FROM info where materia= $materiainterac";
+        $sql ="SELECT info.Descripcion FROM info where materia = '$materiainterac'";
         $resultado = $conn->query($sql);
-        echo "<h2 >$materiainterac";       
-        echo $row["Descripcion"];    
-        
+        echo "<h2 >$materiainterac";
+        //echo $row["Descripcion"];
 
-
-
-    	if ($resultado->num_rows>0)
-      {
-          $cont=0;
-          if ($sql==true)
-          {
-						while ($row=$resultado->fetch_assoc())
-              {  $cont++ ?>
-							<div class="contenedorgiant p-5">
-                  <div id="accordion" class="myaccordion">
-                    <div class="card">
-                      <div class="card-header" id="heading<?php echo $cont ?>">
-                        <h5 class="mb-0">
-                          <button class="btn d-flex align-items-center justify-content-between w-100" data-toggle="collapse" data-target="#collapse<?php echo $cont ?>" aria-expanded="true" aria-controls="collapse<?php echo $cont ?>">
-                                                      <?php echo $row["NombreDelProyecto"]  ?>
-                            <span class="fa-stack fa-fw ">
-                              <i class="fas fa-circle fa-stack-2x"></i>
-                              <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </button>
-
-                        </h5>
-                      </div>
-
-                      <div id="collapse<?php echo $cont ?>" class="collapse" aria-labelledby="heading<?php echo $cont ?>" data-parent="#accordion">
-                        <div class="card-body">
-
-                            <ul class="list-unstyled">
-
-                              <li> Nombre estudiante:
-                                <span class="fw-medium text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
-                              </li>
-                              <li> Nombre proyecto:
-                                <span class="fw-medium text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
-                              </li>
-                              <li> Tipo de proyecto:
-                                <span class="fw-medium text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
-                              </li>
-                              <li> Materia:
-                                <span class="fw-medium text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
-                              </li>
-                            </ul>
-                            <h3 class="h5">Descripción</h3>
-                            <p> <?php echo $row["Descripcion"]  ?></p>
-                            <div>
-                              <img class="card-img" src="<?php echo $row["foto"]?>">
-                            </div>
-
-
-                        </div>
-                      </div>
-                    </div>
-                 </div>
-              <?php   }
-
-    		  }
-      }
-  	  else
-    	{
-    		echo "No hay proyectos aprobados";
-    	}?>
+        if ($resultado->num_rows>0)
+        {?>
+          <table>
+            <tbody>
+              <?php
+              while ($row=$resultado->fetch_assoc())
+                {?>
+                <tr>
+                  <td><?php echo $row["Descripcion"]  ?></td>
+                </tr>
+              <?php   }?>
+            </tbody>
+          </table>
+        <?php
+        }
+        else
+        {
+          echo "No hay materias";
+        }
+        ?>
     </div>
     <script type="bootstrap.min.js"></script>
   </body>
