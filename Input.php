@@ -69,9 +69,7 @@ $varsesion=$_SESSION['usuario'];
 							    <option>Audio y video </option>
 							    <option>Aplicaciones 3D </option>
 							    <option>Computación gráfica </option>
-							    <option>Diseño I</option>
-							    <option>Diseño II</option>
-							    <option>Diseño III</option>
+							    <option>Diseño I,II y III </option>
 							    <option>Dibujo </option>
 							    <option>Expresión Gráfica </option>
 							    <option>Gestión empresarial </option>
@@ -85,9 +83,7 @@ $varsesion=$_SESSION['usuario'];
 							    <option>Modelado 3D </option>
 							    <option>Procesamiento de señales </option>
 							    <option>Procesamiento de imagenes </option>
-							    <option>Programación I</option>
-							    <option>Programación II</option>
-							    <option>Programación III</option>
+							    <option>Programación I, II y III</option>
 							   	<option>Render </option>
 							  	<option>Taller digital de diseño </option>
 							    <option>Tecnologias de la internet </option>

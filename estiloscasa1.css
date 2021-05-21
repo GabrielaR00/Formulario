@@ -22,7 +22,8 @@ display: flex;
     height: 100%;
 }
 
-.contenedorinfo{
+.contenedorinfo
+{
     position: absolute;
     padding: 0;
     min-width: 30%;
@@ -30,5 +31,6 @@ display: flex;
     height: 90%;
     right: 0%;
     top: auto;
-    background-color: #212529;
+    background-color: #ffffff;
+   
 }

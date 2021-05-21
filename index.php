@@ -129,32 +129,25 @@
                     if(siinter.object == tableta){
                         console.log('tableta');
                         const doc = document.querySelector('.contenedorinfo');
-                        doc.style.backgroundColor = '#FF9400';
                         eleccion='Animación 2D';
-
                         getvar();
 
                     }
                     else if(siinter.object == monitor){
                         console.log('monitor');
-                        const doc = document.querySelector('.contenedorinfo');
-                        doc.style.backgroundColor = '#42FF00';
-                         eleccion='Animación 3D y dinámicas';
-                         getvar();
+                        const doc = document.querySelector('.contenedorinfo');                       
+                        eleccion='Animación 3D y dinámicas';
+                        getvar();
 
                     }
                     else if(siinter.object === mesadibujo){
                         console.log('mesadibujo');
-                        const doc = document.querySelector('.contenedorinfo');
-                        doc.style.backgroundColor = '#000FFF';
-                         eleccion='Dibujo';
-                         getvar();
-                    }
-
+                        const doc = document.querySelector('.contenedorinfo');                       
+                        eleccion='Dibujo';
+                        getvar();
+                    }   
 
                 }
-
-
             });
 
 

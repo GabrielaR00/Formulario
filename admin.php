@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="estilos22.css">
+    <link rel="stylesheet" type="text/css" href="estilos11.css">
     <meta charset="utf-8">
     <title>Ventana de Administrador</title>
 

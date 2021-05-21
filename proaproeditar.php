@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Proyectos aprobados</title>
 
-    <link rel="stylesheet" type="text/css" href="estilos22.css">
+    <link rel="stylesheet" type="text/css" href="estilos11.css">
      <link rel="stylesheet" href="bootstrap.min.css" / >
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
@@ -63,7 +63,7 @@
                             </ul>
                             <div>
                               <h3 class="h5">Descripción</h3>
-                              <input type="text" class="form-control" name="newdescripcion" value="<?php echo $row["Descripcion"]  ?>">
+                              <textarea type="text" class="form-control descrip" name="newdescripcion" value="<?php echo $row["Descripcion"]  ?>"><?php echo $row["Descripcion"]  ?></textarea>
                               <div class="pt-3">
                                 <img class="card-img" src="<?php echo $row["foto"]?>">
                               </div>

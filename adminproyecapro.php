@@ -47,6 +47,7 @@ $foto=$_SESSION['foto'];
 						<h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
 						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="adminproyecto.php">Proyectos pendientes</a>
 						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top activeadmin" href="adminproyecapro.php">Proyectos aprobados</a>
+						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="editarinfocar.php">Edición de información</a>
 						<h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
 						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="perfiladmin.php">Perfil</a>
 						<a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión</a>

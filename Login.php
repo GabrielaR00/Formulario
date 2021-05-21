@@ -147,7 +147,7 @@
                         $_SESSION['foto']=$foto;
                         $_SESSION['$fotoproyecto'] = $fotoproye;
 
-                        header('location: Casa.php');
+                        header('location: index.php');
                       }
                      else if ($filas2)
                       {
@@ -178,7 +178,7 @@
                           $_SESSION['correo']=$correodatabase;
                           $_SESSION['foto']=$foto;
 
-                          header('location: Casa.php');
+                          header('location: index.php');
                       }
                      else
                      {

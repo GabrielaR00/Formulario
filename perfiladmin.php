@@ -48,6 +48,7 @@
 			        <div class="d-lg-block collapse pb-2" id="sidemenu">
 			            <h3 class="d-block backspace fonts blackcolor mb-0 px-4 py-3"> Menú</h3>
 			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="adminproyecto.php">Edición proyectos</a>
+			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="editarinfocar.php">Edición de información</a>
 			            <h3 class="backspace fonts blackcolor mb-0 px-4 py-3"> Configuración perfil</h3>
 			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top activeadmin" href="perfiladmin.php">Perfil</a>
 			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión </a>
