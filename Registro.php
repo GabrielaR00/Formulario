@@ -57,7 +57,7 @@
 					  </div>
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >
+					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contrasena" >
 					    <a href="a" class="links text-muted">¿Has olvidado tu contraseña?</a>
 					  </div>
 					  <button type="submit" class="btn btn-primary">Registrate</button>
@@ -80,7 +80,7 @@
 
 						$nombre=$_POST['nombre'];
 						$correo=$_POST['correo'];
-						$contraseña=$_POST['contraseña'];
+						$contrasena=$_POST['contrasena'];
 
 						$campos=array();
 
@@ -91,7 +91,7 @@
 						{
 								array_push($campos, "Ingrese un correo electrónico válido: @unimilitar.edu.co");
 						}
-						if($contraseña =="" || strlen($contraseña)<8)
+						if($contrasena =="" || strlen($contrasena)<8)
 						{
 								array_push($campos, "El campo de contraseña no puede estar vacio. Debe tener minino 8 caracteres");
 						}
@@ -119,8 +119,8 @@
             else {
                 $nombre = $_POST['nombre'];
                 $correo = $_POST['correo'];
-                $contraseña = $_POST['contraseña'];
-                $consulta = "INSERT INTO usuarios(nombre, correo, contraseña) VALUES ('$nombre', '$correo', '$contraseña')";
+                $contrasena = $_POST['contrasena'];
+                $consulta = "INSERT INTO usuarios(nombre, correo, contrasena) VALUES ('$nombre', '$correo', '$contrasena')";
                 $resultado = mysqli_query($conn, $consulta);
                 echo "<div class='correcto mb-auto'> Registro Exitoso";
 
@@ -151,7 +151,7 @@
                 $_SESSION['foto']=$foto;
 
 
-                header('location: Casa.php');
+                header('location: index.php');
               }
 						}
 						echo "</div>";

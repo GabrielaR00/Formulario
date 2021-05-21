@@ -10,7 +10,7 @@
 
   </head>
   <body>
-    <div class="ProyectosAP m-3"> 
+    <div class="ProyectosAP "> 
 
 
       <?php
@@ -35,12 +35,12 @@
                   <?php  echo "<h2>Universidad Militar Nueva Granada</h2>";?>
                   
                 </div>
-                <div class="parrafo align-items-center jext-justify m-4 px-2">
+                <div class="parrafo align-items-center jext-justify m-4 px-3">
                   <?php echo $row["Descripcion"];?>
                 </div> 
                  
                 <?php
-                if($row["id"]=='2')
+                if($row["id"]=='44')
                 {?>
                     <div class="align-items-center  m-5">
                       <?php  echo "<h2>Ingenieria Multimedia</h2>";?>                  

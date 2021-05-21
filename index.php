@@ -54,8 +54,8 @@
         let mixer = null;
         let siinter = null;
         const size = {
-                ancho: window.innerWidth*0.89,
-                alto: window.innerHeight*0.90
+                ancho: window.innerWidth,
+                alto: window.innerHeight
             }
             scene = new THREE.Scene();
             scene.background =new THREE.Color (0xBBBBBB);
@@ -66,7 +66,7 @@
             renderer.toneMapping=THREE.ReinhardToneMapping;
             renderer.toneMappingExposure=2.3;
             renderer.shadowMapEnabled=true;
-            renderer.setSize(window.innerWidth*0.89, window.innerHeight*0.90);
+            renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(renderer.domElement);
             const tableta = new THREE.Mesh(new THREE.SphereBufferGeometry(3,16,16), new THREE.MeshLambertMaterial( {color: 0xff0000}));
             tableta.position.x=-13;
@@ -102,7 +102,7 @@
             window.addEventListener('mousemove',(event) =>
             {
                 mouse.x = (event.clientX / size.ancho * 2 - 1);
-                mouse.y = (-((event.clientY-106) / size.alto) * 2 + 1);
+                mouse.y = (-((event.clientY) / size.alto) * 2 + 1);
             });
 
             function getvar()
@@ -192,7 +192,7 @@
             {
                 camera.aspect = window.innerWidth/window.innerHeight;
                 camera.updateProjectionMatrix()
-                renderer.setSize(window.innerWidth*0.89,window.innerHeight*0.90);
+                renderer.setSize(window.innerWidth,window.innerHeight);
                 renderer.render(scene, camera);
             }
 
@@ -252,7 +252,7 @@
    </script>
 
 <div class="contenedorbody">
-<canvas class="webgl" ></canvas>
+<canvas class="webgl width-100 height-100" ></canvas>
 
 <div class="controles"><img src="controles.png" alt="" class="imgcon"> </div>
 

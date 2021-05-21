@@ -4,12 +4,7 @@
   padding: 0px;
 
 }
-/*.imagen
-{
-	background: url("./Assests/fondo1.png");
-	background-size: cover;
 
-}*/
 body
 {
 	font-family: Lato, sans-serif ;
@@ -27,13 +22,23 @@ a
 	animation-duration: 1s;
 	width: 100%;
 	font-weight: 700 ;
-	/*background-color: rgba(255,255,255,0.2) !important;*/	
+	/*background-color: rgba(255,255,255,0.2) !important;*/
+}
+.container
+{
+	display: flex;
+	flex-wrap: inherit;
+	align-items: center;
+	justify-content: space-between;
+	padding: 
+	width: 100% !important;
 }
 .seccion
 {	
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+
 }
 .nav-link
 {
@@ -45,7 +50,7 @@ a
 	font-weight: 600 ;
 	background-color: rgb(0,51,210);  
 	border-radius: 40px;
-	border:solid rgba(255,255,255,0.2) 3px;
+	
 
 }
 .botoncuenta:hover
@@ -65,7 +70,6 @@ a
 	font-size: 1.1rem; 
 	background-color: rgb(187,2,2);  
 	border-radius: 40px;
-	border:solid rgba(255,255,255,0.2) 3px;
 
 }
 .botonadmin:hover
@@ -78,5 +82,13 @@ a
 	font-weight: bold;	
 	text-decoration:none;
   
+}
+.botonlog
+{	
+	font-size: 1.1rem; 
+	background-color: rgb(187,2,2);  
+	border-radius: 40px;
+	margin-left: 15px;	
+
 }
 
