@@ -100,7 +100,7 @@
                       $resultado=mysqli_query($conn,$consulta);
 
                       $filas=mysqli_num_rows($resultado);
-                      $rol="SELECT*FROM admins where correo='$correo' and contraseña='$contraseña'";
+                      $rol="SELECT*FROM admins where correo='$correo' and contrasena='$contraseña'";
                       $resultado2=mysqli_query($conn,$rol);
                       $filas2=mysqli_num_rows($resultado2);
                       $consulus="SELECT usuarios.nombre FROM usuarios where correo = '$correo'";
@@ -111,24 +111,23 @@
                       $resultado4 = $conn->query($consuladmin);
                      if ($filas)
                      {
-                       $idadmin=1;
-
-                       $consulta4= "SELECT usuarios.id as idusu FROM usuarios WHERE usuarios.correo = '$correo'";
-                       $resul4 = mysqli_query($conn, $consulta4);
-                       $resultfinal = mysqli_fetch_array($resul4);
-                       $idusu = $resultfinal['idusu'];
-                       $consulta5= "SELECT usuarios.nombre as nombredatabase FROM usuarios WHERE usuarios.id = '$idusu'";
-                       $resul5 = mysqli_query($conn, $consulta5);
-                       $resultfinal2 = mysqli_fetch_array($resul5);
-                       $nombredatabase = $resultfinal2['nombredatabase'];
-                       $consulta5= "SELECT usuarios.correo as correodatabase FROM usuarios WHERE usuarios.id = '$idusu'";
-                       $resul5 = mysqli_query($conn, $consulta5);
-                       $resultfinal3 = mysqli_fetch_array($resul5);
-                       $correodatabase = $resultfinal3['correodatabase'];
-                       $consulta6= "SELECT usuarios.fotoperfil as foto FROM usuarios WHERE usuarios.id = '$idusu'";
-                       $resul6 = mysqli_query($conn, $consulta6);
-                       $resultfinal6 = mysqli_fetch_array($resul6);
-                       $foto = $resultfinal6['foto'];
+                        $idadmin=1;
+                        $consulta4= "SELECT usuarios.id as idusu FROM usuarios WHERE usuarios.correo = '$correo'";
+                        $resul4 = mysqli_query($conn, $consulta4);
+                        $resultfinal = mysqli_fetch_array($resul4);
+                        $idusu = $resultfinal['idusu'];
+                        $consulta5= "SELECT usuarios.nombre as nombredatabase FROM usuarios WHERE usuarios.id = '$idusu'";
+                        $resul5 = mysqli_query($conn, $consulta5);
+                        $resultfinal2 = mysqli_fetch_array($resul5);
+                        $nombredatabase = $resultfinal2['nombredatabase'];
+                        $consulta5= "SELECT usuarios.correo as correodatabase FROM usuarios WHERE usuarios.id = '$idusu'";
+                        $resul5 = mysqli_query($conn, $consulta5);
+                        $resultfinal3 = mysqli_fetch_array($resul5);
+                        $correodatabase = $resultfinal3['correodatabase'];
+                        $consulta6= "SELECT usuarios.fotoperfil as foto FROM usuarios WHERE usuarios.id = '$idusu'";
+                        $resul6 = mysqli_query($conn, $consulta6);
+                        $resultfinal6 = mysqli_fetch_array($resul6);
+                        $foto = $resultfinal6['foto'];
                         $row=$resultado3->fetch_assoc();
                         $nombreusuario=$row["nombre"];
 
