@@ -55,7 +55,7 @@
 					  </div>
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contrasena" >
+					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
@@ -71,7 +71,7 @@
 					if (isset($_POST['correo']))
 					{
 						$correo=$_POST['correo'];
-						$contrasena=$_POST['contrasena'];
+						$contraseña=$_POST['contraseña'];
 
 						$campos=array();
 
@@ -79,7 +79,7 @@
 						{
 								array_push($campos, "Ingrese un correo electrónico válido: @unimilitar.edu.co");
 						}
-						if($contrasena =="" || strlen($contrasena)<8)
+						if($contraseña =="" || strlen($contraseña)<8)
 						{
 								array_push($campos, "El campo de contraseña no puede estar vacio. Debe tener minino 8 caracteres");
 						}
@@ -96,10 +96,11 @@
 						{
 								      include "conexion.php";
                       //Validacion//
-                      $consulta="SELECT*FROM usuarios where correo='$correo' and contrasena='$contrasena'";
+                      $consulta="SELECT*FROM usuarios where correo='$correo' and contrasena='$contraseña'";
                       $resultado=mysqli_query($conn,$consulta);
+
                       $filas=mysqli_num_rows($resultado);
-                      $rol="SELECT*FROM admins where correo='$correo' and contrasena='$contrasena'";
+                      $rol="SELECT*FROM admins where correo='$correo' and contraseña='$contraseña'";
                       $resultado2=mysqli_query($conn,$rol);
                       $filas2=mysqli_num_rows($resultado2);
                       $consulus="SELECT usuarios.nombre FROM usuarios where correo = '$correo'";
