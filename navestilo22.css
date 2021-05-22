@@ -24,7 +24,7 @@ a
 	font-weight: 700 ;
 	/*background-color: rgba(255,255,255,0.2) !important;*/
 }
-.container
+.cont
 {
 	display: flex;
 	flex-wrap: inherit;
@@ -49,8 +49,7 @@ a
 	font-size: 1.2rem; 
 	font-weight: 600 ;
 	background-color: rgb(0,51,210);  
-	border-radius: 40px;
-	
+	border-radius: 40px;	
 
 }
 .botoncuenta:hover

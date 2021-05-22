@@ -22,7 +22,6 @@ h5
 .myaccordion .btn
 {
 	
-	
 	align-items: center;
 	justify-content: center;
 }
@@ -100,3 +99,9 @@ h5
 {
 	padding-top: 5rem;
 }
+.semestre
+{
+	width: 30%!important;
+}
+
+

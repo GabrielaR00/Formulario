@@ -55,7 +55,7 @@
 			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión </a>
 			        </div>
 
-				</div>
+				</div> 
 
 			</div>
 			<div class="col-lg-8"> <!-- box grande -->

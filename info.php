@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="estilos11.css">
+    <link rel="stylesheet" type="text/css" href="estilo11.css">
     <meta charset="utf-8">
     <title>Ventana de Administrador</title>
 
@@ -14,8 +14,23 @@
       <div class="ProyectosP m-3">
 
         <h2 class="pb-5">Edición información</h2>
+        <div class>
+          <select class="semestre form-select form-select-md mb-3 " >
+            <option selected>Elegir semestre</option>
+            <option value="1">Semestre 1</option>
+            <option value="2">Semestre 2</option>
+            <option value="3">Semestre 3</option>
+            <option value="4">Semestre 4</option>
+            <option value="5">Semestre 5</option>
+            <option value="6">Semestre 6</option>
+            <option value="7">Semestre 7</option>
+            <option value="8">Semestre 8</option>
+            <option value="9">Semestre 9</option>
+            <option value="10">Semestre 10</option>
+          </select>          
+        </div>
         <?php
-        include "conexion.php";
+        include "conexion.php";        
         // if (condition) {
 
 
@@ -31,6 +46,7 @@
             if ($sql==true)
             {
 
+              
               while ($row=$resultado->fetch_assoc())
               { $cont++; ?>
                 <div class="contenedorgiant pt-2">
@@ -47,18 +63,18 @@
                           </button>
 
                         </h5>
-                      </div>
+                      </div> 
 
                       <div id="collapse<?php echo $cont ?>" class="collapse" aria-labelledby="heading<?php echo $cont ?>" data-parent="#accordion">
-                        <div class="card-body">
-                          <h2><?php echo $row["materia"]  ?></h2>                           
-                         
-                          <h3 class="h5">Descripción</h3>
-                          <textarea type="text" class="form-control descrip" name="newdescripcion" value=""><?php echo $row["Descripcion"]  ?> </textarea>
-                          
-                          <div class="d-flex align-items-center justify-content-center w-100 p-3">
-                              <button class='botonsave btn-md ' type='submit' name='botoneditar' value='Editar'>Guardar cambios
-                          </div>
+                        <div class="card-body">                          
+                            <h4><?php echo $row["materia"]  ?></h4>                           
+                           
+                            <h3 class="h5">Descripción</h3>
+                            <textarea type="text" class="form-control descrip" name="newdescripcion" value=""><?php echo $row["Descripcion"]  ?> </textarea>
+                            
+                            <div class="d-flex align-items-center justify-content-center w-100 p-3">
+                                <button class='botonsave btn-md ' type='submit' name='botoneditar' value='Editar'>Guardar cambios
+                            </div>
                           </div>
                         </div>
                       </div>
