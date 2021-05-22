@@ -61,11 +61,14 @@
 			<div class="col-lg-8"> <!-- box grande -->
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 
-					<?php include 'info.php';?>
+					<?php
+          $var = false;
+           include 'info.php';
+           ?>
 
 				</div>
 
-			</div>			
+			</div>
 		</div>
 
 	</div>

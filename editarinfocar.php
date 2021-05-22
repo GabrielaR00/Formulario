@@ -55,17 +55,20 @@
 			            <a class="d-flex align-items-center nav-link-style px-5 py-3 border-top" href="cerrarsesion.php">Cerrar sesión </a>
 			        </div>
 
-				</div> 
+				</div>
 
 			</div>
 			<div class="col-lg-8"> <!-- box grande -->
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 
-					<?php include 'info.php';?>
+          <?php
+          $var = true;
+           include 'info.php';
+           ?>
 
 				</div>
 
-			</div>			
+			</div>
 		</div>
 
 	</div>

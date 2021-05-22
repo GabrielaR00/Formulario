@@ -68,7 +68,7 @@
                                 <img class="card-img" src="<?php echo $row["foto"]?>">
                               </div>
                               <div class="d-flex align-items-center justify-content-center w-100 p-3">
-                                  <button class='botonsave btn-md ' type='submit' name='botoneditar' value='Editar'>Guardar cambios
+                                <button class='botonsave btn-md ' type='submit' name='botoneditar' value='Editar'>Guardar cambios
                               </div>
                             </div>
                           </form>

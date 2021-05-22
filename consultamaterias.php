@@ -10,58 +10,82 @@
 
   </head>
   <body>
-    <div class="ProyectosAP "> 
+    <div class="ProyectosAP ">
 
 
       <?php
 
     		include "conexion.php";
         $materiainterac=$_REQUEST['eleccion'];
+        $var=0;
 
   		//$ides=$_POST["materia_cl"];
         $sql ="SELECT info.id, info.Descripcion  FROM info where materia = '$materiainterac'";
         $resultado = $conn->query($sql);
-        
-           echo "$materiainterac";  
-        
-        //echo $row["Descripcion"];        
-        if ($resultado->num_rows>0) 
+
+        echo "$materiainterac";
+
+        //echo $row["Descripcion"];
+        if ($resultado->num_rows>0)
         {
          while ($row=$resultado->fetch_assoc())
-            { 
-              if ($row["id"]=='1' ||  $row["id"]=='2') 
+            {
+              if ($row["id"]=='1')
               {?>
                 <div class="align-items-center  m-5">
                   <?php  echo "<h2>Universidad Militar Nueva Granada</h2>";?>
-                  
+
                 </div>
                 <div class="parrafo align-items-center jext-justify m-4 px-3">
                   <?php echo $row["Descripcion"];?>
-                </div> 
-                 
+                </div>
+
                 <?php
                 if($row["id"]=='44')
                 {?>
                     <div class="align-items-center  m-5">
-                      <?php  echo "<h2>Ingenieria Multimedia</h2>";?>                  
-                    </div>  
+                      <?php  echo "<h2>Ingenieria Multimedia</h2>";?>
+                    </div>
                     <div class="parrafo align-items-center jext-justify m-4 px-2">
                       <?php echo $row["Descripcion"];?>
-                    </div>  
+                    </div>
                 <?php
-                }             
+                }
               }
               else
               {
                  echo $row["Descripcion"];
 
-              }                          
-           }    
-        
+              }
+           }
+
         }
         else
         {
-          echo "No hay materias";
+          $sql ="SELECT * FROM info WHERE id = '1'";
+          $resultado = $conn->query($sql);
+          $row1=$resultado->fetch_assoc();
+          ?>
+          <div class="align-items-center  m-5">
+            <?php  echo "<h2>Universidad Militar Nueva Granada</h2>";?>
+
+          </div>
+          <div class="parrafo align-items-center jext-justify m-4 px-3">
+            <?php echo $row1["Descripcion"];?>
+          </div>
+          <?php
+
+          $sql1 ="SELECT * FROM info WHERE id = '44'";
+          $resultado = $conn->query($sql1);
+          $row2=$resultado->fetch_assoc();
+          ?>
+          <div class="align-items-center  m-5">
+            <?php  echo "<h2>Ingenieria Multimedia</h2>";?>
+          </div>
+          <div class="parrafo align-items-center jext-justify m-4 px-2">
+            <?php echo $row2["Descripcion"];?>
+          <?php
+
         }
         ?>
     </div>

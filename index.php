@@ -21,6 +21,7 @@
 <body>
     <div class="header">
     <?php
+    
     $varsesion=$_SESSION['usuario'];
 
     $rol=$_SESSION['rol_id'];
@@ -130,22 +131,25 @@
                         console.log('tableta');
                         const doc = document.querySelector('.contenedorinfo');
                         eleccion='Animación 2D';
+                        <?php $var=false; ?>
                         getvar();
 
                     }
                     else if(siinter.object == monitor){
                         console.log('monitor');
-                        const doc = document.querySelector('.contenedorinfo');                       
+                        const doc = document.querySelector('.contenedorinfo');
                         eleccion='Animación 3D y dinámicas';
+                        <?php $var=false; ?>
                         getvar();
 
                     }
                     else if(siinter.object === mesadibujo){
                         console.log('mesadibujo');
-                        const doc = document.querySelector('.contenedorinfo');                       
+                        const doc = document.querySelector('.contenedorinfo');
                         eleccion='Dibujo';
+                        <?php $var=false; ?>
                         getvar();
-                    }   
+                    }
 
                 }
             });
@@ -259,7 +263,6 @@
 <div class="contenedorinfo" id="contenedorinfo">
 
      <?php
-
      require_once "consultamaterias.php";
      ?>
 </div>
