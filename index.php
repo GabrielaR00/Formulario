@@ -21,7 +21,7 @@
 <body>
     <div class="header">
     <?php
-    
+
     $varsesion=$_SESSION['usuario'];
 
     $rol=$_SESSION['rol_id'];
@@ -46,12 +46,40 @@
 
 
     <script type="module" >
+
+        var RESOURCES_LOADED = false;
+        var loadingManager = null;
+        var loadingScreen={
+        scene: new THREE.Scene(),
+        camera: new THREE.PerspectiveCamera(90,1280/720,0.1,100),
+        box: new THREE.Mesh(
+          new THREE.BoxGeometry(0.5,0.5,0.5),
+          new THREE.MeshBasicMaterial({color:0x4442ff})
+        )
+        };
+
         var scene, camera, renderer, controls, hemiLight, spotLight;
         var eleccion="";
 
         import * as THREE from './js/three.module.js';
         import {OrbitControls} from './js/OrbitControls.js';
         import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/loaders/GLTFLoader.js';
+
+        loadingScreen.box.position.set(0,0,5);
+        loadingScreen.camera.lookAt(loadingScreen.box.position);
+        loadingScreen.scene.add(loadingScreen.box);
+
+        loadingManager = new THREE.LoadingManager();
+
+        loadingManager.onProgress = function(item,loaded,total){
+          console.log(item,loaded,total);
+        }
+        loadingManager.onLoad = function(){
+          console.log("Loaded all objects");
+          RESOURCES_LOADED = true;
+        }
+
+
         let mixer = null;
         let siinter = null;
         const size = {
@@ -82,8 +110,8 @@
             mesadibujo.position.y=5;
             mesadibujo.position.z=19;
             scene.add(tableta,monitor,mesadibujo);
-            const loader4= new GLTFLoader();
-                        loader4.load('./Assests/Modelos/todo3.gltf', function(gltf)
+            const loader4= new GLTFLoader(loadingManager);
+                        loader4.load('./Assests/Modelos/todas4.gltf', function(gltf)
                          {
                              mixer = new THREE.AnimationMixer(gltf.scene);
                              const action = mixer.clipAction(gltf.animations[0]).play();
@@ -220,6 +248,19 @@
 
         function animate()
         {
+
+          if(RESOURCES_LOADED == false){
+          window.requestAnimationFrame(animate);
+          loadingScreen.box.position.x -= 0.05;
+          if(loadingScreen.box.position.x < -5) loadingScreen.box.position.x = 10;
+          loadingScreen.box.position.y=Math.sin(loadingScreen.box.position.x);
+
+
+
+          renderer.render(loadingScreen.scene, loadingScreen.camera);
+          return;
+          }
+
             const curtime = clock.getElapsedTime();
             const deltatime=curtime-prevtime;
             prevtime=curtime;
