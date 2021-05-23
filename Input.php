@@ -91,7 +91,6 @@ $varsesion=$_SESSION['usuario'];
 							</optgroup>
 						    <optgroup label="Electivas">
 							    <option>Animación de objetos y personajes </option>
-							    <option>Base de datos </option>
 							    <option>Cortometraje </option>
 							    <option>Desarrollo de producto multimedia </option>
 							    <option>Diseño de experiencia de usuario </option>

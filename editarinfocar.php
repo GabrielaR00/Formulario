@@ -15,7 +15,9 @@
 	<link rel="stylesheet" href="bootstrap.min.css" / >
 	<link rel="stylesheet" type="text/css" href="perfilestilos.css">
 
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&display=swap" rel="stylesheet">
 
 </head>
 <body class="fondoadmin">
