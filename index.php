@@ -60,11 +60,11 @@
     import {OrbitControls} from './js/OrbitControls.js';
     import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/loaders/GLTFLoader.js';
 
-    
+
     loadingScreen.box.position.set(0,0,5);
     loadingScreen.camara.lookAt(loadingScreen.box.position);
     loadingScreen.scene.add(loadingScreen.box);
-    
+
     loadingManager = new THREE.LoadingManager();
 
     loadingManager.onProgress = function(item,loaded,total){
@@ -86,13 +86,13 @@
             scene = new THREE.Scene();
             scene.background =new THREE.Color (0xBBBBBB);
             camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,0.1,1000);
-            
+
             camera.position.set(80,40,80);
-            
-            
-            
-            
-            
+
+
+
+
+
             const can = document.querySelector('.webgl')
             renderer =new THREE.WebGLRenderer({canvas: can});
             renderer.toneMapping=THREE.ReinhardToneMapping;
@@ -171,7 +171,7 @@
             multimedia.position.x=-22;
             multimedia.position.y=47.3;
             multimedia.position.z=-23;
-            
+
 
 
 
@@ -223,12 +223,12 @@
                 });
 
             }
-            
+
             window.addEventListener('click',()=>
             {
                 if(siinter){
 
-                    //habitacion1 
+                    //habitacion1
 
                     if(siinter.object === tableta){
                         console.log('tableta');
@@ -251,15 +251,15 @@
                         const doc = document.querySelector('.contenedorinfo')
                         eleccion='Animación 2D';
                         <?php $var=false; ?>
-                        getvar();   
+                        getvar();
 
-                    }                   
+                    }
                     else if(siinter.object === monitorani){
                         console.log('monitorani');
                         const doc = document.querySelector('.contenedorinfo')
                         eleccion='Animación 3D y dinámicas';
                         <?php $var=false; ?>
-                        getvar(); 
+                        getvar();
 
                     }
                     else if(siinter.object === lamp){
@@ -277,7 +277,7 @@
                         const doc = document.querySelector('.contenedorinfo')
                         eleccion='Ingeniera de Software';
                         <?php $var=false; ?>
-                        getvar(); 
+                        getvar();
 
                     }
                     else if(siinter.object === gafas){
@@ -353,8 +353,8 @@
                         <?php $var=false; ?>
                         getvar();
 
-                    }                
-                  
+                    }
+
                     else if(siinter.object === multimedia){
                         console.log('multimedia');
                         const doc = document.querySelector('.contenedorinfo')
@@ -414,7 +414,7 @@
 
             //CONTROLS
             controls = new OrbitControls(camera, renderer.domElement);
-                
+
                 controls.maxPolarAngle = Math.PI * 0.5;
                 controls.minPolarAngle = Math.PI * 0.2;
                 controls.minDistance = 50;
@@ -434,8 +434,8 @@
 
         function animate()
         {
-          
-          
+
+
           if(RESOURCES_LOADED == false){
             window.requestAnimationFrame(animate);
             loadingScreen.box.position.x -= 0.05;
@@ -452,8 +452,8 @@
               t=t+10;
               u=u-10;
 
-            
-            
+
+
             renderer.render(loadingScreen.scene, loadingScreen.camara);
             return;
           }
@@ -504,7 +504,7 @@
               u=u-10;
             }
 
-            
+
             if(intersecta.length){
                 siinter = intersecta[0];
 
@@ -519,17 +519,17 @@
                 alto: window.innerHeight*0.90
             }
             //console.log(size)
-            
+
         }
         animate();
    </script>
-   
-<div class="contenedorbody">
-<canvas class="webgl width-100 height-100" ></canvas>
 
-<div class="controles"><img src="controles.png" alt="" class="imgcon"> </div>
+    <div class="contenedorbody">
+    <canvas class="webgl width-100 height-100" ></canvas>
 
-<div class="contenedorinfo" id="contenedorinfo">
+    <div class="controles"><img src="controles.png" alt="" class="imgcon"> </div>
+
+    <div class="contenedorinfo" id="contenedorinfo">
 
      <?php
      require_once "consultamaterias.php";

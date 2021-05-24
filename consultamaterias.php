@@ -17,7 +17,7 @@
 
   </head>
   <body>
-    <div class="proyectos ">             
+    <div class="proyectos ">
 
 
       <?php
@@ -28,7 +28,7 @@
 
   		//$ides=$_POST["materia_cl"];
         $sql ="SELECT info.id, info.Descripcion  FROM info where materia = '$materiainterac'";
-        $resultado = $conn->query($sql);       
+        $resultado = $conn->query($sql);
 
         //echo $row["Descripcion"];
         if ($resultado->num_rows>0)
@@ -59,7 +59,7 @@
               }
               else
               {?>
-                
+
                   <div class="align-items-center m-5">
                     <?php
                         //animador
@@ -68,24 +68,24 @@
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Expresión Gráfica </button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación 2D</button>                              
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación 2D</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Expresión Gráfica";
                                 include 'infoyproyecto.php';
-                              ?>                                
+                              ?>
                               </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Animación 2D";
                                 include 'infoyproyecto.php';
                               ?>
                           </div>
-                          <div> 
-                          <?php                 
+                          <div>
+                          <?php
                         }
                         else if ($materiainterac=="Animación 3D y dinámicas") //monitor animador
                         {?>
@@ -93,57 +93,57 @@
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Modelado 3D</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación 3D y dinámicas</button>
-                              <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Taller digital de diseño</button>                              
+                              <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Taller digital de diseño</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Modelado 3D";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Animación 3D y dinámicas";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Taller digital de diseño";
                                 include 'infoyproyecto.php';
                               ?>
-                            </div>                
+                            </div>
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Dibujo") //Muñeco
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Dibujo</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de personajes</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de personajes</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Dibujo";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Diseño de personajes";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Integración multimedia") //Tableta
                         {?>
@@ -152,56 +152,56 @@
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Diseño I, II y III</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Integración multimedia</button>
                               <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Museos y tecnología</button>
-                                                           
+
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Diseño I, II y III";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Integración multimedia";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                              <?php 
-                                $materiainterac="Museos y tecnología";                                
+                              <?php
+                                $materiainterac="Museos y tecnología";
                                 include 'infoyproyecto.php';
                               ?>
-                            </div>                                       
+                            </div>
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                          else if ($materiainterac=="Render") //Lampara
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Render</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación de objetos y personajes</button>                                                      
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación de objetos y personajes</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Render";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Animación de objetos y personajes";
                                 include 'infoyproyecto.php';
                               ?>
-                            </div>                                                                
+                            </div>
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
 
 
@@ -213,31 +213,31 @@
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Programación I, II y III</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Introducción a la computación gráfica</button>
                               <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Tecnologias de la internet</button>
-                                                           
+
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Programación I, II y III";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Introducción a la computación gráfica";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Tecnologias de la internet";
                                 include 'infoyproyecto.php';
                               ?>
-                            </div>                                       
+                            </div>
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Inteligencia artificial") //gafas
                         {?>
@@ -246,109 +246,109 @@
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Inteligencia artificial</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de interfaces multimedia</button>
                               <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Visión por computador</button>
-                                                           
+
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Inteligencia artificial";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Diseño de interfaces multimedia";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Visión por computador";
                                 include 'infoyproyecto.php';
                               ?>
-                            </div>                                       
+                            </div>
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Simulación") //Play
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Simulación</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Aplicaciones 3D</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Aplicaciones 3D</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Simulación";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Aplicaciones 3D";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Computación gráfica") //pacman
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Computación gráfica</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Desarrollo de producto multimedia</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Desarrollo de producto multimedia</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Computación gráfica";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Desarrollo de producto multimedia";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Ingeniera de Software") //torre
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Ingeniera de Software</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de experiencia de usuario</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de experiencia de usuario</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Ingeniera de Software";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Diseño de experiencia de usuario";
                                 include 'infoyproyecto.php';
-                              ?>                               
+                              ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
 
                         //productor
@@ -357,26 +357,26 @@
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Procesamiento de señales</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Integración multimedia</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Integración multimedia</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Procesamiento de señales";
                                 include 'infoyproyecto.php';
-                              ?> 
+                              ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Integración multimedia";
                                 include 'infoyproyecto.php';
-                              ?> 
+                              ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Motion Graphics") //monitor video
                         {?>
@@ -385,83 +385,83 @@
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Procesamiento de imagenes</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Marketing digital</button>
                               <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Motion Graphics</button>
-                                                           
+
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Procesamiento de imagenes";
                                 include 'infoyproyecto.php';
-                              ?> 
+                              ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Marketing digital";
                                 include 'infoyproyecto.php';
-                              ?> 
+                              ?>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Motion Graphics";
                                 include 'infoyproyecto.php';
-                              ?> 
-                            </div>                                       
+                              ?>
+                            </div>
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Audio y video") //claqueta
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Audio y video</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Cortometraje</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Cortometraje</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Audio y video";
                                 include 'infoyproyecto.php';
-                              ?> 
+                              ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Cortometraje";
                                 include 'infoyproyecto.php';
-                              ?> 
+                              ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Movimiento e interacción") //Dron
                         {?>
                           <nav>
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Movimiento e interacción</button>
-                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Entornos virtuales en multimedia</button>                                                        
+                              <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Entornos virtuales en multimedia</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Movimiento e interacción";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Entornos virtuales en multimedia";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
                         else if ($materiainterac=="Introducción a la ingeniería") //libros
                         {?>
@@ -469,50 +469,51 @@
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Introducción a la ingeniería</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Gestión empresarial</button>
-                              <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Gestión integral de proyectos</button>                                                        
+                              <button class="nav-link pestana" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="presentation" aria-controls="nav-contact" aria-selected="false">Gestión integral de proyectos</button>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Introducción a la ingeniería";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Gestión empresarial";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                              <?php 
+                              <?php
                                 $materiainterac="Gestión integral de proyectos";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                                            
+
                           </div>
-                          <div> 
-                         <?php 
+                          <div>
+                         <?php
                         }
 
                         //Moneda
-                        else if ($materiainterac=="Informacion Carrera") 
+                        else if ($materiainterac=="Informacion Carrera")
                         {?>
+                          <div class="align-items-center m-5">
+                            <h2> Ingenieria en Multimedia</h2>
+                          </div>
                            <div> <?php echo $row["Descripcion"];?></div>
-                                            
-                          
-                         
-                         <?php 
+
+                         <?php
                         }
 
 
 
-                    ?>                    
+                    ?>
                   </div>
 
-                
+
                 <?php
 
                  // echo $row["Descripcion"];
@@ -535,18 +536,6 @@
             <?php echo $row1["Descripcion"];?>
           </div>
           <?php
-
-          $sql1 ="SELECT * FROM info WHERE id = '44'";
-          $resultado = $conn->query($sql1);
-          $row2=$resultado->fetch_assoc();
-          ?>
-          <div class="align-items-center  m-5">
-            <h2>Ingenieria en Multimedia</h2>
-          </div>
-          <div class="parrafo align-items-center jext-justify m-5 px-4">
-            <?php echo $row2["Descripcion"];?>
-          <?php
-
         }
         ?>
     </div>
