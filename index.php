@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa</title>
 
-    <link rel="stylesheet" type="text/css" href="estiloscasa1.css">
+    <link rel="stylesheet" type="text/css" href="estiloscasa01.css">
     <title>Invasión Multimedia</title>
 </head>
 <body>

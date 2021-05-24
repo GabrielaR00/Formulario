@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Proyectos aprobados</title>
 
-    <link rel="stylesheet" type="text/css" href="estilo04.css">
+    <link rel="stylesheet" type="text/css" href="estilo5.css">
     <link rel="stylesheet" href="bootstrap.min.css" / >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
@@ -67,7 +67,7 @@
                         //animador
                         if($materiainterac=="Animación 2D") //Mesa dibujo
                         {?>
-                          <nav>
+                          <nav class="tabs align-items-center">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Expresión Gráfica </button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación 2D</button>
@@ -91,7 +91,7 @@
                         }
                         else if ($materiainterac=="Animación 3D y dinámicas") //monitor animador
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Modelado 3D</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación 3D y dinámicas</button>
@@ -123,7 +123,7 @@
                         }
                         else if ($materiainterac=="Dibujo") //Muñeco
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Dibujo</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de personajes</button>
@@ -149,7 +149,7 @@
                         }
                         else if ($materiainterac=="Integración multimedia") //Tableta
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Diseño I, II y III</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Integración multimedia</button>
@@ -182,7 +182,7 @@
                         }
                          else if ($materiainterac=="Render") //Lampara
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Render</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Animación de objetos y personajes</button>
@@ -210,7 +210,7 @@
                         //programador
                         else if ($materiainterac=="Tecnologias de la internet") //monitor progra
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Programación I, II y III</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Introducción a la computación gráfica</button>
@@ -243,7 +243,7 @@
                         }
                         else if ($materiainterac=="Inteligencia artificial") //gafas
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Inteligencia artificial</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de interfaces multimedia</button>
@@ -276,7 +276,7 @@
                         }
                         else if ($materiainterac=="Simulación") //Play
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Simulación</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Aplicaciones 3D</button>
@@ -302,7 +302,7 @@
                         }
                         else if ($materiainterac=="Computación gráfica") //pacman
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Computación gráfica</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Desarrollo de producto multimedia</button>
@@ -328,7 +328,7 @@
                         }
                         else if ($materiainterac=="Ingeniera de Software") //torre
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Ingeniera de Software</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Diseño de experiencia de usuario</button>
@@ -356,7 +356,7 @@
                         //productor
                         else if ($materiainterac=="Procesamiento de señales") //torre
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Procesamiento de señales</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Integración multimedia</button>
@@ -382,7 +382,7 @@
                         }
                         else if ($materiainterac=="Motion Graphics") //monitor video
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Procesamiento de imagenes</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Marketing digital</button>
@@ -415,7 +415,7 @@
                         }
                         else if ($materiainterac=="Audio y video") //claqueta
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Audio y video</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Cortometraje</button>
@@ -441,7 +441,7 @@
                         }
                         else if ($materiainterac=="Movimiento e interacción") //Dron
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Movimiento e interacción</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Entornos virtuales en multimedia</button>
@@ -467,7 +467,7 @@
                         }
                         else if ($materiainterac=="Introducción a la ingeniería") //libros
                         {?>
-                          <nav>
+                          <nav class="tabs">
                             <div class="nav nav-tabs"  role="tablist">
                               <button class="nav-link active pestana" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="presentation" aria-controls="nav-home" aria-selected="true">Introducción a la ingeniería</button>
                               <button class="nav-link pestana" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="presentation" aria-controls="nav-profile" aria-selected="false">Gestión empresarial</button>
@@ -502,18 +502,20 @@
                         //Moneda
                         else if ($materiainterac=="Informacion Carrera")
                         {?>
-                          <div class="align-items-center m-2">
-                            <h2> Ingenieria en Multimedia</h2>
-                          </div>
-                          <div class="parrafo align-items-center jext-justify px-4 mt-5 mb-2">
-                            <p class="justificado"><?php echo $row["Descripcion"];?></p>
-                          </div>                        
-                          <div class="row justify-content-center my-3 "> 
-                          <p class="justificado2"> Entérate de más:</p>  
-                           <div class="col-sm-2">  
+                          <div class="tabs">
+                            <div class="align-items-center m-2">
+                              <h2> Ingeniería en Multimedia</h2>
+                            </div>
+                            <div class="parrafo align-items-center jext-justify px-4 mt-5 mb-2">
+                              <p class="justificado"><?php echo $row["Descripcion"];?></p>
+                            </div>                        
+                            <div class="row justify-content-center my-3 "> 
+                            <p class="justificado2"> Entérate de más:</p>  
+                             <div class="col-sm-2">  
 
-                              <a href="https://www.umng.edu.co/programas/pregrados/ingenieria-multimedia" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/multi.png" ></a>          
-                           </div>   
+                                <a href="https://www.umng.edu.co/programas/pregrados/ingenieria-multimedia" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/multi.png" ></a>          
+                             </div>   
+                            </div>
                           </div>
 
                          <?php

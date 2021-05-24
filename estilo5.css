@@ -104,21 +104,7 @@ h5
 {
 	width: 30%!important;
 }
-.pestaña
-{
-	font-size: 1.1rem;
-	border-radius: 0.5rem;
-	border:1px solid transparent;
-	background-color: rgb(233, 150, 122)!important; 
-}
-.active
-{
-	background-color: rgb(233, 150, 122)!important; 
-}
-.show
-{
-	background-color: rgb(255, 255, 255)!important; 
-}
+
 .buscar
 {
 	font-family: Lato, sans-serif;	
@@ -152,6 +138,39 @@ select
 	font-size:1.2rem;
 	color: #2033E0;
 }
+
+.pestana
+{
+	font-family: KoHo, sans-serif;	
+	font-weight:500! important;
+	font-size: 1.1rem;
+	border-radius: 0.5rem;	
+
+	box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition-duration:0.6s;
+}
+.tabs .active
+{
+
+	border-radius:5px;	
+	color:#ffffff!important;
+	box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+	background: #05abe0!important;
+ 	background: -moz-linear-gradient(45deg, #05abe0 0%, #05d9e0 100%)!important;
+  	background: -webkit-linear-gradient(45deg, #05abe0 0%,#05d9e0 100%)!important;
+  	background: linear-gradient(45deg, #05abe0 0%,#05d9e0 100%)!important;
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#05d9e0',GradientType=1 );
+}
+.tabs button.pestana
+{
+	color: #4f4f4f;	
+	transition-duration:0.6s;	
+}
+
 
 
 
