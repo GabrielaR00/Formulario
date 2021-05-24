@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Proyectos aprobados</title>
 
-    <link rel="stylesheet" type="text/css" href="estilo3.css">
+    <link rel="stylesheet" type="text/css" href="estilo04.css">
     <link rel="stylesheet" href="bootstrap.min.css" / >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
@@ -37,6 +37,7 @@
             {
               if ($row["id"]=='1')
               {?>
+                
                 <div class="align-items-center ">
                   <h2 >Universidad Militar Nueva Granada</h2>
 
@@ -44,6 +45,7 @@
                 <div class="parrafo align-items-center jext-justify m-6 px-4">
                   <?php echo $row["Descripcion"];?>
                 </div>
+
 
                 <?php
                 if($row["id"]=='44')
@@ -72,13 +74,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Expresión Gráfica";
                                 include 'infoyproyecto.php';
                               ?>
                               </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Animación 2D";
                                 include 'infoyproyecto.php';
@@ -97,19 +99,19 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Modelado 3D";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Animación 3D y dinámicas";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade m-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <?php
                                 $materiainterac="Taller digital de diseño";
                                 include 'infoyproyecto.php';
@@ -128,13 +130,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Dibujo";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Diseño de personajes";
                                 include 'infoyproyecto.php';
@@ -156,19 +158,19 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Diseño I, II y III";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Integración multimedia";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade m-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <?php
                                 $materiainterac="Museos y tecnología";
                                 include 'infoyproyecto.php';
@@ -187,13 +189,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Render";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Animación de objetos y personajes";
                                 include 'infoyproyecto.php';
@@ -217,19 +219,19 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Programación I, II y III";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Introducción a la computación gráfica";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade m-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <?php
                                 $materiainterac="Tecnologias de la internet";
                                 include 'infoyproyecto.php';
@@ -250,19 +252,19 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Inteligencia artificial";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Diseño de interfaces multimedia";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade m-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <?php
                                 $materiainterac="Visión por computador";
                                 include 'infoyproyecto.php';
@@ -281,13 +283,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Simulación";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Aplicaciones 3D";
                                 include 'infoyproyecto.php';
@@ -307,13 +309,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Computación gráfica";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Desarrollo de producto multimedia";
                                 include 'infoyproyecto.php';
@@ -333,13 +335,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4 " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Ingeniera de Software";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Diseño de experiencia de usuario";
                                 include 'infoyproyecto.php';
@@ -361,13 +363,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Procesamiento de señales";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Integración multimedia";
                                 include 'infoyproyecto.php';
@@ -389,19 +391,19 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Procesamiento de imagenes";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Marketing digital";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade m-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <?php
                                 $materiainterac="Motion Graphics";
                                 include 'infoyproyecto.php';
@@ -420,13 +422,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Audio y video";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Cortometraje";
                                 include 'infoyproyecto.php';
@@ -446,13 +448,13 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Movimiento e interacción";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Entornos virtuales en multimedia";
                                 include 'infoyproyecto.php';
@@ -473,19 +475,19 @@
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active m-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                               <?php
                                 $materiainterac="Introducción a la ingeniería";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade m-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <?php
                                 $materiainterac="Gestión empresarial";
                                 include 'infoyproyecto.php';
                               ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade m-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <?php
                                 $materiainterac="Gestión integral de proyectos";
                                 include 'infoyproyecto.php';
@@ -500,16 +502,22 @@
                         //Moneda
                         else if ($materiainterac=="Informacion Carrera")
                         {?>
-                          <div class="align-items-center m-5">
+                          <div class="align-items-center m-2">
                             <h2> Ingenieria en Multimedia</h2>
                           </div>
-                           <div> <?php echo $row["Descripcion"];?></div>
+                          <div class="parrafo align-items-center jext-justify px-4 mt-5 mb-2">
+                            <p class="justificado"><?php echo $row["Descripcion"];?></p>
+                          </div>                        
+                          <div class="row justify-content-center my-3 "> 
+                          <p class="justificado2"> Entérate de más:</p>  
+                           <div class="col-sm-2">  
+
+                              <a href="https://www.umng.edu.co/programas/pregrados/ingenieria-multimedia" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/multi.png" ></a>          
+                           </div>   
+                          </div>
 
                          <?php
                         }
-
-
-
                     ?>
                   </div>
 
@@ -532,8 +540,14 @@
             <h2>Universidad Militar Nueva Granada</h2>
 
           </div>
-          <div class="parrafo align-items-center jext-justify m-5 px-4">
-            <?php echo $row1["Descripcion"];?>
+          <div class="parrafo align-items-center jext-justify mx-5 px-4 mt-5 mb-2">
+            <p class="justificado"><?php echo $row1["Descripcion"];?></p>
+          </div>
+          <div class="row justify-content-center "> 
+            <p class="justificado2"> Entérate de más:</p>   
+             <div class="col-sm-2">        
+             <a href="https://www.umng.edu.co" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/UMNG.png" ></a>          
+             </div>   
           </div>
           <?php
         }

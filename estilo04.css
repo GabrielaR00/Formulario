@@ -135,6 +135,25 @@ select
 	font-family: Lato, sans-serif;	
 	font-weight:500! important;
 }
+.justificado
+{
+	text-align: justify;
+	font-family: Lato, sans-serif;	
+	font-weight:500! important;
+	font-weight: normal;
+	font-size:1.05rem;
+}
+.justificado2
+{
+	text-align: center;
+	font-family: KoHo, sans-serif;	
+	font-weight:500! important;
+	font-weight: normal;
+	font-size:1.2rem;
+	color: #2033E0;
+}
+
+
 
 
 

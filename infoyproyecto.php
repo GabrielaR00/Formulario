@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title></title>
+
 </head>
-<body>
+<body >
+
 	<?php 
 		include "conexion.php";
 		$sql ="SELECT info.id, info.Descripcion  FROM info where materia = '$materiainterac'";
@@ -12,9 +14,9 @@
 		if ($resultado->num_rows>0)
         {
          	while ($row=$resultado->fetch_assoc())
-            {
-				echo $row["Descripcion"];
-				?>
+            {?>
+				<p class="justificado"><?php echo $row["Descripcion"];?></p>
+				
 				<h2>Proyectos</h2>
 
 				<?php
