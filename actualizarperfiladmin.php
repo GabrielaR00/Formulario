@@ -46,5 +46,5 @@ include "conexion.php";
     }
 
 
-  //header('location: cerrarsesion.php');
+  header('location: cerrarsesion.php');
 ?>

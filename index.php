@@ -92,6 +92,7 @@
             
             
             
+            
             const can = document.querySelector('.webgl')
             renderer =new THREE.WebGLRenderer({canvas: can});
             renderer.toneMapping=THREE.ReinhardToneMapping;
@@ -116,6 +117,10 @@
             monitorani.position.x=-24;
             monitorani.position.y=24;
             monitorani.position.z=15;
+            const lamp = new THREE.Mesh(new THREE.SphereBufferGeometry(1.5,16,16), new THREE.MeshLambertMaterial( {color: 0xff0000}));
+            lamp.position.x=-20.3;
+            lamp.position.y=16;
+            lamp.position.z=24;
 
 
             const gafas = new THREE.Mesh(new THREE.SphereBufferGeometry(1.5,16,16), new THREE.MeshLambertMaterial( {color: 0xff0000}));
@@ -170,7 +175,7 @@
 
 
 
-            scene.add(tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes);
+            scene.add(tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes,lamp);
 
             const loader4= new GLTFLoader(loadingManager);
                         loader4.load('./Assests/Modelos/final1.gltf', function(gltf)
@@ -252,9 +257,17 @@
                     else if(siinter.object === monitorani){
                         console.log('monitorani');
                         const doc = document.querySelector('.contenedorinfo')
-                        eleccion='Animación 3D';
+                        eleccion='Animación 3D y dinámicas';
                         <?php $var=false; ?>
                         getvar(); 
+
+                    }
+                    else if(siinter.object === lamp){
+                        console.log('lamp');
+                        const doc = document.querySelector('.contenedorinfo')
+                        eleccion='Render';
+                        <?php $var=false; ?>
+                        getvar();
 
                     }
 
@@ -429,6 +442,16 @@
             if(loadingScreen.box.position.x < -10) loadingScreen.box.position.x = 10;
             loadingScreen.box.position.y=Math.sin(loadingScreen.box.position.x);
 
+            if(t<255){loadingScreen.box.material.color.set('rgb(' + 255 + ',' + 0 + ',' + parseFloat(t) + ')');}
+              if(t>=255){loadingScreen.box.material.color.set('rgb(' + parseFloat(u+255) + ',' + 0 + ',' + 255 + ')');}
+              if(t>=510){loadingScreen.box.material.color.set('rgb(' + 0 + ',' + parseFloat(t-510) + ',' + 255 + ')');}
+              if(t>=765){loadingScreen.box.material.color.set('rgb(' + 0 + ',' + 255 + ',' + parseFloat(u+765) + ')');}
+              if(t>=1020){loadingScreen.box.material.color.set('rgb(' + parseFloat(t-1020) + ',' + 255 + ',' + 0 + ')');}
+              if(t>=1275){loadingScreen.box.material.color.set('rgb(' + 255 + ',' + parseFloat(u+1275) + ',' + 0 + ')');}
+              if(t>=1530){t=0;u=255;}
+              t=t+10;
+              u=u-10;
+
             
             
             renderer.render(loadingScreen.scene, loadingScreen.camara);
@@ -445,7 +468,7 @@
             }
 
             raycaster.setFromCamera(mouse,camera);
-            const objetosdesplegables = [tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes];
+            const objetosdesplegables = [tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes,lamp];
             const intersecta =raycaster.intersectObjects(objetosdesplegables);
 
             for(const ob of objetosdesplegables){
@@ -464,6 +487,8 @@
               parlantes.material.color.set(0xff0000);
               libros.material.color.set(0xff0000);
               monitorani.material.color.set(0xff0000);
+              lamp.material.color.set(0xff0000);
+
 
 
             }

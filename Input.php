@@ -74,7 +74,6 @@ $varsesion=$_SESSION['usuario'];
 							    <option>Expresión Gráfica </option>
 							    <option>Gestión empresarial </option>
 							    <option>Gestión integral de proyectos </option>
-							    <option>Historia del arte </option>
 							    <option>Ingeniera de Software </option>
 							    <option>Integración multimedia </option>
 							    <option>Inteligencia artificial </option>

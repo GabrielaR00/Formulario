@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="estilo11.css">
+    <link rel="stylesheet" type="text/css" href="estilo3.css">
     <meta charset="utf-8">
     <title>Ventana de Administrador</title>
 
@@ -14,7 +14,7 @@
 
       <div class="ProyectosP m-3">
 
-        <h2 class="pb-5">Proyectos Pendientes</h2>
+        <h2 class="p-3">Proyectos Pendientes</h2>
         <?php
     		include "conexion.php";
     	  $sql ="SELECT * FROM proyectos where apro=''";

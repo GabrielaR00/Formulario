@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <title>Proyectos aprobados</title>
 
-    <link rel="stylesheet" type="text/css" href="estilo11.css">
+    <link rel="stylesheet" type="text/css" href="estilo3.css">
      <link rel="stylesheet" href="bootstrap.min.css" / >
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
   </head>
   <body>
-    <div class="ProyectosAP m-3">
+    <div class="ProyectosAP ">
 
-      <h2 class="pb-5">Proyectos Aprobados</h2>
+      <h2 class="py-lg-4">Proyectos Aprobados</h2>
 
       <form method="POST" action="adminproyeceditar.php">
         <div class=" w-100 p-2">
@@ -53,16 +53,16 @@
 
                         <ul class="list-unstyled">
 
-                          <li> Nombre estudiante:
+                          <li class="form-label"> Nombre estudiante:
                             <span class="fw-medium text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
                           </li>
-                          <li> Nombre proyecto:
+                          <li class="form-label"> Nombre proyecto:
                             <span class="fw-medium text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
                           </li>
-                          <li> Tipo de proyecto:
+                          <li class="form-label"> Tipo de proyecto:
                             <span class="fw-medium text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
                           </li>
-                          <li> Materia:
+                          <li class="form-label "> Materia:
                             <span class="fw-medium text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
                           </li>
                         </ul>

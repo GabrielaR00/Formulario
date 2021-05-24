@@ -4,10 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
    	<link rel="stylesheet" type="text/css" href="estilos.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <title>Registro</title>
@@ -36,11 +39,13 @@
 				</div>
 
     		</div>
-    		<div class="col-lg-5 d-flex flex-column align-items-end min-vh-100 ">
+    		<div class="col-lg-5 d-flex flex-column align-items-end min-vh-auto ">
     			<div class="px-lg-5 pt-lg-4 pb-lg-3 p-4  w-100 mb-auto">
-
+                    <div class="pt-lg-4 pb-lg-3">
+                      <a href="index.php"><i class="fa fa-arrow-circle-left" style="font-size:45px;" aria-hidden="true"></i></a>
+                    </div>
     			</div>
-    			<div class="px-lg-5 py-lg-4 p-4 w-100 align-self-center " >
+    			<div class="px-lg-5 py-lg-2 p-4 w-100 align-self-center " >
 
     				<h1  > Bienvenido </h1>
 
