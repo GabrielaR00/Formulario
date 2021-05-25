@@ -13,9 +13,11 @@
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilos.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&display=swap" rel="stylesheet">
 
 </head>
 <body class="fondoadmin">
@@ -61,7 +63,7 @@
 				<div class="d-flex flex-column h-100 bg-light rounded-3 shadow-lg p-4">
 					<div class="py-2 p-md-3">
 						<div class="d-sm-flex align-items-center justify-content-between pb-4 text-center text-sm-start"></div>
-						<h1 class="h3 mb-2 text-nowrap"> Perfil</h1>
+						<h1 class="h3 mb-2 text-nowrap titulo"> Perfil</h1>
 					</div>
 					<div class="backspace rounded-3 p-4 mb-4">
 						<div class="d-block d-sm-flex align-items-center">
@@ -76,17 +78,17 @@
 					<div class="row">
 		              <div class="col-sm-6">
 			                <div class="mb-3 pb-1">
-			                  <label class="form-label px-0">Nombre y apellido</label>
+			                  <label class="form-label px-0 fw-medium">Nombre y apellido</label>
 			                  <input type="text" class="form-control" placeholder="Ingresa tu nombre y apellido" name="nombrenew" value="<?php echo $nombreus ?>">
 			                </div>
 		              </div>
 		              <div class="col-sm-6">
 			                <div class="mb-3 pb-1">
-			                  <label class="form-label px-0">Correo</label>
+			                  <label class="form-label px-0 fw-medium">Correo</label>
 			                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
 			                </div>			                
 						</div>
-						
+
 						<div class="col-sm-6 pt-3 ">
 							<button class=" editaradmin shadow btn-md py-2" type="submit" name="btneditar">
 									<i class="ai-refresh-cw me-2"></i>
@@ -95,6 +97,14 @@
 						</div>
           			</div>
             		</form>
+            		<div class="backspace rounded-3 p-3 m-4 d-flex justify-content-around">
+		              	<div>
+		              		<i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i>	              		
+		              	</div>           	
+
+		              	<div class="p mb-0 fonts blackcolor">Querido usuario: <br>Al momento de actualizar la información, la sesión se va a cerrar automáticamente.
+		              	</div>
+		          	</div>
 				</div>
 			</div>
 		</div>

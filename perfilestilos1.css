@@ -14,6 +14,18 @@ body
 	/*font-weight: 400;*/	
 	line-height: 1.5;	
 }
+.titulo
+{
+	font-family: KoHo, sans-serif;
+	font-weight: 600;
+
+}
+.fw-medium
+{
+	font-family: Lato, sans-serif;	
+	font-weight:500!important;
+	font-weight: bold!important;
+}
 .fondoadmin
 {
 	background-image: url(./Assests/Fondorojo.gif);
