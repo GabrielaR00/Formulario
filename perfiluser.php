@@ -14,6 +14,7 @@
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
 	<link rel="stylesheet" type="text/css" href="perfilestilos.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -91,16 +92,22 @@
 			                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
 			                </div>
 		              </div>
+		              
 		              <div class="col-sm-6 pt-3 ">
 							<button class=" editaruser shadow btn-md py-2" type="submit" name="btneditar">
 									<i class="ai-refresh-cw me-2"></i>
 									Editar Perfil
 							</button>
-					  </div>
-		              
+					  </div>		              
 		            </div>
+            		</form>
+            		<div class="backspace rounded-3 p-3 m-4 d-flex justify-content-around">
+		              	<div>
+		              		<i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i>	              		
+		              	</div>           	
 
-            </form>
+		              	<div class="p mb-0 fonts blackcolor">Querido usuario: <br>Al momento de actualizar la información, la sesión se va a cerrar automáticamente.</div>
+		          	  </div>
 				</div>
 
 			</div>

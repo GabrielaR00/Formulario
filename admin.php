@@ -35,8 +35,8 @@
                         <button class="btn collapsed d-flex align-items-center justify-content-between w-100" data-toggle="collapse" data-target="#collapse<?php echo $cont ?>" aria-expanded="true" aria-controls="collapse<?php echo $cont ?>">
                                                     <?php echo $row["NombreDelProyecto"]  ?>
                           <span class="fa-stack fa-fw ">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                            <i class="fas fa-circle fa-stack-2x mas"></i>
+                            <i class="fas fa-plus fa-stack-1x fa-inverse mas"></i>
                           </span>
                         </button>
 

@@ -9,9 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa</title>
-
-    <link rel="stylesheet" type="text/css" href="estiloscasa01.css">
+    <link rel="stylesheet" href="bootstrap.min.css" / >
+    <link rel="stylesheet" type="text/css" href="estiloscasa2.css">
     <title>Invasión Multimedia</title>
 </head>
 <body>
@@ -53,12 +52,13 @@
     )
     };
 
-
-    var scene, camera, renderer, controls, hemiLight, spotLight;
+    
+    var scene, camera, renderer, controls, hemiLight, spotLight,cambio,la,active;
     var eleccion="";
     import * as THREE from './js/three.module.js';
     import {OrbitControls} from './js/OrbitControls.js';
     import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/loaders/GLTFLoader.js';
+    import { TWEEN } from "./js/tween.module.min.js";
 
 
     loadingScreen.box.position.set(0,0,5);
@@ -87,7 +87,9 @@
             scene.background =new THREE.Color (0xBBBBBB);
             camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,0.1,1000);
 
-            camera.position.set(80,40,80);
+            camera.position.set(130,130,130);
+            
+            
 
 
 
@@ -98,6 +100,8 @@
             renderer.toneMapping=THREE.ReinhardToneMapping;
             renderer.toneMappingExposure=2.3;
             renderer.shadowMapEnabled=true;
+            renderer.outputEncoding = THREE.sRGBEncoding;
+            renderer.physicallyCorrectLights = true;
             renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(renderer.domElement);
 
@@ -171,14 +175,34 @@
             multimedia.position.x=-22;
             multimedia.position.y=47.3;
             multimedia.position.z=-23;
+            la=multimedia.position;
+            active=multimedia;
+
+
+            
+            
+            const habita1 = new THREE.Mesh(new THREE.BoxGeometry(60,4,70), new THREE.MeshLambertMaterial( {color: 0x00D8FF,transparent: true, opacity: 0}));
+            habita1.position.x=0;
+            habita1.position.y=0;
+            habita1.position.z=0;
+
+            const habita2 = new THREE.Mesh(new THREE.BoxGeometry(60,4,70), new THREE.MeshLambertMaterial( {color: 0x00D8FF,transparent: true, opacity: 0}));
+            habita2.position.x=-55;
+            habita2.position.y=42;
+            habita2.position.z=0;
+
+            const habita3 = new THREE.Mesh(new THREE.BoxGeometry(60,4,70), new THREE.MeshLambertMaterial( {color: 0x00D8FF,transparent: true, opacity: 0}));
+            habita3.position.x=0;
+            habita3.position.y=42;
+            habita3.position.z=-62;
 
 
 
 
-            scene.add(tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes,lamp);
+            scene.add(tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes,lamp,habita1,habita2,habita3);
 
             const loader4= new GLTFLoader(loadingManager);
-                        loader4.load('./Assests/Modelos/final1.gltf', function(gltf)
+                        loader4.load('./Assests/Modelos/todo1.gltf', function(gltf)
                          {
                              mixer = new THREE.AnimationMixer(gltf.scene);
                              const action = mixer.clipAction(gltf.animations[0]).play();
@@ -199,6 +223,10 @@
                              scene.add(gltf.scene);
                          });
 
+
+
+
+            
 
             //Raycaster
             const raycaster = new THREE.Raycaster();
@@ -361,6 +389,54 @@
                         eleccion='Informacion Carrera';
                         <?php $var=false; ?>
                         getvar();
+                        if(active!=multimedia){
+                        camera.position.set(130,130,130);
+                        controls.minDistance = 60;
+                        controls.maxDistance = 250;
+                        la=multimedia.position;
+                        active=multimedia;
+                        }
+                        
+
+                    }
+                    else if(siinter.object === habita1){
+                        console.log('habita1');
+                        if(active!=habita1){
+                        camera.position.set(90,60,90);
+                        la=(habita1.position);
+                        active=habita1;
+                        controls.minDistance = 20;
+                        controls.maxDistance = 150;
+                        }
+                        
+                        
+
+                    }
+                    else if(siinter.object === habita2){
+                        console.log('habita2');
+                        if(active!=habita2){
+                        camera.position.set(20,120,60);
+                        la=habita2.position;
+                        active=habita2;
+                        controls.minAzimuthAngle = Math.PI * -1/6;
+                        
+                        controls.minDistance = 20;
+                        controls.maxDistance = 150;
+                        }
+                    }
+                    else if(siinter.object === habita3){
+                        console.log('habita3');
+                        if(active!=habita3){
+                        camera.position.set(20,120,0);
+                        la=habita3.position;
+                        active=habita3;
+                        controls.minAzimuthAngle = Math.PI * -1/10;
+                        controls.maxAzimuthAngle = Math.PI * 0.7;
+                        controls.minDistance = 20;
+                        controls.maxDistance = 150;
+
+                        }
+                    
 
                     }
                 }
@@ -369,7 +445,7 @@
             //LUCES
 
             //AMBIENTAL
-            const ambientlight = new THREE.AmbientLight(0xffffff,0.8);
+            const ambientlight = new THREE.AmbientLight(0xffffff,1);
             scene.add(ambientlight);
 
             //DIRECCIONALES
@@ -419,11 +495,14 @@
                 controls.minPolarAngle = Math.PI * 0.2;
                 controls.minDistance = 50;
                 controls.maxDistance = 400;
-                controls.rotateSpeed = 0.2;
-                controls.zoomSpeed=0.2;
-                controls.panSpeed=0.2;
+                controls.rotateSpeed = 0.14;
+                controls.zoomSpeed=0.4;
+                controls.panSpeed=0.5;
                 controls.minAzimuthAngle = Math.PI * 0;
                 controls.maxAzimuthAngle = Math.PI * 0.5;
+                
+                //controls.target.set(multimedia.position);
+                
                 controls.update();
 
 
@@ -434,7 +513,6 @@
 
         function animate()
         {
-
 
           if(RESOURCES_LOADED == false){
             window.requestAnimationFrame(animate);
@@ -451,9 +529,6 @@
               if(t>=1530){t=0;u=255;}
               t=t+10;
               u=u-10;
-
-
-
             renderer.render(loadingScreen.scene, loadingScreen.camara);
             return;
           }
@@ -461,6 +536,7 @@
             const curtime = clock.getElapsedTime();
             const deltatime=curtime-prevtime;
             prevtime=curtime;
+            
 
             controls.update(curtime);
             if (mixer !== null){
@@ -468,7 +544,7 @@
             }
 
             raycaster.setFromCamera(mouse,camera);
-            const objetosdesplegables = [tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes,lamp];
+            const objetosdesplegables = [tableta,muneco,mesadibujo,gafas,monitorpro,pacman,claqueta,dron,monitorvide,multimedia,monitorani,ps5,torre,libros,parlantes,lamp,habita1,habita2,habita3];
             const intersecta =raycaster.intersectObjects(objetosdesplegables);
 
             for(const ob of objetosdesplegables){
@@ -505,12 +581,17 @@
             }
 
 
+
+
+
             if(intersecta.length){
                 siinter = intersecta[0];
 
             }else {
                 siinter = null;
             }
+            camera.lookAt(la);
+            TWEEN.update(curtime);
             renderer.render(scene,camera);
             window.requestAnimationFrame(animate);
 
@@ -527,7 +608,7 @@
     <div class="contenedorbody">
     <canvas class="webgl width-100 height-100" ></canvas>
 
-    <div class="controles"><img src="controles.png" alt="" class="imgcon"> </div>
+    <div class="controles position-absolute w-1 h-auto"><img src="controles.png" alt="" class="imgcon img-fluid"> </div>
 
     <div class="contenedorinfo" id="contenedorinfo">
 
@@ -538,6 +619,7 @@
 
 
 </div>
+ <script type="bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+   padding: 0; 
+   overflow: hidden;
+}
+
+.contenedorvista{
+display: flex;
+}
+.contenedorbody{
+    display: flex;
+}
+
+.controles{
+   /*position: absolute;*/
+   top: 70%;
+   left: 1.5%;
+}
+
+.imgcon{
+    width: 100%;
+    height: 100%;
+}
+
+.contenedorinfo
+{
+  position: absolute;
+  padding: 0;
+  min-width: 30%;
+  width: 20%;
+  height: 100%;
+  right: 0%;
+  top: auto;
+  background-color: #ffffff;    
+  overflow: auto;   
+}
+.header
+{
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+}
+.webgl
+{
+  z-index: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+

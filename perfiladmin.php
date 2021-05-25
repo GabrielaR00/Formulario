@@ -86,6 +86,7 @@
 			                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
 			                </div>			                
 						</div>
+						
 						<div class="col-sm-6 pt-3 ">
 							<button class=" editaradmin shadow btn-md py-2" type="submit" name="btneditar">
 									<i class="ai-refresh-cw me-2"></i>
