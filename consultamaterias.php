@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Proyectos aprobados</title>
 
-    <link rel="stylesheet" type="text/css" href="estilo5.css">
+    <link rel="stylesheet" type="text/css" href="estilo6.css">
     <link rel="stylesheet" href="bootstrap.min.css" / >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
@@ -502,11 +502,11 @@
                         //Moneda
                         else if ($materiainterac=="Informacion Carrera")
                         {?>
-                          <div class="tabs">
-                            <div class="align-items-center m-2">
+                          <div class="tabs m-2">
+                            <div class="align-items-center ">
                               <h2> Ingeniería en Multimedia</h2>
                             </div>
-                            <div class="parrafo align-items-center jext-justify px-4 mt-5 mb-2">
+                            <div class="parrafo align-items-center jext-justify px-3 mt-5 mb-2">
                               <p class="justificado"><?php echo $row["Descripcion"];?></p>
                             </div>                        
                             <div class="row justify-content-center my-3 "> 

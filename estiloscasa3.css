@@ -40,6 +40,7 @@ display: flex;
   position: fixed;
   z-index: 3;
   width: 100%;
+  display: block;
 }
 .webgl
 {
@@ -47,6 +48,42 @@ display: flex;
   width: 100% !important;
   height: 100% !important;
 }
+@media screen and (max-width: 600px)
+{
+
+  .webgl
+  {
+    transform: none;
+    width:600px;
+    height:400px;
+    transform: none;
+    width: auto;
+    height: calc(3/4*100vw);
+  }  
+  .header 
+  {    
+    right: 20px;        
+  }
+  .controles
+  {
+    width: 70px;
+    height: auto;
+    top: 80%;
+   left: 1.5%;
+
+  }
+  .contenedorinfo
+  {
+    top: 100%;
+    overflow: none; 
+    padding: 0; 
+  }
+}
+@media screen and (max-width: 1050px)
+{
+
+}
+
 
 
 

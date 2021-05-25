@@ -170,7 +170,20 @@ select
 	color: #4f4f4f;	
 	transition-duration:0.6s;	
 }
-
+@media (min-width: 600px) and (max-width: 1050px)
+{
+	h2
+	{
+		font-size: 0.5rem;
+	}
+	.tabs
+	{
+		padding: 0;
+	}
+	
+  
+  
+}
 
 
 

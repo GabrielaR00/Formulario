@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css" / >
-    <link rel="stylesheet" type="text/css" href="estiloscasa02.css">
+    <link rel="stylesheet" type="text/css" href="estiloscasa3.css">
     <title>Invasión Multimedia</title>
 </head>
 <body>
@@ -626,20 +626,20 @@
    </script>
 
     <div class="contenedorbody">
-    <canvas class="webgl width-100 height-100" ></canvas>
+        
+            <canvas class="webgl width-100 height-100" ></canvas>
+        
 
-    <div class="controles position-absolute w-1 h-auto"><img src="controles.png" alt="" class="imgcon img-fluid"> </div>
+        <div class="controles position-absolute w-1 h-auto"><img src="controles.png" alt="" class="imgcon img-fluid"> </div>
 
-    <div class="contenedorinfo" id="contenedorinfo">
+        <div class="contenedorinfo" id="contenedorinfo">
 
-     <?php
-     require_once "consultamaterias.php";
-     ?>
-</div>
-
-
-</div>
- <script type="bootstrap.min.js"></script>
+         <?php
+         require_once "consultamaterias.php";
+         ?>
+        </div>
+    </div>
+<script type="bootstrap.min.js"></script>
 
 </body>
 </html>
