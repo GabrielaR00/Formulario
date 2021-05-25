@@ -6,7 +6,7 @@
 </head>
 <body >
 
-	<?php 
+	<?php
 		include "conexion.php";
 		$sql ="SELECT info.id, info.Descripcion  FROM info where materia = '$materiainterac'";
 		$resultado = $conn->query($sql);
@@ -16,11 +16,11 @@
          	while ($row=$resultado->fetch_assoc())
             {?>
 				<p class="justificado"><?php echo $row["Descripcion"];?></p>
-				
+
 				<h2>Proyectos</h2>
 
 				<?php
-				$sql ="SELECT* FROM proyectos where Materia = '$materiainterac'";
+				$sql ="SELECT* FROM proyectos where Materia = '$materiainterac' AND apro='aprovado'";
 				$resultado1 = $conn->query($sql);
 				$cont=0;
 				if ($resultado1->num_rows>0)
@@ -68,7 +68,7 @@
 			                        <div>
 			                          <img class="card-img" src="<?php echo $row["foto"]?>">
 			                        </div>
-			                        
+
 			                      </div>
 			                    </div>
 			                  </div>
@@ -76,7 +76,7 @@
 			            </div>
 			            <?php
 			        	}
-		       		}		       		
+		       		}
 				}
 				else
 	       		{
