@@ -14,10 +14,11 @@ body
 	/*font-weight: 400;*/	
 	line-height: 1.5;	
 }
+
 .titulo
 {
-	font-family: KoHo, sans-serif;
-	font-weight: 600;
+	font-family: KoHo, sans-serif!important;
+	font-weight: 600!important;
 
 }
 .fw-medium

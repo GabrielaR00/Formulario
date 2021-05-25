@@ -13,7 +13,7 @@
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos2.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
 				<div class="bg-light rounded 3 shadow-lg">
 					<div class="px-3 py-4 mb-1 text-center">
 						<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto; ?>" width="110">
-						<h5 class="mb-0 pt-1"> <?php echo $nombreus; ?></h5>
+						<h5 class="mb-0 pt-1 titulo"> <?php echo $nombreus; ?></h5>
 					</div>
 					<div class="d-lg-none px-4 pb-4 text-center">
 
@@ -95,6 +95,7 @@
                        <input type="text" class="form-control" placeholder="Ingresa tu contraseña" name="contranew" value="<?php echo $contrasena ?>">
                      </div>
                  </div>
+                 <div class="col-sm-6"></div>
 				      <div class="col-sm-6 pt-3 ">
 					<button class=" editaradmin shadow btn-md py-2" type="submit" name="btneditar">
 							<i class="ai-refresh-cw me-2"></i>

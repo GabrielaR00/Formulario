@@ -13,7 +13,7 @@ $varsesion=$_SESSION['usuario'];
 
 	
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilos1.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos2.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
@@ -34,7 +34,7 @@ $varsesion=$_SESSION['usuario'];
 				<div class="bg-light rounded 3 shadow-lg">
 					<div class="px-3 py-4 mb-1 text-center">
 						<img class="d-block rounded-circle mx-auto my-2" src="./Assests/user.png" width="110">
-						<h5 class="mb-0 pt-1"> <?php echo $nombreadmin ?></h5>						
+						<h5 class="mb-0 pt-1 titulo"> <?php echo $nombreadmin ?></h5>						
 					</div>
 					<div class="d-lg-none px-4 pb-4 text-center">
 						

@@ -104,13 +104,19 @@ p
 }
 .back
 {
-	background-image: url(Assests/fondo1.png);
+	background-image: url(Assests/carrusel1.png);
 	background-position: center;
 	background-size: cover;
 }
 .back2
 {
-	background-image: url(Assests/Fondo2.jpg);
+	background-image: url(Assests/carrusel2.png);
+	background-position: center;
+	background-size: cover;
+}
+.back3
+{
+	background-image: url(Assests/carrusel3.png);
 	background-position: center;
 	background-size: cover;
 }

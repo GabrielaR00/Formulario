@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-   	<link rel="stylesheet" type="text/css" href="estilos.css">
+   	<link rel="stylesheet" type="text/css" href="estilos1.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -27,6 +27,9 @@
 				    <div class=" carousel-item back2 min-vh-100 ">
 
 				    </div>
+                    <div class=" carousel-item back3 min-vh-100 ">
+
+                    </div>
 				  </div>
 				  <a class="carousel-control-prev"  href="#carouselExampleControls" role="button" data-slide="prev">
 				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -63,7 +66,7 @@
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
 					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contrasena" >
-					    <a href="a" class="links text-muted">¿Has olvidado tu contraseña?</a>
+					    
 					  </div>
 					  <button type="submit" class="btn btn-primary">Registrate</button>
 					</form>
