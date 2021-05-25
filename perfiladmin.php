@@ -92,7 +92,7 @@
               <div class="col-sm-6">
                      <div class="mb-3 pb-1">
                        <label class="form-label px-0 fw-medium">Contraseña</label>
-                       <input type="text" class="form-control" placeholder="Ingresa tu contraseña" name="contranew" value="<?php echo $contrasena ?>">
+                       <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="contranew" value="<?php echo $contrasena ?>">
                      </div>
                  </div>
                  <div class="col-sm-6"></div>
