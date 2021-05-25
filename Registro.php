@@ -66,7 +66,7 @@
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
 					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contrasena" >
-					    
+
 					  </div>
 					  <button type="submit" class="btn btn-primary">Registrate</button>
 					</form>
@@ -128,7 +128,7 @@
                 $nombre = $_POST['nombre'];
                 $correo = $_POST['correo'];
                 $contrasena = $_POST['contrasena'];
-                $consulta = "INSERT INTO usuarios(nombre, correo, contrasena) VALUES ('$nombre', '$correo', '$contrasena')";
+                $consulta = "INSERT INTO usuarios(nombre, correo, fotoperfil, contrasena) VALUES ('$nombre', '$correo','', '$contrasena')";
                 $resultado = mysqli_query($conn, $consulta);
                 echo "<div class='correcto mb-auto'> Registro Exitoso";
 
@@ -148,6 +148,10 @@
                 $resul6 = mysqli_query($conn, $consulta6);
                 $resultfinal6 = mysqli_fetch_array($resul6);
                 $foto = $resultfinal6['foto'];
+                $consulta7= "SELECT usuarios.contrasena as contrasena FROM usuarios WHERE usuarios.id = '$idusu'";
+                $resul7 = mysqli_query($conn, $consulta7);
+                $resultfinal7 = mysqli_fetch_array($resul7);
+                $contrasenausuario = $resultfinal7['contrasena'];
 
                 $idadmin=1;
 
@@ -157,6 +161,7 @@
                 $_SESSION['usuario']=$nombredatabase;
                 $_SESSION['correo']=$correodatabase;
                 $_SESSION['foto']=$foto;
+                $_SESSION['contrasena']=$contrasenausuario;
 
 
                 header('location: index.php');
