@@ -21,8 +21,8 @@
 
 </head>
 <body class="fondouser">
-	
-   
+
+
 
 	<header>
 		<?php include 'navsesion.html'; ?>
@@ -34,6 +34,7 @@
         $nombreus=$_SESSION['usuario'];
         $correous=$_SESSION['correo'];
         $foto=$_SESSION['foto'];
+        $contrasena=$_SESSION['contrasena'];
 
       }
       ?>
@@ -93,19 +94,24 @@
 			                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
 			                </div>
 		              </div>
-		              
+                  <div class="col-sm-6">
+                         <div class="mb-3 pb-1">
+                           <label class="form-label px-0 fw-medium">Contraseña</label>
+                           <input type="text" class="form-control" placeholder="Ingresa tu contraseña" name="contranew" value="<?php echo $contrasena ?>">
+                         </div>
+                     </div>
 		              <div class="col-sm-6 pt-3 ">
 							<button class=" editaruser shadow btn-md py-2" type="submit" name="btneditar">
 									<i class="ai-refresh-cw me-2"></i>
 									Editar Perfil
 							</button>
-					  </div>		              
+					  </div>
 		            </div>
             		</form>
             		<div class="backspace rounded-3 p-3 m-4 d-flex justify-content-around">
 		              	<div>
-		              		<i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i>	              		
-		              	</div>           	
+		              		<i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i>
+		              	</div>
 
 		              	<div class="p mb-0 fonts blackcolor">Querido usuario: <br>Al momento de actualizar la información, la sesión se va a cerrar automáticamente.
 		              	</div>
@@ -118,7 +124,7 @@
 	</div>
 
   	</div>
-	
+
 	<script type="bootstrap.min.js"></script>
 </body>
 </html>

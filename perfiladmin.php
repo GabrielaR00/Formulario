@@ -31,6 +31,7 @@
         $nombreus=$_SESSION['usuario'];
         $correous=$_SESSION['correo'];
         $foto=$_SESSION['foto'];
+        $contrasena=$_SESSION['contrasena'];
 
       }
       ?>
@@ -40,7 +41,7 @@
 				<div class="bg-light rounded 3 shadow-lg">
 					<div class="px-3 py-4 mb-1 text-center">
 						<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto; ?>" width="110">
-						<h5 class="mb-0 pt-1"> <?php echo $nombreus ?></h5>
+						<h5 class="mb-0 pt-1"> <?php echo $nombreus; ?></h5>
 					</div>
 					<div class="d-lg-none px-4 pb-4 text-center">
 
@@ -67,40 +68,45 @@
 					</div>
 					<div class="backspace rounded-3 p-4 mb-4">
 						<div class="d-block d-sm-flex align-items-center">
-							<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto; ?>" width="110">
+							<img class="d-block rounded-circle mx-auto my-2" src="<?php echo $foto;?>" width="110">
 							<div class="ps-sm-3 text-center text-sm-start">
 	                			<form action="actualizarperfiladmin.php" method="post" enctype="multipart/form-data">
-	                    		<input type="file" name="foto">
+                            <input type="file" name="foto2">
 								<div class="p mb-0 fonts blackcolor"> Subir foto JPG o PNG. Requerido 300 x 300. </div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-		              <div class="col-sm-6">
-			                <div class="mb-3 pb-1">
-			                  <label class="form-label px-0 fw-medium">Nombre y apellido</label>
-			                  <input type="text" class="form-control" placeholder="Ingresa tu nombre y apellido" name="nombrenew" value="<?php echo $nombreus ?>">
-			                </div>
-		              </div>
-		              <div class="col-sm-6">
-			                <div class="mb-3 pb-1">
-			                  <label class="form-label px-0 fw-medium">Correo</label>
-			                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
-			                </div>			                
-						</div>
-
-						<div class="col-sm-6 pt-3 ">
-							<button class=" editaradmin shadow btn-md py-2" type="submit" name="btneditar">
-									<i class="ai-refresh-cw me-2"></i>
-									Editar Perfil
-							</button>
-						</div>
-          			</div>
+              <div class="col-sm-6">
+	                <div class="mb-3 pb-1">
+	                  <label class="form-label px-0 fw-medium">Nombre y apellido</label>
+	                  <input type="text" class="form-control" placeholder="Ingresa tu nombre y apellido" name="nombrenew" value="<?php echo $nombreus ?>">
+	                </div>
+              </div>
+              <div class="col-sm-6">
+	                <div class="mb-3 pb-1">
+	                  <label class="form-label px-0 fw-medium">Correo</label>
+	                  <input type="text" class="form-control" placeholder="Ingresa tu correo" name="correonew" value="<?php echo $correous ?>">
+	                </div>
+				         </div>
+              <div class="col-sm-6">
+                     <div class="mb-3 pb-1">
+                       <label class="form-label px-0 fw-medium">Contraseña</label>
+                       <input type="text" class="form-control" placeholder="Ingresa tu contraseña" name="contranew" value="<?php echo $contrasena ?>">
+                     </div>
+                 </div>
+				      <div class="col-sm-6 pt-3 ">
+					<button class=" editaradmin shadow btn-md py-2" type="submit" name="btneditar">
+							<i class="ai-refresh-cw me-2"></i>
+							Editar Perfil
+					</button>
+				</div>
+          </div>
             		</form>
             		<div class="backspace rounded-3 p-3 m-4 d-flex justify-content-around">
 		              	<div>
-		              		<i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i>	              		
-		              	</div>           	
+		              		<i class="fa fa-exclamation-circle fa-3x" aria-hidden="true"></i>
+		              	</div>
 
 		              	<div class="p mb-0 fonts blackcolor">Querido usuario: <br>Al momento de actualizar la información, la sesión se va a cerrar automáticamente.
 		              	</div>

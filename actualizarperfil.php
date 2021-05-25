@@ -10,7 +10,8 @@ include "conexion.php";
 
     $nombrenuevo = $_POST['nombrenew'];
     $correonuevo = $_POST['correonew'];
-    $consulta77 = "UPDATE usuarios SET nombre = '$nombrenuevo', correo = '$correonuevo' WHERE usuarios.id = '$idus'";
+    $contranueva = $_POST['contranew'];
+    $consulta77 = "UPDATE usuarios SET nombre = '$nombrenuevo', correo = '$correonuevo', contrasena = '$contranueva' WHERE usuarios.id = '$idus'";
     $resultado77 = mysqli_query($conn, $consulta77);
 
     if ($resultado77=true)

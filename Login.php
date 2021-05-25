@@ -21,7 +21,7 @@
     <section>
     	<div class="row g-0">
     		<div class="col-lg-7 d-none d-lg-block">
-          
+
     			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   				  <div class="carousel-inner">
   				    <div class=" carousel-item active back min-vh-100 ">
@@ -41,8 +41,8 @@
   				  </a>
   				</div>
         </div>
-        
-    	 
+
+
     		<div class="col-lg-5 d-flex flex-column align-items-end min-vh-auto">
     			<div class="px-lg-5 pt-lg-4 pb-lg-3 p-4  w-100 mb-auto">
             <div class="pt-lg-4 pb-lg-3">
@@ -50,7 +50,7 @@
             </div>
     			</div>
     			<div class="px-lg-5 py-lg-2 p-4 w-100 align-self-center " >
-            
+
 
     				<h1  > Bienvenido </h1>
 
@@ -64,7 +64,7 @@
 					  </div>
 					  <div class="input-contenedor">
 					    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contraseña" >
+					    <input type="password" class="form-control mb-2" placeholder="Ingresa tu contraseña" name="contrasena" >
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
@@ -80,7 +80,7 @@
 					if (isset($_POST['correo']))
 					{
 						$correo=$_POST['correo'];
-						$contraseña=$_POST['contraseña'];
+						$contrasena=$_POST['contrasena'];
 
 						$campos=array();
 
@@ -88,7 +88,7 @@
 						{
 								array_push($campos, "Ingrese un correo electrónico válido: @unimilitar.edu.co");
 						}
-						if($contraseña =="" || strlen($contraseña)<8)
+						if($contrasena =="" || strlen($contrasena)<8)
 						{
 								array_push($campos, "El campo de contraseña no puede estar vacio. Debe tener minino 8 caracteres");
 						}
@@ -105,11 +105,11 @@
 						{
 								      include "conexion.php";
                       //Validacion//
-                      $consulta="SELECT*FROM usuarios where correo='$correo' and contrasena='$contraseña'";
+                      $consulta="SELECT*FROM usuarios where correo='$correo' and contrasena='$contrasena'";
                       $resultado=mysqli_query($conn,$consulta);
 
                       $filas=mysqli_num_rows($resultado);
-                      $rol="SELECT*FROM admins where correo='$correo' and contrasena='$contraseña'";
+                      $rol="SELECT*FROM admins where correo='$correo' and contrasena='$contrasena'";
                       $resultado2=mysqli_query($conn,$rol);
                       $filas2=mysqli_num_rows($resultado2);
                       $consulus="SELECT usuarios.nombre FROM usuarios where correo = '$correo'";
@@ -125,18 +125,22 @@
                         $resul4 = mysqli_query($conn, $consulta4);
                         $resultfinal = mysqli_fetch_array($resul4);
                         $idusu = $resultfinal['idusu'];
+
                         $consulta5= "SELECT usuarios.nombre as nombredatabase FROM usuarios WHERE usuarios.id = '$idusu'";
                         $resul5 = mysqli_query($conn, $consulta5);
                         $resultfinal2 = mysqli_fetch_array($resul5);
                         $nombredatabase = $resultfinal2['nombredatabase'];
+
                         $consulta5= "SELECT usuarios.correo as correodatabase FROM usuarios WHERE usuarios.id = '$idusu'";
                         $resul5 = mysqli_query($conn, $consulta5);
                         $resultfinal3 = mysqli_fetch_array($resul5);
                         $correodatabase = $resultfinal3['correodatabase'];
+
                         $consulta6= "SELECT usuarios.fotoperfil as foto FROM usuarios WHERE usuarios.id = '$idusu'";
                         $resul6 = mysqli_query($conn, $consulta6);
                         $resultfinal6 = mysqli_fetch_array($resul6);
                         $foto = $resultfinal6['foto'];
+
                         $row=$resultado3->fetch_assoc();
                         $nombreusuario=$row["nombre"];
 
@@ -145,6 +149,10 @@
                         $resultfinal6 = mysqli_fetch_array($resul6);
                         $fotoproye = $resultfinal6['foto'];
 
+                        $consulta7= "SELECT usuarios.contrasena as contrasena FROM usuarios WHERE usuarios.id = '$idusu'";
+                        $resul7 = mysqli_query($conn, $consulta7);
+                        $resultfinal7 = mysqli_fetch_array($resul7);
+                        $contrasenausuario = $resultfinal7['contrasena'];
 
 
 
@@ -155,8 +163,10 @@
                         $_SESSION['correo']=$correodatabase;
                         $_SESSION['foto']=$foto;
                         $_SESSION['$fotoproyecto'] = $fotoproye;
+                        $_SESSION['contrasena']=$contrasenausuario;
 
                         header('location: index.php');
+                        die();
                       }
                      else if ($filas2)
                       {
@@ -167,18 +177,26 @@
                           $resul4 = mysqli_query($conn, $consulta4);
                           $resultfinal = mysqli_fetch_array($resul4);
                           $idusu = $resultfinal['idusu'];
+
                           $consulta5= "SELECT admins.nombre as nombredatabase FROM admins WHERE admins.id = '$idusu'";
                           $resul5 = mysqli_query($conn, $consulta5);
                           $resultfinal2 = mysqli_fetch_array($resul5);
                           $nombredatabase = $resultfinal2['nombredatabase'];
+
                           $consulta5= "SELECT admins.correo as correodatabase FROM admins WHERE admins.id = '$idusu'";
                           $resul5 = mysqli_query($conn, $consulta5);
                           $resultfinal3 = mysqli_fetch_array($resul5);
                           $correodatabase = $resultfinal3['correodatabase'];
+
                           $consulta6= "SELECT admins.fotoperfil as foto FROM admins WHERE admins.id = '$idusu'";
                           $resul6 = mysqli_query($conn, $consulta6);
                           $resultfinal6 = mysqli_fetch_array($resul6);
                           $foto = $resultfinal6['foto'];
+
+                          $consulta7= "SELECT admins.contrasena as contrasena FROM admins WHERE admins.id = '$idusu'";
+                          $resul7 = mysqli_query($conn, $consulta7);
+                          $resultfinal7 = mysqli_fetch_array($resul7);
+                          $contrasenaadmin = $resultfinal7['contrasena'];
 
                           session_start();
                           $_SESSION['rol_id']=$idadmin;
@@ -186,6 +204,7 @@
                           $_SESSION['idusu']=$idusu;
                           $_SESSION['correo']=$correodatabase;
                           $_SESSION['foto']=$foto;
+                          $_SESSION['contrasena']=$contrasenaadmin;
 
                           header('location: index.php');
                       }
@@ -209,9 +228,7 @@
     </section>
     <link rel="stylesheet" href="bootstrap.min.js" / >
 
-
-    <script type="bootstrap.min.js"></script>
-
+      <script type="bootstrap.min.js"></script>
 
     </body>
 </html>

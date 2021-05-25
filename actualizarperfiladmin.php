@@ -7,25 +7,21 @@ $varsesion=$_SESSION['idusu'];
 include "conexion.php";
   $nombreus=$_SESSION['usuario'];
   $idus=$_SESSION['idusu'];
-  $foto = $_FILES['foto'];
+  $foto1=$_SESSION['foto'];
+  $foto = $_FILES['foto2'];
 
     $nombrenuevo = $_POST['nombrenew'];
     $correonuevo = $_POST['correonew'];
-    $consulta77 = "UPDATE admins SET nombre = '$nombrenuevo', correo = '$correonuevo' WHERE admins.id = '$idus'";
+    $contranueva = $_POST['contranew'];
+    $foto2 = $_POST['foto2'];
+
+
+    $consulta77 = "UPDATE admins SET nombre = '$nombrenuevo', correo = '$correonuevo', contrasena = '$contranueva' WHERE admins.id = '$idus'";
     $resultado77 = mysqli_query($conn, $consulta77);
 
 
-    if ($resultado77=true)
-    {
-      echo "<div class='correcto mb-auto'> Edicion Exitosa";
-      echo "</div>";
-    }
-    else {
-      echo "edicion no exitosa";
-    }
-
-    if ($foto!=null) {
-
+    if ($foto1 != $foto2) {
+      echo "cambio";
       echo $foto['tmp_name'];
       $directorio_destino = "profile";
       $tmp_name = $foto['tmp_name'];
@@ -41,8 +37,18 @@ include "conexion.php";
         echo "se subio correctamente";
       }
     }
-    else {
+    else
+    {
       echo "no hay foto";
+    }
+
+    if ($resultado77=true)
+    {
+      echo "<div class='correcto mb-auto'> Edicion Exitosa";
+      echo "</div>";
+    }
+    else {
+      echo "edicion no exitosa";
     }
 
 
