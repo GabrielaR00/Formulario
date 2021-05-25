@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css" / >
-    <link rel="stylesheet" type="text/css" href="estiloscasa2.css">
+    <link rel="stylesheet" type="text/css" href="estiloscasa02.css">
     <title>Invasión Multimedia</title>
 </head>
 <body>
@@ -41,17 +41,25 @@
     <script type="module" >
     var t=0;
     var u=255;
+    
     var RESOURCES_LOADED = false;
     var loadingManager = null;
+
+
+    
+
     var loadingScreen={
     scene: new THREE.Scene(),
     camara: new THREE.PerspectiveCamera(90,1280/720,0.1,100),
     box: new THREE.Mesh(
       new THREE.BoxGeometry(0.5,0.5,0.5),
       new THREE.MeshBasicMaterial({color:0x4442ff})
+    ),
+    box2: new THREE.Mesh(
+      new THREE.BoxGeometry(0.1,0.1,0.1),
+      new THREE.MeshBasicMaterial({color:0x000000})
     )
     };
-
     
     var scene, camera, renderer, controls, hemiLight, spotLight,cambio,la,active;
     var eleccion="";
@@ -60,13 +68,26 @@
     import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/loaders/GLTFLoader.js';
     import { TWEEN } from "./js/tween.module.min.js";
 
+    const ambientlight2 = new THREE.AmbientLight(0xffffff,2);
+            loadingScreen.scene.add(ambientlight2);
+
+    const loader5= new GLTFLoader();
+                        loader5.load('./Assests/Modelos/cargando.gltf', function(gltf)
+                         {
+                            gltf.scene.position.set(1.2,1.4,3);
+                            gltf.scene.rotation.y = Math.PI;
+                            gltf.scene.scale.set(0.7,0.7,0.7);
+                            loadingScreen.scene.add(gltf.scene);
+                         });
+
 
     loadingScreen.box.position.set(0,0,5);
+    loadingScreen.box2.position.set(5,1.3,3);
     loadingScreen.camara.lookAt(loadingScreen.box.position);
-    loadingScreen.scene.add(loadingScreen.box);
+    loadingScreen.scene.add(loadingScreen.box,loadingScreen.box2);
+
 
     loadingManager = new THREE.LoadingManager();
-
     loadingManager.onProgress = function(item,loaded,total){
       console.log(item,loaded,total);
     }
@@ -519,14 +540,13 @@
             loadingScreen.box.position.x -= 0.05;
             if(loadingScreen.box.position.x < -10) loadingScreen.box.position.x = 10;
             loadingScreen.box.position.y=Math.sin(loadingScreen.box.position.x);
-
             if(t<255){loadingScreen.box.material.color.set('rgb(' + 255 + ',' + 0 + ',' + parseFloat(t) + ')');}
               if(t>=255){loadingScreen.box.material.color.set('rgb(' + parseFloat(u+255) + ',' + 0 + ',' + 255 + ')');}
-              if(t>=510){loadingScreen.box.material.color.set('rgb(' + 0 + ',' + parseFloat(t-510) + ',' + 255 + ')');}
+              if(t>=510){loadingScreen.box.material.color.set('rgb(' + 0 + ',' + parseFloat(t-510) + ',' + 255 + ')'); loadingScreen.box2.position.set(0.4,1.3,3);}
               if(t>=765){loadingScreen.box.material.color.set('rgb(' + 0 + ',' + 255 + ',' + parseFloat(u+765) + ')');}
-              if(t>=1020){loadingScreen.box.material.color.set('rgb(' + parseFloat(t-1020) + ',' + 255 + ',' + 0 + ')');}
+              if(t>=1020){loadingScreen.box.material.color.set('rgb(' + parseFloat(t-1020) + ',' + 255 + ',' + 0 + ')'); loadingScreen.box2.position.set(0.29,1.3,3);}
               if(t>=1275){loadingScreen.box.material.color.set('rgb(' + 255 + ',' + parseFloat(u+1275) + ',' + 0 + ')');}
-              if(t>=1530){t=0;u=255;}
+              if(t>=1530){t=0;u=255; loadingScreen.box2.position.set(0.18,1.3,3);}
               t=t+10;
               u=u-10;
             renderer.render(loadingScreen.scene, loadingScreen.camara);
