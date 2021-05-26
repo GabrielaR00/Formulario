@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="shortcut icon" href="Assests/M.png"/>
     <meta charset="utf-8">
     <title>Proyectos aprobados</title>
 
@@ -37,7 +38,7 @@
             {
               if ($row["id"]=='1')
               {?>
-                
+
                 <div class="align-items-center ">
                   <h2 >Universidad Militar Nueva Granada</h2>
 
@@ -508,13 +509,13 @@
                             </div>
                             <div class="parrafo align-items-center jext-justify px-3 mt-5 mb-2">
                               <p class="justificado"><?php echo $row["Descripcion"];?></p>
-                            </div>                        
-                            <div class="row justify-content-center my-3 "> 
-                            <p class="justificado2"> Entérate de más:</p>  
-                             <div class="col-sm-2">  
+                            </div>
+                            <div class="row justify-content-center my-3 ">
+                            <p class="justificado2"> Entérate de más:</p>
+                             <div class="col-sm-2">
 
-                                <a href="https://www.umng.edu.co/programas/pregrados/ingenieria-multimedia" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/multi.png" ></a>          
-                             </div>   
+                                <a href="https://www.umng.edu.co/programas/pregrados/ingenieria-multimedia" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/multi.png" ></a>
+                             </div>
                             </div>
                           </div>
 
@@ -545,11 +546,11 @@
           <div class="parrafo align-items-center jext-justify mx-5 px-4 mt-5 mb-2">
             <p class="justificado"><?php echo $row1["Descripcion"];?></p>
           </div>
-          <div class="row justify-content-center "> 
-            <p class="justificado2"> Entérate de más:</p>   
-             <div class="col-sm-2">        
-             <a href="https://www.umng.edu.co" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/UMNG.png" ></a>          
-             </div>   
+          <div class="row justify-content-center ">
+            <p class="justificado2"> Entérate de más:</p>
+             <div class="col-sm-2">
+             <a href="https://www.umng.edu.co" target="_blank"><img class="img-responsive w-100 h-auto " src="Assests/UMNG.png" ></a>
+             </div>
           </div>
           <?php
         }

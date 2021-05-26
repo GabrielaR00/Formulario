@@ -7,6 +7,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="Assests/M.png"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css" / >
@@ -41,12 +42,12 @@
     <script type="module" >
     var t=0;
     var u=255;
-    
+
     var RESOURCES_LOADED = false;
     var loadingManager = null;
 
 
-    
+
 
     var loadingScreen={
     scene: new THREE.Scene(),
@@ -60,7 +61,7 @@
       new THREE.MeshBasicMaterial({color:0x000000})
     )
     };
-    
+
     var scene, camera, renderer, controls, hemiLight, spotLight,cambio,la,active;
     var eleccion="";
     import * as THREE from './js/three.module.js';
@@ -109,8 +110,8 @@
             camera = new THREE.PerspectiveCamera(40,window.innerWidth/window.innerHeight,0.1,1000);
 
             camera.position.set(130,130,130);
-            
-            
+
+
 
 
 
@@ -200,8 +201,8 @@
             active=multimedia;
 
 
-            
-            
+
+
             const habita1 = new THREE.Mesh(new THREE.BoxGeometry(60,4,70), new THREE.MeshLambertMaterial( {color: 0x00D8FF,transparent: true, opacity: 0}));
             habita1.position.x=0;
             habita1.position.y=0;
@@ -247,7 +248,7 @@
 
 
 
-            
+
 
             //Raycaster
             const raycaster = new THREE.Raycaster();
@@ -417,7 +418,7 @@
                         la=multimedia.position;
                         active=multimedia;
                         }
-                        
+
 
                     }
                     else if(siinter.object === habita1){
@@ -429,8 +430,8 @@
                         controls.minDistance = 20;
                         controls.maxDistance = 150;
                         }
-                        
-                        
+
+
 
                     }
                     else if(siinter.object === habita2){
@@ -440,7 +441,7 @@
                         la=habita2.position;
                         active=habita2;
                         controls.minAzimuthAngle = Math.PI * -1/6;
-                        
+
                         controls.minDistance = 20;
                         controls.maxDistance = 150;
                         }
@@ -457,7 +458,7 @@
                         controls.maxDistance = 150;
 
                         }
-                    
+
 
                     }
                 }
@@ -521,9 +522,9 @@
                 controls.panSpeed=0.5;
                 controls.minAzimuthAngle = Math.PI * 0;
                 controls.maxAzimuthAngle = Math.PI * 0.5;
-                
+
                 //controls.target.set(multimedia.position);
-                
+
                 controls.update();
 
 
@@ -556,7 +557,7 @@
             const curtime = clock.getElapsedTime();
             const deltatime=curtime-prevtime;
             prevtime=curtime;
-            
+
 
             controls.update(curtime);
             if (mixer !== null){
@@ -626,9 +627,9 @@
    </script>
 
     <div class="contenedorbody">
-        
+
             <canvas class="webgl width-100 height-100" ></canvas>
-        
+
 
         <div class="controles position-absolute w-1 h-auto"><img src="controles.png" alt="" class="imgcon img-fluid"> </div>
 
