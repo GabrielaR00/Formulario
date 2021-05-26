@@ -15,9 +15,12 @@
 
 
 	<link rel="stylesheet" href="bootstrap.min.css" / >
-	<link rel="stylesheet" type="text/css" href="perfilestilos2.css">
+	<link rel="stylesheet" type="text/css" href="perfilestilos03.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body class="fondouser">
 
@@ -103,8 +106,8 @@
 				                          <button class="btn d-flex align-items-center justify-content-between w-100" data-toggle="collapse" data-target="#collapse<?php echo $cont ?>" aria-expanded="true" aria-controls="collapse<?php echo $cont ?>">
 				                                                      <?php echo $row["NombreDelProyecto"]  ?>
 				                            <span class="fa-stack fa-fw ">
-				                              <i class="fas fa-circle fa-stack-2x"></i>
-				                              <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+				                              <i class="fas fa-circle fa-stack-2x masazul"></i>
+				                              <i class="fas fa-plus fa-stack-1x fa-inverse masazul"></i>
 				                            </span>
 				                          </button>
 
@@ -116,17 +119,17 @@
 
 				                            <ul class="list-unstyled">
 
-				                              <li> Nombre estudiante:
-				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
+				                              <li class="fw-medium"> Nombre estudiante:
+				                                <span class=" delgado text-nav ms-2"> <?php echo $row["nombreest"]  ?></span>
 				                              </li>
-				                              <li> Nombre proyecto:
-				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
+				                              <li class="fw-medium"> Nombre proyecto:
+				                                <span class=" delgado text-nav ms-2"> <?php echo $row["NombreDelProyecto"]  ?></span>
 				                              </li>
-				                              <li> Tipo de proyecto:
-				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
+				                              <li class="fw-medium"> Tipo de proyecto:
+				                                <span class="delgado text-nav ms-2"> <?php echo $row["Tipo"]  ?></span>
 				                              </li>
-				                              <li> Materia:
-				                                <span class="fw-medium text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
+				                              <li class="fw-medium"> Materia:
+				                                <span class="delgado text-nav ms-2"> <?php echo $row["Materia"]  ?></span>
 				                              </li>
 				                            </ul>
 				                            <h3 class="h5">Descripción</h3>

@@ -25,15 +25,12 @@ body
 {
 	background-image: url(./Assests/Fondoazul.gif);
 	background-size: cover;
-
-
 }
 .backtexto
 {
 	margin: 0px auto;	
 	background-color: rgba(130,130,130,0.4);	
-	border-radius: 10px;
-	
+	border-radius: 10px;	
 }
 h1 
 {
@@ -43,20 +40,18 @@ h1
 }
 h3
 {
+	font-family: KoHo, sans-serif ;
 	color: var(--light);	
 	margin-bottom: 2rem;
 	
 }
 .parrafo
 {
-
 	text-align: justify;
 	font-family: Lato, sans-serif ;
 	font-weight: 400 ;
 	font-weight:normal;
 	color: #ffffff;
-
-
 }
 .arch
 {
@@ -67,13 +62,12 @@ h3
 }
 .titulo
 {
-	font-family: Lato, sans-serif ;
+	font-family: KoHo, sans-serif ;
 	font-weight: 700 ;
 	font-weight:bold;
 	margin-bottom: 3rem;
 	text-align: center;
 }
-
 .contenedor
 {	
 	margin: 0px auto;	
@@ -135,14 +129,6 @@ select
 {
 	display: inline-block;
 }
-/*.archivo input[type="file"] 
-{
-  opacity: 0;
-  width: 200px;
-  height: 32px;
-  display: inline-block;            
-}*/
-
 .invoiceBox > input {
   display: none;
 }
@@ -181,97 +167,15 @@ select
   border: 1px solid green;
 }
 
-
-/*.custom-archivo {
-  background-color: #941B80;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 auto 0;
-  min-height: 15px;
-  overflow: hidden;
-  padding: 10px;
-  position: relative;
-  text-align: center;
-  width: 400px;
-}
-
-.custom-archivo .archivo {
- border: 10000px solid transparent;
- cursor: pointer;
- font-size: 10000px;
- margin: 0;
- opacity: 0;
- outline: 0 none;
- padding: 0;
- position: absolute;
- right: -1000px;
- top: -1000px;
-}*/
-/*.links
+@media only screen and (max-width: 600px)
 {
-	font-family: Lato,  sans-serif;
-	font-weight: 300;	
-	text-decoration: none;	
-}
-}
-.nocuenta
-{
-	font-family: Lato, sans-serif;
-	font-weight: 300;	
-	text-align: center;	
-}
-.regis
-{
-	font-family: Lato,  sans-serif;
-	font-weight: 300;	
-	text-decoration: none;	
-	font-weight: bold;
+	.col-6
+	{
+		width: 90%!important;
+	}
+	.backtexto .p-5 
+	{
+		padding: 1rem!important;
+	}
 
 }
-p
-{
-	font-family: Lato, sans-serif;
-	font-weight: 300;
-	font-weight: lighter;
-	text-align: center;	
-	display: inline-block;
-	margin: 0px auto;
-}
-.back
-{
-	background-image: url(Assests/fondo1.png);
-	background-position: center;
-	background-size: cover;
-}
-.back2
-{
-	background-image: url(Assests/Fondo2.jpg);
-	background-position: center;
-	background-size: cover;
-}
-.error
-{
-	font-family: Lato,  sans-serif;
-	font-weight: 300;	
-	text-align: center;
-	font-size: 0.9rem;
-	font-family: Lato, sans-serif;
-	font-weight: normal;
-	width: 100%;
-}
-.correcto
-{
-	font-family: Lato,  sans-serif;
-	font-weight: 300;	
-	text-align: center;
-	font-size: 0.9rem;
-	font-family: Lato, sans-serif;
-	font-weight: normal;
-	width: 100%;
-}
-li
-{	
-	list-style: none;
-}*/

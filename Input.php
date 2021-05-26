@@ -12,10 +12,11 @@ $varsesion=$_SESSION['usuario'];
 	<title>Envia Tu Trabajo</title>
 
 	<link rel="stylesheet" href="bootstrap.min.css" >
-	<link rel="stylesheet" type="text/css" href="estilosinput.css">
+	<link rel="stylesheet" type="text/css" href="estilosinput1.css">
 
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600;700&display=swap" rel="stylesheet">
 
 </head>
 <body class="fondo bg"  >
@@ -26,7 +27,7 @@ $varsesion=$_SESSION['usuario'];
 	<div class="col align-self-start p-4 "></div>
 	<div class="backtexto col-6 d-flex flex-column p-5 mb-auto align-self-center">
 		<div class="contenedor m-2">
-			<h1 class="titulo pb-2" > Formulario de envio </h1>
+			<h1 class="titulo pb-2 " > Formulario de envio </h1>
 			<div>
 				<h3 class="py-2"> Indicaciones:</h3>
 				<p class="parrafo  pb-4">Con este formulario puedes enviar los proyectos que hayas realizado en la carrera y que desees compartir con nosotros. Te pedimos que hagas uso de un vocabulario adecuado y profesional al momento de ingresar tu información. Al momento de subir el archivo seguir las instrucciones indicadas y al llenar el espacio de la breve descripción explicar de que se trata el proyecto y un poco de su desarrollo, sin exceder los 300 caracteres con espacios. </p>
